@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Test_Management_App
 {
-	public partial class Form1 : Form
+	public partial class TestLibraryForm : Form
 	{
-		public Form1()
+		public TestLibraryForm()
 		{
 			InitializeComponent();
 		}
