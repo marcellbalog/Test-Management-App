@@ -12,7 +12,7 @@ namespace Test_Management_App
 {
 	public partial class MainForm : Form
 	{
-		private Form activeForm = null;
+		public Form activeForm = null;
 
 		public MainForm()
 		{
