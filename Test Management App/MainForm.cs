@@ -40,5 +40,25 @@ namespace Test_Management_App
 		{
 			OpenPageForm(new TestLibraryForm());
 		}
+
+		private void teamButton_Click(object sender, EventArgs e)
+		{
+			OpenPageForm(new TeamForm());
+		}
+
+		private void scheduleButton_Click(object sender, EventArgs e)
+		{
+			OpenPageForm(new ScheduleForm());
+		}
+
+		private void analyticsButton_Click(object sender, EventArgs e)
+		{
+			OpenPageForm(new AnalyticsForm());
+		}
+
+		private void settingsButton_Click(object sender, EventArgs e)
+		{
+			OpenPageForm(new SettingsForm());
+		}
 	}
 }

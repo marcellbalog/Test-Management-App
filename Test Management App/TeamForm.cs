@@ -10,25 +10,11 @@ using System.Windows.Forms;
 
 namespace Test_Management_App
 {
-	public partial class TestLibraryForm : Form
+	public partial class TeamForm : Form
 	{
-		public TestLibraryForm()
+		public TeamForm()
 		{
 			InitializeComponent();
-			PopulateTestList();
-		}
-
-		public void PopulateTestList()
-		{
-			for (int i = 0; i < 3; i++)
-			{
-				TestRow tr = new TestRow();
-				testListPanel.Controls.Add(tr);
-				tr.Dock = DockStyle.Top;
-			}
-
-			
-
 		}
 	}
 }

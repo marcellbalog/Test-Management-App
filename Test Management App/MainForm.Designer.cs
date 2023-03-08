@@ -30,11 +30,11 @@ namespace Test_Management_App
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.testLibraryButton = new System.Windows.Forms.Button();
-			this.teamButton = new System.Windows.Forms.Button();
-			this.scheduleButton = new System.Windows.Forms.Button();
-			this.analyticsButton = new System.Windows.Forms.Button();
 			this.settingsButton = new System.Windows.Forms.Button();
+			this.analyticsButton = new System.Windows.Forms.Button();
+			this.scheduleButton = new System.Windows.Forms.Button();
+			this.teamButton = new System.Windows.Forms.Button();
+			this.testLibraryButton = new System.Windows.Forms.Button();
 			this.pageFormPanel = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -56,51 +56,21 @@ namespace Test_Management_App
 			this.panel1.Size = new System.Drawing.Size(1018, 57);
 			this.panel1.TabIndex = 0;
 			// 
-			// testLibraryButton
+			// settingsButton
 			// 
-			this.testLibraryButton.BackColor = System.Drawing.Color.Transparent;
-			this.testLibraryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.testLibraryButton.FlatAppearance.BorderSize = 0;
-			this.testLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.testLibraryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.testLibraryButton.ForeColor = System.Drawing.Color.Aqua;
-			this.testLibraryButton.Location = new System.Drawing.Point(15, 22);
-			this.testLibraryButton.Name = "testLibraryButton";
-			this.testLibraryButton.Size = new System.Drawing.Size(146, 30);
-			this.testLibraryButton.TabIndex = 8;
-			this.testLibraryButton.Text = "Test Library";
-			this.testLibraryButton.UseVisualStyleBackColor = false;
-			this.testLibraryButton.Click += new System.EventHandler(this.testLibrarybutton_Click);
-			// 
-			// teamButton
-			// 
-			this.teamButton.BackColor = System.Drawing.Color.Transparent;
-			this.teamButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.teamButton.FlatAppearance.BorderSize = 0;
-			this.teamButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.teamButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.teamButton.ForeColor = System.Drawing.Color.Aqua;
-			this.teamButton.Location = new System.Drawing.Point(141, 22);
-			this.teamButton.Name = "teamButton";
-			this.teamButton.Size = new System.Drawing.Size(94, 30);
-			this.teamButton.TabIndex = 9;
-			this.teamButton.Text = "Team";
-			this.teamButton.UseVisualStyleBackColor = false;
-			// 
-			// scheduleButton
-			// 
-			this.scheduleButton.BackColor = System.Drawing.Color.Transparent;
-			this.scheduleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.scheduleButton.FlatAppearance.BorderSize = 0;
-			this.scheduleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.scheduleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.scheduleButton.ForeColor = System.Drawing.Color.Aqua;
-			this.scheduleButton.Location = new System.Drawing.Point(224, 22);
-			this.scheduleButton.Name = "scheduleButton";
-			this.scheduleButton.Size = new System.Drawing.Size(94, 30);
-			this.scheduleButton.TabIndex = 10;
-			this.scheduleButton.Text = "Schedule";
-			this.scheduleButton.UseVisualStyleBackColor = false;
+			this.settingsButton.BackColor = System.Drawing.Color.Transparent;
+			this.settingsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.settingsButton.FlatAppearance.BorderSize = 0;
+			this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.settingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.settingsButton.ForeColor = System.Drawing.Color.Aqua;
+			this.settingsButton.Location = new System.Drawing.Point(414, 22);
+			this.settingsButton.Name = "settingsButton";
+			this.settingsButton.Size = new System.Drawing.Size(94, 30);
+			this.settingsButton.TabIndex = 12;
+			this.settingsButton.Text = "Settings";
+			this.settingsButton.UseVisualStyleBackColor = false;
+			this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
 			// 
 			// analyticsButton
 			// 
@@ -116,21 +86,55 @@ namespace Test_Management_App
 			this.analyticsButton.TabIndex = 11;
 			this.analyticsButton.Text = "Analytics";
 			this.analyticsButton.UseVisualStyleBackColor = false;
+			this.analyticsButton.Click += new System.EventHandler(this.analyticsButton_Click);
 			// 
-			// settingsButton
+			// scheduleButton
 			// 
-			this.settingsButton.BackColor = System.Drawing.Color.Transparent;
-			this.settingsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.settingsButton.FlatAppearance.BorderSize = 0;
-			this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.settingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.settingsButton.ForeColor = System.Drawing.Color.Aqua;
-			this.settingsButton.Location = new System.Drawing.Point(414, 22);
-			this.settingsButton.Name = "settingsButton";
-			this.settingsButton.Size = new System.Drawing.Size(94, 30);
-			this.settingsButton.TabIndex = 12;
-			this.settingsButton.Text = "Settings";
-			this.settingsButton.UseVisualStyleBackColor = false;
+			this.scheduleButton.BackColor = System.Drawing.Color.Transparent;
+			this.scheduleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.scheduleButton.FlatAppearance.BorderSize = 0;
+			this.scheduleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.scheduleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.scheduleButton.ForeColor = System.Drawing.Color.Aqua;
+			this.scheduleButton.Location = new System.Drawing.Point(224, 22);
+			this.scheduleButton.Name = "scheduleButton";
+			this.scheduleButton.Size = new System.Drawing.Size(94, 30);
+			this.scheduleButton.TabIndex = 10;
+			this.scheduleButton.Text = "Schedule";
+			this.scheduleButton.UseVisualStyleBackColor = false;
+			this.scheduleButton.Click += new System.EventHandler(this.scheduleButton_Click);
+			// 
+			// teamButton
+			// 
+			this.teamButton.BackColor = System.Drawing.Color.Transparent;
+			this.teamButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.teamButton.FlatAppearance.BorderSize = 0;
+			this.teamButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.teamButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.teamButton.ForeColor = System.Drawing.Color.Aqua;
+			this.teamButton.Location = new System.Drawing.Point(141, 22);
+			this.teamButton.Name = "teamButton";
+			this.teamButton.Size = new System.Drawing.Size(94, 30);
+			this.teamButton.TabIndex = 9;
+			this.teamButton.Text = "Team";
+			this.teamButton.UseVisualStyleBackColor = false;
+			this.teamButton.Click += new System.EventHandler(this.teamButton_Click);
+			// 
+			// testLibraryButton
+			// 
+			this.testLibraryButton.BackColor = System.Drawing.Color.Transparent;
+			this.testLibraryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.testLibraryButton.FlatAppearance.BorderSize = 0;
+			this.testLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.testLibraryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.testLibraryButton.ForeColor = System.Drawing.Color.Aqua;
+			this.testLibraryButton.Location = new System.Drawing.Point(15, 22);
+			this.testLibraryButton.Name = "testLibraryButton";
+			this.testLibraryButton.Size = new System.Drawing.Size(146, 30);
+			this.testLibraryButton.TabIndex = 8;
+			this.testLibraryButton.Text = "Test Library";
+			this.testLibraryButton.UseVisualStyleBackColor = false;
+			this.testLibraryButton.Click += new System.EventHandler(this.testLibrarybutton_Click);
 			// 
 			// pageFormPanel
 			// 

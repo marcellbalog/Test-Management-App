@@ -29,19 +29,7 @@ namespace Test_Management_App
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.panel9 = new System.Windows.Forms.Panel();
-			this.panel11 = new System.Windows.Forms.Panel();
-			this.pictureBox8 = new System.Windows.Forms.PictureBox();
-			this.label43 = new System.Windows.Forms.Label();
-			this.label44 = new System.Windows.Forms.Label();
-			this.label45 = new System.Windows.Forms.Label();
-			this.label46 = new System.Windows.Forms.Label();
-			this.panel10 = new System.Windows.Forms.Panel();
-			this.pictureBox7 = new System.Windows.Forms.PictureBox();
-			this.label39 = new System.Windows.Forms.Label();
-			this.label40 = new System.Windows.Forms.Label();
-			this.label41 = new System.Windows.Forms.Label();
-			this.label42 = new System.Windows.Forms.Label();
+			this.testListPanel = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.label29 = new System.Windows.Forms.Label();
@@ -66,17 +54,18 @@ namespace Test_Management_App
 			this.label13 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
+			this.EditButton = new System.Windows.Forms.Button();
+			this.RefreshButton = new System.Windows.Forms.Button();
+			this.NewButton = new System.Windows.Forms.Button();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
+			this.CurrentFolderLabel = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
+			this.HierarchyPanel = new System.Windows.Forms.Panel();
 			this.label21 = new System.Windows.Forms.Label();
 			this.label22 = new System.Windows.Forms.Label();
 			this.label25 = new System.Windows.Forms.Label();
@@ -84,11 +73,6 @@ namespace Test_Management_App
 			this.label27 = new System.Windows.Forms.Label();
 			this.label30 = new System.Windows.Forms.Label();
 			this.label35 = new System.Windows.Forms.Label();
-			this.panel9.SuspendLayout();
-			this.panel11.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-			this.panel10.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
 			this.panel7.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			this.panel6.SuspendLayout();
@@ -99,152 +83,17 @@ namespace Test_Management_App
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.HierarchyPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// panel9
+			// testListPanel
 			// 
-			this.panel9.AutoScroll = true;
-			this.panel9.Controls.Add(this.panel11);
-			this.panel9.Controls.Add(this.panel10);
-			this.panel9.Location = new System.Drawing.Point(179, 298);
-			this.panel9.Name = "panel9";
-			this.panel9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-			this.panel9.Size = new System.Drawing.Size(811, 118);
-			this.panel9.TabIndex = 56;
-			// 
-			// panel11
-			// 
-			this.panel11.BackColor = System.Drawing.Color.Lavender;
-			this.panel11.Controls.Add(this.pictureBox8);
-			this.panel11.Controls.Add(this.label43);
-			this.panel11.Controls.Add(this.label44);
-			this.panel11.Controls.Add(this.label45);
-			this.panel11.Controls.Add(this.label46);
-			this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel11.Location = new System.Drawing.Point(0, 38);
-			this.panel11.Name = "panel11";
-			this.panel11.Size = new System.Drawing.Size(811, 38);
-			this.panel11.TabIndex = 39;
-			// 
-			// pictureBox8
-			// 
-			this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.pictureBox8.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox8.Location = new System.Drawing.Point(767, 6);
-			this.pictureBox8.Name = "pictureBox8";
-			this.pictureBox8.Size = new System.Drawing.Size(25, 25);
-			this.pictureBox8.TabIndex = 41;
-			this.pictureBox8.TabStop = false;
-			// 
-			// label43
-			// 
-			this.label43.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.label43.AutoSize = true;
-			this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label43.Location = new System.Drawing.Point(647, 10);
-			this.label43.Name = "label43";
-			this.label43.Size = new System.Drawing.Size(36, 17);
-			this.label43.TabIndex = 3;
-			this.label43.Text = "DEV";
-			// 
-			// label44
-			// 
-			this.label44.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.label44.AutoSize = true;
-			this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label44.Location = new System.Drawing.Point(456, 10);
-			this.label44.Name = "label44";
-			this.label44.Size = new System.Drawing.Size(112, 17);
-			this.label44.TabIndex = 2;
-			this.label44.Text = "Team Member A";
-			// 
-			// label45
-			// 
-			this.label45.AutoSize = true;
-			this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label45.Location = new System.Drawing.Point(84, 10);
-			this.label45.Name = "label45";
-			this.label45.Size = new System.Drawing.Size(140, 17);
-			this.label45.TabIndex = 1;
-			this.label45.Text = "Sample Test Name 2";
-			// 
-			// label46
-			// 
-			this.label46.AutoSize = true;
-			this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label46.Location = new System.Drawing.Point(16, 10);
-			this.label46.Name = "label46";
-			this.label46.Size = new System.Drawing.Size(25, 17);
-			this.label46.TabIndex = 0;
-			this.label46.Text = "T2";
-			// 
-			// panel10
-			// 
-			this.panel10.BackColor = System.Drawing.Color.Lavender;
-			this.panel10.Controls.Add(this.pictureBox7);
-			this.panel10.Controls.Add(this.label39);
-			this.panel10.Controls.Add(this.label40);
-			this.panel10.Controls.Add(this.label41);
-			this.panel10.Controls.Add(this.label42);
-			this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel10.Location = new System.Drawing.Point(0, 0);
-			this.panel10.Name = "panel10";
-			this.panel10.Size = new System.Drawing.Size(811, 38);
-			this.panel10.TabIndex = 38;
-			// 
-			// pictureBox7
-			// 
-			this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.pictureBox7.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox7.Location = new System.Drawing.Point(767, 6);
-			this.pictureBox7.Name = "pictureBox7";
-			this.pictureBox7.Size = new System.Drawing.Size(25, 25);
-			this.pictureBox7.TabIndex = 41;
-			this.pictureBox7.TabStop = false;
-			// 
-			// label39
-			// 
-			this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.label39.AutoSize = true;
-			this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label39.Location = new System.Drawing.Point(647, 10);
-			this.label39.Name = "label39";
-			this.label39.Size = new System.Drawing.Size(36, 17);
-			this.label39.TabIndex = 3;
-			this.label39.Text = "DEV";
-			// 
-			// label40
-			// 
-			this.label40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.label40.AutoSize = true;
-			this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label40.Location = new System.Drawing.Point(456, 10);
-			this.label40.Name = "label40";
-			this.label40.Size = new System.Drawing.Size(112, 17);
-			this.label40.TabIndex = 2;
-			this.label40.Text = "Team Member A";
-			// 
-			// label41
-			// 
-			this.label41.AutoSize = true;
-			this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label41.Location = new System.Drawing.Point(84, 10);
-			this.label41.Name = "label41";
-			this.label41.Size = new System.Drawing.Size(140, 17);
-			this.label41.TabIndex = 1;
-			this.label41.Text = "Sample Test Name 2";
-			// 
-			// label42
-			// 
-			this.label42.AutoSize = true;
-			this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label42.Location = new System.Drawing.Point(16, 10);
-			this.label42.Name = "label42";
-			this.label42.Size = new System.Drawing.Size(25, 17);
-			this.label42.TabIndex = 0;
-			this.label42.Text = "T2";
+			this.testListPanel.AutoScroll = true;
+			this.testListPanel.Location = new System.Drawing.Point(179, 298);
+			this.testListPanel.Name = "testListPanel";
+			this.testListPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+			this.testListPanel.Size = new System.Drawing.Size(811, 118);
+			this.testListPanel.TabIndex = 56;
 			// 
 			// panel7
 			// 
@@ -518,44 +367,44 @@ namespace Test_Management_App
 			this.label15.TabIndex = 0;
 			this.label15.Text = "T3";
 			// 
-			// button3
+			// EditButton
 			// 
-			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button3.BackColor = System.Drawing.Color.LightCyan;
-			this.button3.FlatAppearance.BorderSize = 0;
-			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.button3.Location = new System.Drawing.Point(868, 49);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(47, 23);
-			this.button3.TabIndex = 51;
-			this.button3.Text = "EDIT";
-			this.button3.UseVisualStyleBackColor = false;
+			this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.EditButton.BackColor = System.Drawing.Color.LightCyan;
+			this.EditButton.FlatAppearance.BorderSize = 0;
+			this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.EditButton.Location = new System.Drawing.Point(868, 49);
+			this.EditButton.Name = "EditButton";
+			this.EditButton.Size = new System.Drawing.Size(47, 23);
+			this.EditButton.TabIndex = 51;
+			this.EditButton.Text = "EDIT";
+			this.EditButton.UseVisualStyleBackColor = false;
 			// 
-			// button2
+			// RefreshButton
 			// 
-			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button2.BackColor = System.Drawing.Color.LightCyan;
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.button2.Location = new System.Drawing.Point(921, 49);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(68, 23);
-			this.button2.TabIndex = 50;
-			this.button2.Text = "REFRESH";
-			this.button2.UseVisualStyleBackColor = false;
+			this.RefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.RefreshButton.BackColor = System.Drawing.Color.LightCyan;
+			this.RefreshButton.FlatAppearance.BorderSize = 0;
+			this.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.RefreshButton.Location = new System.Drawing.Point(921, 49);
+			this.RefreshButton.Name = "RefreshButton";
+			this.RefreshButton.Size = new System.Drawing.Size(68, 23);
+			this.RefreshButton.TabIndex = 50;
+			this.RefreshButton.Text = "REFRESH";
+			this.RefreshButton.UseVisualStyleBackColor = false;
 			// 
-			// button1
+			// NewButton
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.BackColor = System.Drawing.Color.LightCyan;
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.button1.Location = new System.Drawing.Point(815, 49);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(47, 23);
-			this.button1.TabIndex = 49;
-			this.button1.Text = "NEW";
-			this.button1.UseVisualStyleBackColor = false;
+			this.NewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.NewButton.BackColor = System.Drawing.Color.LightCyan;
+			this.NewButton.FlatAppearance.BorderSize = 0;
+			this.NewButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.NewButton.Location = new System.Drawing.Point(815, 49);
+			this.NewButton.Name = "NewButton";
+			this.NewButton.Size = new System.Drawing.Size(47, 23);
+			this.NewButton.TabIndex = 49;
+			this.NewButton.Text = "NEW";
+			this.NewButton.UseVisualStyleBackColor = false;
 			// 
 			// panel3
 			// 
@@ -625,16 +474,16 @@ namespace Test_Management_App
 			this.label8.TabIndex = 0;
 			this.label8.Text = "T2";
 			// 
-			// label7
+			// CurrentFolderLabel
 			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label7.ForeColor = System.Drawing.Color.LightSeaGreen;
-			this.label7.Location = new System.Drawing.Point(177, 32);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(88, 24);
-			this.label7.TabIndex = 47;
-			this.label7.Text = "/Folder A";
+			this.CurrentFolderLabel.AutoSize = true;
+			this.CurrentFolderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.CurrentFolderLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
+			this.CurrentFolderLabel.Location = new System.Drawing.Point(177, 32);
+			this.CurrentFolderLabel.Name = "CurrentFolderLabel";
+			this.CurrentFolderLabel.Size = new System.Drawing.Size(88, 24);
+			this.CurrentFolderLabel.TabIndex = 47;
+			this.CurrentFolderLabel.Text = "/Folder A";
 			// 
 			// label6
 			// 
@@ -642,11 +491,25 @@ namespace Test_Management_App
 			this.label6.BackColor = System.Drawing.Color.Transparent;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label6.Location = new System.Drawing.Point(27, 32);
+			this.label6.Location = new System.Drawing.Point(12, 32);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(87, 22);
 			this.label6.TabIndex = 64;
 			this.label6.Text = "Hierarchy";
+			// 
+			// HierarchyPanel
+			// 
+			this.HierarchyPanel.Controls.Add(this.label21);
+			this.HierarchyPanel.Controls.Add(this.label22);
+			this.HierarchyPanel.Controls.Add(this.label25);
+			this.HierarchyPanel.Controls.Add(this.label26);
+			this.HierarchyPanel.Controls.Add(this.label27);
+			this.HierarchyPanel.Controls.Add(this.label30);
+			this.HierarchyPanel.Controls.Add(this.label35);
+			this.HierarchyPanel.Location = new System.Drawing.Point(12, 69);
+			this.HierarchyPanel.Name = "HierarchyPanel";
+			this.HierarchyPanel.Size = new System.Drawing.Size(163, 591);
+			this.HierarchyPanel.TabIndex = 65;
 			// 
 			// label21
 			// 
@@ -654,11 +517,11 @@ namespace Test_Management_App
 			this.label21.BackColor = System.Drawing.Color.Transparent;
 			this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label21.Location = new System.Drawing.Point(38, 158);
+			this.label21.Location = new System.Drawing.Point(7, 105);
 			this.label21.Name = "label21";
 			this.label21.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
 			this.label21.Size = new System.Drawing.Size(114, 17);
-			this.label21.TabIndex = 63;
+			this.label21.TabIndex = 70;
 			this.label21.Text = "◆ Subfolder E2";
 			// 
 			// label22
@@ -667,11 +530,11 @@ namespace Test_Management_App
 			this.label22.BackColor = System.Drawing.Color.Transparent;
 			this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label22.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label22.Location = new System.Drawing.Point(39, 141);
+			this.label22.Location = new System.Drawing.Point(8, 88);
 			this.label22.Name = "label22";
 			this.label22.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
 			this.label22.Size = new System.Drawing.Size(114, 17);
-			this.label22.TabIndex = 62;
+			this.label22.TabIndex = 69;
 			this.label22.Text = "◇ Subfolder E1";
 			// 
 			// label25
@@ -680,10 +543,10 @@ namespace Test_Management_App
 			this.label25.BackColor = System.Drawing.Color.Transparent;
 			this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label25.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label25.Location = new System.Drawing.Point(39, 126);
+			this.label25.Location = new System.Drawing.Point(8, 73);
 			this.label25.Name = "label25";
 			this.label25.Size = new System.Drawing.Size(75, 17);
-			this.label25.TabIndex = 61;
+			this.label25.TabIndex = 68;
 			this.label25.Text = "◆ Folder E";
 			// 
 			// label26
@@ -692,10 +555,10 @@ namespace Test_Management_App
 			this.label26.BackColor = System.Drawing.Color.Transparent;
 			this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label26.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label26.Location = new System.Drawing.Point(39, 111);
+			this.label26.Location = new System.Drawing.Point(8, 58);
 			this.label26.Name = "label26";
 			this.label26.Size = new System.Drawing.Size(76, 17);
-			this.label26.TabIndex = 60;
+			this.label26.TabIndex = 67;
 			this.label26.Text = "◆ Folder D";
 			// 
 			// label27
@@ -704,10 +567,10 @@ namespace Test_Management_App
 			this.label27.BackColor = System.Drawing.Color.Transparent;
 			this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label27.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label27.Location = new System.Drawing.Point(39, 96);
+			this.label27.Location = new System.Drawing.Point(8, 43);
 			this.label27.Name = "label27";
 			this.label27.Size = new System.Drawing.Size(75, 17);
-			this.label27.TabIndex = 59;
+			this.label27.TabIndex = 66;
 			this.label27.Text = "◇ Folder C";
 			// 
 			// label30
@@ -716,10 +579,10 @@ namespace Test_Management_App
 			this.label30.BackColor = System.Drawing.Color.Transparent;
 			this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label30.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label30.Location = new System.Drawing.Point(39, 81);
+			this.label30.Location = new System.Drawing.Point(8, 28);
 			this.label30.Name = "label30";
 			this.label30.Size = new System.Drawing.Size(75, 17);
-			this.label30.TabIndex = 58;
+			this.label30.TabIndex = 65;
 			this.label30.Text = "◆ Folder B";
 			// 
 			// label35
@@ -728,10 +591,10 @@ namespace Test_Management_App
 			this.label35.BackColor = System.Drawing.Color.Transparent;
 			this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label35.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label35.Location = new System.Drawing.Point(39, 64);
+			this.label35.Location = new System.Drawing.Point(8, 11);
 			this.label35.Name = "label35";
 			this.label35.Size = new System.Drawing.Size(75, 17);
-			this.label35.TabIndex = 57;
+			this.label35.TabIndex = 64;
 			this.label35.Text = "◆ Folder A";
 			// 
 			// TestLibraryForm
@@ -739,33 +602,20 @@ namespace Test_Management_App
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1120, 660);
+			this.Controls.Add(this.HierarchyPanel);
 			this.Controls.Add(this.label6);
-			this.Controls.Add(this.label21);
-			this.Controls.Add(this.label22);
-			this.Controls.Add(this.label25);
-			this.Controls.Add(this.label26);
-			this.Controls.Add(this.label27);
-			this.Controls.Add(this.label30);
-			this.Controls.Add(this.label35);
-			this.Controls.Add(this.panel9);
+			this.Controls.Add(this.testListPanel);
 			this.Controls.Add(this.panel7);
 			this.Controls.Add(this.panel6);
 			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.panel4);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.EditButton);
+			this.Controls.Add(this.RefreshButton);
+			this.Controls.Add(this.NewButton);
 			this.Controls.Add(this.panel3);
-			this.Controls.Add(this.label7);
+			this.Controls.Add(this.CurrentFolderLabel);
 			this.Name = "TestLibraryForm";
 			this.Text = "TestLibraryForm";
-			this.panel9.ResumeLayout(false);
-			this.panel11.ResumeLayout(false);
-			this.panel11.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-			this.panel10.ResumeLayout(false);
-			this.panel10.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
 			this.panel7.ResumeLayout(false);
 			this.panel7.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -781,6 +631,8 @@ namespace Test_Management_App
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.HierarchyPanel.ResumeLayout(false);
+			this.HierarchyPanel.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -788,19 +640,7 @@ namespace Test_Management_App
 
 		#endregion
 
-		private System.Windows.Forms.Panel panel9;
-		private System.Windows.Forms.Panel panel11;
-		private System.Windows.Forms.PictureBox pictureBox8;
-		private System.Windows.Forms.Label label43;
-		private System.Windows.Forms.Label label44;
-		private System.Windows.Forms.Label label45;
-		private System.Windows.Forms.Label label46;
-		private System.Windows.Forms.Panel panel10;
-		private System.Windows.Forms.PictureBox pictureBox7;
-		private System.Windows.Forms.Label label39;
-		private System.Windows.Forms.Label label40;
-		private System.Windows.Forms.Label label41;
-		private System.Windows.Forms.Label label42;
+		private System.Windows.Forms.Panel testListPanel;
 		private System.Windows.Forms.Panel panel7;
 		private System.Windows.Forms.PictureBox pictureBox5;
 		private System.Windows.Forms.Label label29;
@@ -825,17 +665,18 @@ namespace Test_Management_App
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button EditButton;
+		private System.Windows.Forms.Button RefreshButton;
+		private System.Windows.Forms.Button NewButton;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label CurrentFolderLabel;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Panel HierarchyPanel;
 		private System.Windows.Forms.Label label21;
 		private System.Windows.Forms.Label label22;
 		private System.Windows.Forms.Label label25;
