@@ -12,6 +12,8 @@ namespace Test_Management_App
 {
 	public partial class MainForm : Form
 	{
+		public MainFormController controller;
+
 		public Form activeForm = null;
 
 		public MainForm()
@@ -19,6 +21,10 @@ namespace Test_Management_App
 			InitializeComponent();
 
 			activeForm = new TestLibraryForm();
+			var view = new MainFormView(this);
+			controller = new MainFormController(view/*, model*/);
+			controller.Initialize();
+
 		}
 
 		private void OpenPageForm(Form pageForm)
