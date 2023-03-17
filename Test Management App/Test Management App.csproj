@@ -74,6 +74,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainFormController.cs" />
+    <Compile Include="MainFormModel.cs" />
     <Compile Include="MainFormView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="TeamForm.Designer.cs">
       <DependentUpon>TeamForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestData.cs" />
     <Compile Include="TestLibraryForm.cs">
       <SubType>Form</SubType>
     </Compile>

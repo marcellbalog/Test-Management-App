@@ -65,6 +65,9 @@ namespace Test_Management_App
 		{
 			form.controller.OnSettingsButtonClick();
 		}
+
+
+
 	}
 
 }
