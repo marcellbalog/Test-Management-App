@@ -12,19 +12,22 @@ namespace Test_Management_App
 {
 	public partial class TestLibraryForm : Form
 	{
-		public TestLibraryForm()
+		public TestLibraryForm(MainFormModel model)
 		{
 			InitializeComponent();
-			PopulateTestList();
+
+			PopulateTestList(model.testData);
 		}
 
-		public void PopulateTestList()
+		public void PopulateTestList(List<TestData> data)
 		{
-			for (int i = 0; i < 3; i++)
+			foreach (TestData item in data)
 			{
 				TestRow tr = new TestRow();
 				testListPanel.Controls.Add(tr);
 				tr.Dock = DockStyle.Top;
+				tr.TestID.Text = item.ID.ToString();
+				tr.TestName.Text = item.Name;
 			}
 
 			

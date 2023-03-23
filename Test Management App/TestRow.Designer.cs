@@ -122,11 +122,11 @@ namespace Test_Management_App
 
 		#endregion
 
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.PictureBox TestResult;
-		private System.Windows.Forms.Label TestStatus;
-		private System.Windows.Forms.Label TestOwner;
-		private System.Windows.Forms.Label TestName;
-		private System.Windows.Forms.Label TestID;
+		public System.Windows.Forms.Panel panel1;
+		public System.Windows.Forms.PictureBox TestResult;
+		public System.Windows.Forms.Label TestStatus;
+		public System.Windows.Forms.Label TestOwner;
+		public System.Windows.Forms.Label TestName;
+		public System.Windows.Forms.Label TestID;
 	}
 }

@@ -12,44 +12,55 @@ namespace Test_Management_App
 {
 	public class MainFormController
 	{
+		private MainFormModel model;
 		private MainFormView view;
 		//private TestLibraryModel testLibraryModel;
+		private Form activeForm = null;
 
-		public MainFormController(MainFormView view/*, TestLibraryModel testLibraryModel*/)
+		public MainFormController(MainFormView view, MainFormModel mainFormModel)
 		{
 			this.view = view;
-			//this.testLibraryModel = testLibraryModel;
+			this.model = mainFormModel;
 		}
 
 		public void Initialize()
 		{
 			view.Show();
-			view.OpenPageForm(new TestLibraryForm());
+			view.OpenPageForm(new TestLibraryForm(model));
 		}
+
+		public void OpenPageForm(Form form)
+		{
+			if (activeForm != null)
+				activeForm.Close();
+			activeForm = form;
+			view.OpenPageForm(form);
+		}
+
 
 		public void OnTestLibraryButtonClick()
 		{
-			view.OpenPageForm(new TestLibraryForm());
+			OpenPageForm(new TestLibraryForm(model));			
 		}
 
 		public void OnTeamButtonClick()
 		{
-			view.OpenPageForm(new TeamForm());
+			OpenPageForm(new TeamForm());
 		}
 
 		public void OnScheduleButtonClick()
 		{
-			view.OpenPageForm(new ScheduleForm());
+			OpenPageForm(new ScheduleForm());
 		}
 
 		public void OnAnalyticsButtonClick()
 		{
-			view.OpenPageForm(new AnalyticsForm());
+			OpenPageForm(new AnalyticsForm());
 		}
 
 		public void OnSettingsButtonClick()
 		{
-			view.OpenPageForm(new SettingsForm());
+			OpenPageForm(new SettingsForm());
 		}
 	}
 

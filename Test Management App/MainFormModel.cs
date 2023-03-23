@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace Test_Management_App
 {
 	public class MainFormModel
-	{
+	{		
 
 		private SqlConnection connection;
-		private List<TestData> testData;
+		public List<TestData> testData;
 
 		public MainFormModel(string connectionString)
 		{

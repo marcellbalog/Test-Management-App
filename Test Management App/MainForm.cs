@@ -13,58 +13,47 @@ namespace Test_Management_App
 	public partial class MainForm : Form
 	{
 		public MainFormController controller;
+		string connectionString = "";
 
 		public Form activeForm = null;
 
 		public MainForm()
 		{
 			InitializeComponent();
-
-			activeForm = new TestLibraryForm();
+			
 			var view = new MainFormView(this);
-			controller = new MainFormController(view/*, model*/);
+			var model = new MainFormModel(connectionString);
+			controller = new MainFormController(view, model);
 			controller.Initialize();
 
+			testLibraryButton.Click  += new EventHandler(view.OnTestLibraryButtonClick);
 		}
 
-		private void OpenPageForm(Form pageForm)
-		{
-			if (activeForm != null)
-				activeForm.Close();
-			activeForm = pageForm;
-			pageForm.TopLevel = false;
-			pageForm.FormBorderStyle = FormBorderStyle.None;
-			pageForm.Dock = DockStyle.Fill;
-			pageFormPanel.Controls.Add(pageForm);
-			pageFormPanel.Tag = pageForm;
-			pageForm.BringToFront();
-			pageForm.Show();
+		
 
+		public void testLibrarybutton_Click(object sender, EventArgs e)
+		{
+			//OpenPageForm(new TestLibraryForm());
 		}
 
-		private void testLibrarybutton_Click(object sender, EventArgs e)
+		public void teamButton_Click(object sender, EventArgs e)
 		{
-			OpenPageForm(new TestLibraryForm());
+			//OpenPageForm(new TeamForm());
 		}
 
-		private void teamButton_Click(object sender, EventArgs e)
+		public void scheduleButton_Click(object sender, EventArgs e)
 		{
-			OpenPageForm(new TeamForm());
+			//OpenPageForm(new ScheduleForm());
 		}
 
-		private void scheduleButton_Click(object sender, EventArgs e)
+		public void analyticsButton_Click(object sender, EventArgs e)
 		{
-			OpenPageForm(new ScheduleForm());
+			//OpenPageForm(new AnalyticsForm());
 		}
 
-		private void analyticsButton_Click(object sender, EventArgs e)
+		public void settingsButton_Click(object sender, EventArgs e)
 		{
-			OpenPageForm(new AnalyticsForm());
-		}
-
-		private void settingsButton_Click(object sender, EventArgs e)
-		{
-			OpenPageForm(new SettingsForm());
+			//OpenPageForm(new SettingsForm());
 		}
 	}
 }

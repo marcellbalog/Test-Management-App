@@ -18,7 +18,8 @@ namespace Test_Management_App
 		public MainFormView(MainForm form)
 		{
 			this.form = form;
-			/*this.form.testLibraryButton.Click += OnTestLibraryButtonClick;			
+			/*this.OnTestLibraryButtonClick += new EventHandler(this.form.testLibrarybutton_Click);
+			this.form.testLibraryButton.Click += OnTestLibraryButtonClick;			
 			this.form.teamButton.Click += OnTeamButtonClick;
 			this.form.scheduleButton.Click += OnScheduleButtonClick;
 			this.form.analyticsButton.Click += OnAnalyticsButtonClick;
@@ -38,10 +39,10 @@ namespace Test_Management_App
 			pageForm.Dock = DockStyle.Fill;
 			//form.pageFormPanel.Controls.Add(pageForm);
 			pageForm.BringToFront();
-			pageForm.Show();
+			pageForm.Show();			
 		}
 
-		private void OnTestLibraryButtonClick(object sender, EventArgs e)
+		public void OnTestLibraryButtonClick(object sender, EventArgs e)
 		{
 			form.controller.OnTestLibraryButtonClick();
 		}
