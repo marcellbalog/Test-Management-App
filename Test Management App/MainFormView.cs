@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,39 +33,42 @@ namespace Test_Management_App
 		}
 
 		public void OpenPageForm(Form pageForm)
-		{
-			//form.pageFormPanel.Controls.Clear();
+		{			
 			pageForm.TopLevel = false;
 			pageForm.FormBorderStyle = FormBorderStyle.None;
-			pageForm.Dock = DockStyle.Fill;
-			//form.pageFormPanel.Controls.Add(pageForm);
+			pageForm.Dock = DockStyle.Fill;			
 			pageForm.BringToFront();
-			pageForm.Show();			
+			pageForm.Show();
+
+			Debug.WriteLine("library show");
 		}
 
 		public void OnTestLibraryButtonClick(object sender, EventArgs e)
 		{
-			form.controller.OnTestLibraryButtonClick();
+			//form.controller.OnTestLibraryButtonClick();
+			OpenPageForm(new TestLibraryForm(form.model));
+			Debug.WriteLine("library click");
+
 		}
 
 		private void OnTeamButtonClick(object sender, EventArgs e)
 		{
-			form.controller.OnTeamButtonClick();
+			//form.controller.OnTeamButtonClick();
 		}
 
 		private void OnScheduleButtonClick(object sender, EventArgs e)
 		{
-			form.controller.OnScheduleButtonClick();
+			//form.controller.OnScheduleButtonClick();
 		}
 
 		private void OnAnalyticsButtonClick(object sender, EventArgs e)
 		{
-			form.controller.OnAnalyticsButtonClick();
+			//form.controller.OnAnalyticsButtonClick();
 		}
 
 		private void OnSettingsButtonClick(object sender, EventArgs e)
 		{
-			form.controller.OnSettingsButtonClick();
+			//form.controller.OnSettingsButtonClick();
 		}
 
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,48 +13,63 @@ namespace Test_Management_App
 {
 	public partial class MainForm : Form
 	{
-		public MainFormController controller;
+		public MainFormModel model;
+		public MainFormView view;
+
 		string connectionString = "";
 
 		public Form activeForm = null;
+
+		
 
 		public MainForm()
 		{
 			InitializeComponent();
 			
-			var view = new MainFormView(this);
-			var model = new MainFormModel(connectionString);
-			controller = new MainFormController(view, model);
-			controller.Initialize();
+			model = new MainFormModel(connectionString);			
+			view = new MainFormView(this);
+
+			view.Show();
+			view.OpenPageForm(new TestLibraryForm(model));
 
 			testLibraryButton.Click  += new EventHandler(view.OnTestLibraryButtonClick);
 		}
 
-		
+		public void OpenPageForm(Form form)
+		{
+			if (activeForm != null)
+				activeForm.Close();
+			activeForm = form;
+			view.OpenPageForm(form);
+			pageFormPanel.Controls.Clear();
+			pageFormPanel.Controls.Add(form);
+		}
+
+
 
 		public void testLibrarybutton_Click(object sender, EventArgs e)
 		{
-			//OpenPageForm(new TestLibraryForm());
+			OpenPageForm(new TestLibraryForm(model));
 		}
 
 		public void teamButton_Click(object sender, EventArgs e)
 		{
-			//OpenPageForm(new TeamForm());
+			OpenPageForm(new TeamForm());
 		}
 
 		public void scheduleButton_Click(object sender, EventArgs e)
 		{
-			//OpenPageForm(new ScheduleForm());
+			OpenPageForm(new ScheduleForm());
 		}
 
 		public void analyticsButton_Click(object sender, EventArgs e)
 		{
-			//OpenPageForm(new AnalyticsForm());
+			OpenPageForm(new AnalyticsForm());
 		}
 
 		public void settingsButton_Click(object sender, EventArgs e)
 		{
-			//OpenPageForm(new SettingsForm());
+			OpenPageForm(new SettingsForm());
 		}
 	}
 }
