@@ -88,11 +88,15 @@ namespace Test_Management_App
 			// 
 			// testListPanel
 			// 
+			this.testListPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.testListPanel.AutoScroll = true;
+			this.testListPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.testListPanel.Location = new System.Drawing.Point(179, 298);
+			this.testListPanel.MinimumSize = new System.Drawing.Size(700, 225);
 			this.testListPanel.Name = "testListPanel";
 			this.testListPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-			this.testListPanel.Size = new System.Drawing.Size(811, 118);
+			this.testListPanel.Size = new System.Drawing.Size(811, 225);
 			this.testListPanel.TabIndex = 56;
 			// 
 			// panel7

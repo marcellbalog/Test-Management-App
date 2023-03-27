@@ -27,10 +27,44 @@ namespace Test_Management_App
 				TestRow tr = new TestRow();
 				testListPanel.Controls.Add(tr);
 				tr.Dock = DockStyle.Top;
-				tr.TestID.Text = item.ID.ToString();
+				tr.MaximumSize = new Size(default, 45);
+				tr.MinimumSize = new Size(default, 45);
+				tr.TestID.Text = "T" + item.ID.ToString();
 				tr.TestName.Text = item.TestName;
 
-				Debug.WriteLine(item.TestName);
+				tr.TestOwner.Text = item.TeamMemberID.ToString();
+
+				switch (item.Status)
+				{
+					case 0: 
+						tr.TestStatus.Text = "DEV";
+						break;
+					case 1:
+						tr.TestStatus.Text = "DONE";
+						break;
+					default:
+						tr.TestStatus.Text = "DEV";
+						break;
+				}
+
+				switch (item.Result)
+				{
+					case 0:
+						tr.TestResult.BackColor = Color.WhiteSmoke;
+						break;
+					case 1:
+						tr.TestResult.BackColor = Color.Lime;
+						break;
+					case 2:
+						tr.TestResult.BackColor = Color.Crimson;
+						break;
+					default: 
+						break;
+				}
+
+
+
+				Debug.WriteLine(item.TestName, item.Status, item.Result, item.TeamMemberID);
 			}
 
 			

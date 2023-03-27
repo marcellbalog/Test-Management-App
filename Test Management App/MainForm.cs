@@ -28,7 +28,7 @@ namespace Test_Management_App
 			view = new MainFormView(this);
 
 			view.Show();
-			view.OpenPageForm(new TestLibraryForm(model));
+			OpenPageForm(new TestLibraryForm(model));
 
 			testLibraryButton.Click  += new EventHandler(view.OnTestLibraryButtonClick);
 		}

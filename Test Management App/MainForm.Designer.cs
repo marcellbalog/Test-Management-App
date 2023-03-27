@@ -138,8 +138,12 @@ namespace Test_Management_App
 			// 
 			// pageFormPanel
 			// 
+			this.pageFormPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.pageFormPanel.BackColor = System.Drawing.Color.Transparent;
 			this.pageFormPanel.Location = new System.Drawing.Point(-3, 48);
+			this.pageFormPanel.MinimumSize = new System.Drawing.Size(1018, 581);
 			this.pageFormPanel.Name = "pageFormPanel";
 			this.pageFormPanel.Size = new System.Drawing.Size(1018, 581);
 			this.pageFormPanel.TabIndex = 47;

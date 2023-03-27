@@ -34,8 +34,13 @@ namespace Test_Management_App
 			{
 				TestData item = new TestData();
 				item.ID = (int)reader["ID"];
+				item.FolderID = (int)reader["FolderID"];
+				item.TeamMemberID = (int)reader["TeamMemberID"];
 				item.TestName = reader["TestName"].ToString();
-				
+				item.Description = reader["Description"].ToString();
+				item.Status = (int)reader["Status"];
+				item.Result = (int)reader["Result"];
+
 
 				testData.Add(item);
 			}
