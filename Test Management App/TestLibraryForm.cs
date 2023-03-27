@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,9 @@ namespace Test_Management_App
 				testListPanel.Controls.Add(tr);
 				tr.Dock = DockStyle.Top;
 				tr.TestID.Text = item.ID.ToString();
-				tr.TestName.Text = item.Name;
+				tr.TestName.Text = item.TestName;
+
+				Debug.WriteLine(item.TestName);
 			}
 
 			

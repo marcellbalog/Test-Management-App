@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -8,21 +9,23 @@ using System.Threading.Tasks;
 namespace Test_Management_App
 {
 	public class MainFormModel
-	{		
-
+	{
+		string connectionString = ConfigurationManager.ConnectionStrings["Test_Management_App.Properties.Settings.Database1ConnectionString"].ConnectionString;
 		private SqlConnection connection;
 		public List<TestData> testData;
 
-		public MainFormModel(string connectionString)
+		public MainFormModel()
 		{
 			connection = new SqlConnection(connectionString);
 			testData = new List<TestData>();
+
+			LoadTests();
 		}
 
 
 		public void LoadTests()
 		{
-			string sql = "SELECT * FROM YourTableNameHere";
+			string sql = "SELECT * FROM Test";
 			SqlCommand command = new SqlCommand(sql, connection);
 			connection.Open();
 			SqlDataReader reader = command.ExecuteReader();
@@ -31,7 +34,7 @@ namespace Test_Management_App
 			{
 				TestData item = new TestData();
 				item.ID = (int)reader["ID"];
-				item.Name = reader["Name"].ToString();
+				item.TestName = reader["TestName"].ToString();
 				
 
 				testData.Add(item);

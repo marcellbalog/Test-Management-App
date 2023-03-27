@@ -16,8 +16,6 @@ namespace Test_Management_App
 		public MainFormModel model;
 		public MainFormView view;
 
-		string connectionString = "";
-
 		public Form activeForm = null;
 
 		
@@ -26,7 +24,7 @@ namespace Test_Management_App
 		{
 			InitializeComponent();
 			
-			model = new MainFormModel(connectionString);			
+			model = new MainFormModel();			
 			view = new MainFormView(this);
 
 			view.Show();
