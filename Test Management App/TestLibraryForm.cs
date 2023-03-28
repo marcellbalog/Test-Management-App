@@ -13,18 +13,22 @@ namespace Test_Management_App
 {
 	public partial class TestLibraryForm : Form
 	{
-		public TestLibraryForm(MainFormModel model)
+		MainForm mainForm;
+
+		public TestLibraryForm(MainForm mf)
 		{
 			InitializeComponent();
 
-			PopulateTestList(model.testData);
+			mainForm = mf;
+			PopulateTestList(mainForm.model.Tests);
 		}
 
-		public void PopulateTestList(List<TestData> data)
+		public void PopulateTestList(List<Test> data)
 		{
-			foreach (TestData item in data)
+			foreach (Test item in data)
 			{
 				TestRow tr = new TestRow();
+				testListPanel.Controls.Clear();
 				testListPanel.Controls.Add(tr);
 				tr.Dock = DockStyle.Top;
 				tr.MaximumSize = new Size(default, 45);
@@ -63,11 +67,19 @@ namespace Test_Management_App
 				}
 
 
-
 				Debug.WriteLine(item.TestName, item.Status, item.Result, item.TeamMemberID);
 			}
+		}
 
-			
+		private void RefreshButton_Click(object sender, EventArgs e)
+		{
+			//refresh from db
+			mainForm.model.Refresh();
+			PopulateTestList(mainForm.model.Tests);
+		}
+
+		private void NewButton_Click(object sender, EventArgs e)
+		{
 
 		}
 	}

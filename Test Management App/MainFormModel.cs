@@ -12,14 +12,19 @@ namespace Test_Management_App
 	{
 		string connectionString = ConfigurationManager.ConnectionStrings["Test_Management_App.Properties.Settings.Database1ConnectionString"].ConnectionString;
 		private SqlConnection connection;
-		public List<TestData> testData;
+		public List<Test> Tests = new List<Test>();
+		public List<Folder> Folders = new List<Folder>();
+		public List<Step> Steps = new List<Step>();
+		public List<TeamMember> TeamMembers = new List<TeamMember>();
+		public List<ScheduleDay> ScheduleDays = new List<ScheduleDay>();
+		public List<DailyTest> DailyTests = new List<DailyTest>();		
 
 		public MainFormModel()
 		{
 			connection = new SqlConnection(connectionString);
-			testData = new List<TestData>();
 
 			LoadTests();
+			LoadFolders();
 		}
 
 
@@ -32,26 +37,160 @@ namespace Test_Management_App
 
 			while (reader.Read())
 			{
-				TestData item = new TestData();
-				item.ID = (int)reader["ID"];
-				item.FolderID = (int)reader["FolderID"];
-				item.TeamMemberID = (int)reader["TeamMemberID"];
-				item.TestName = reader["TestName"].ToString();
-				item.Description = reader["Description"].ToString();
-				item.Status = (int)reader["Status"];
-				item.Result = (int)reader["Result"];
-
-
-				testData.Add(item);
+				Test item = new Test {
+					ID = (int)reader["ID"],
+					FolderID = (int)reader["FolderID"],
+					TeamMemberID = (int)reader["TeamMemberID"],
+					TestName = reader["TestName"].ToString(),
+					Description = reader["Description"].ToString(),
+					Status = (int)reader["Status"],
+					Result = (int)reader["Result"],
+				};				
+			
+				Tests.Add(item);
 			}
 
 			reader.Close();
 			connection.Close();
 		}
 
-		public List<TestData> GetData()
+		public void LoadFolders()
 		{
-			return testData;
+			string sql = "SELECT * FROM Folder";
+			SqlCommand command = new SqlCommand(sql, connection);
+			connection.Open();
+			SqlDataReader reader = command.ExecuteReader();
+
+			while (reader.Read())
+			{
+				Folder item = new Folder();
+				item.ID = (int)reader["ID"];
+				item.Name = reader["Name"].ToString();
+
+				if (reader.IsDBNull(reader.GetOrdinal("ParentFolderID")))
+				{
+					item.ParentFolderID = null; // or some default value if it's not nullable
+				}
+				else
+				{
+					item.ParentFolderID = (int)reader["ParentFolderID"];
+				}
+				
+
+				Folders.Add(item);
+			}
+
+			reader.Close();
+			connection.Close();
+		}
+
+		public void LoadSteps()
+		{
+			string sql = "SELECT * FROM Step";
+			SqlCommand command = new SqlCommand(sql, connection);
+			connection.Open();
+			SqlDataReader reader = command.ExecuteReader();
+
+			while (reader.Read())
+			{
+				Step item = new Step
+				{
+					ID = (int)reader["ID"],
+					TestID = (int)reader["TestID"],
+					StepNum = (int)reader["StepNum"],
+					StepDescription = reader["StepDescription"].ToString(),
+					StepResult = reader["StepResult"].ToString(),
+				};
+
+				Steps.Add(item);
+			}
+
+			reader.Close();
+			connection.Close();
+		}
+
+		public void LoadTeamMembers()
+		{
+			string sql = "SELECT * FROM TeamMember";
+			SqlCommand command = new SqlCommand(sql, connection);
+			connection.Open();
+			SqlDataReader reader = command.ExecuteReader();
+
+			while (reader.Read())
+			{
+				TeamMember item = new TeamMember
+				{
+					ID = (int)reader["ID"],
+					Name = reader["Name"].ToString(),
+				};
+
+				TeamMembers.Add(item);
+			}
+
+			reader.Close();
+			connection.Close();
+		}
+
+		public void LoadScheduleDays()
+		{
+			string sql = "SELECT * FROM ScheduleDay";
+			SqlCommand command = new SqlCommand(sql, connection);
+			connection.Open();
+			SqlDataReader reader = command.ExecuteReader();
+
+			while (reader.Read())
+			{
+				ScheduleDay item = new ScheduleDay
+				{
+					ID = (int)reader["ID"],
+					Date = (DateTime)reader["Date"],
+				};
+
+				ScheduleDays.Add(item);
+			}
+
+			reader.Close();
+			connection.Close();
+		}
+
+		public void LoadDailyTests()
+		{
+			string sql = "SELECT * FROM DailyTest";
+			SqlCommand command = new SqlCommand(sql, connection);
+			connection.Open();
+			SqlDataReader reader = command.ExecuteReader();
+
+			while (reader.Read())
+			{
+				DailyTest item = new DailyTest
+				{
+					ID = (int)reader["ID"],
+					TeamMemberID = (int)reader["TeamMemberID"],
+					ScheduleDayID = (int)reader["ScheduleDayID"],
+					TestID = (int)reader["TestID"],
+				};
+
+				DailyTests.Add(item);
+			}
+
+			reader.Close();
+			connection.Close();
+		}
+		
+
+		public List<Test> GetData()
+		{
+			return Tests;
+		}
+
+		public void Refresh()
+		{
+			Tests.Clear();
+			Folders.Clear();
+			//others...
+
+			LoadTests();
+			LoadFolders();
 		}
 	}
 }

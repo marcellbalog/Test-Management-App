@@ -396,6 +396,7 @@ namespace Test_Management_App
 			this.RefreshButton.TabIndex = 50;
 			this.RefreshButton.Text = "REFRESH";
 			this.RefreshButton.UseVisualStyleBackColor = false;
+			this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
 			// 
 			// NewButton
 			// 
@@ -409,6 +410,7 @@ namespace Test_Management_App
 			this.NewButton.TabIndex = 49;
 			this.NewButton.Text = "NEW";
 			this.NewButton.UseVisualStyleBackColor = false;
+			this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
 			// 
 			// panel3
 			// 

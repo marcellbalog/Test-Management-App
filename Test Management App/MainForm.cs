@@ -28,7 +28,7 @@ namespace Test_Management_App
 			view = new MainFormView(this);
 
 			view.Show();
-			OpenPageForm(new TestLibraryForm(model));
+			OpenPageForm(new TestLibraryForm(this));
 
 			testLibraryButton.Click  += new EventHandler(view.OnTestLibraryButtonClick);
 		}
@@ -47,7 +47,7 @@ namespace Test_Management_App
 
 		public void testLibrarybutton_Click(object sender, EventArgs e)
 		{
-			OpenPageForm(new TestLibraryForm(model));
+			OpenPageForm(new TestLibraryForm(this));
 		}
 
 		public void teamButton_Click(object sender, EventArgs e)
