@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,24 @@ namespace Test_Management_App
 {
 	public partial class TestRow : UserControl
 	{
-		public TestRow()
+		public Test thisTest { get; set; }
+
+		public TestRow(Test t)
 		{
 			InitializeComponent();
+			thisTest = t;
+			Debug.WriteLine(thisTest + " " + t);
+		}
+
+		private void TestRow_Click(object sender, EventArgs e)
+		{
+
+			Debug.WriteLine("click test");
+			Debug.WriteLine(thisTest + " ");
+
+			Testcase tc = new Testcase (thisTest);
+			tc.Show();
+
 		}
 	}
 }

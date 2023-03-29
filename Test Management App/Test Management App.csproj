@@ -102,6 +102,12 @@
     </Compile>
     <Compile Include="TeamMember.cs" />
     <Compile Include="Test.cs" />
+    <Compile Include="Testcase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testcase.Designer.cs">
+      <DependentUpon>Testcase.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestLibraryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Testcase.resx">
+      <DependentUpon>Testcase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestLibraryForm.resx">
       <DependentUpon>TestLibraryForm.cs</DependentUpon>
     </EmbeddedResource>

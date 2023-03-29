@@ -47,11 +47,14 @@ namespace Test_Management_App
 			this.panel1.Controls.Add(this.TestOwner);
 			this.panel1.Controls.Add(this.TestName);
 			this.panel1.Controls.Add(this.TestID);
+			this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(642, 38);
 			this.panel1.TabIndex = 40;
+			this.panel1.Click += new System.EventHandler(this.TestRow_Click);
 			// 
 			// TestResult
 			// 
@@ -113,6 +116,7 @@ namespace Test_Management_App
 			this.Controls.Add(this.panel1);
 			this.Name = "TestRow";
 			this.Size = new System.Drawing.Size(642, 37);
+			this.Click += new System.EventHandler(this.TestRow_Click);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.TestResult)).EndInit();

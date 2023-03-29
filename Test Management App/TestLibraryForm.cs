@@ -31,7 +31,7 @@ namespace Test_Management_App
 			testListPanel.Controls.Clear();
 			foreach (Test item in data)
 			{
-				TestRow tr = new TestRow();
+				TestRow tr = new TestRow (item);
 				testRows.Add(tr);				
 				testListPanel.Controls.Add(tr);
 				tr.Dock = DockStyle.Top;
