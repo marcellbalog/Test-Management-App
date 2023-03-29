@@ -15,6 +15,8 @@ namespace Test_Management_App
 	{
 		MainForm mainForm;
 
+		List<TestRow> testRows = new List<TestRow>();
+
 		public TestLibraryForm(MainForm mf)
 		{
 			InitializeComponent();
@@ -25,10 +27,12 @@ namespace Test_Management_App
 
 		public void PopulateTestList(List<Test> data)
 		{
+			Debug.WriteLine(data.Count());
+			testListPanel.Controls.Clear();
 			foreach (Test item in data)
 			{
 				TestRow tr = new TestRow();
-				testListPanel.Controls.Clear();
+				testRows.Add(tr);				
 				testListPanel.Controls.Add(tr);
 				tr.Dock = DockStyle.Top;
 				tr.MaximumSize = new Size(default, 45);
@@ -67,7 +71,7 @@ namespace Test_Management_App
 				}
 
 
-				Debug.WriteLine(item.TestName, item.Status, item.Result, item.TeamMemberID);
+				Debug.WriteLine(item.TestName + item.Status + item.Result + item.TeamMemberID);
 			}
 		}
 

@@ -110,7 +110,6 @@ namespace Test_Management_App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.Controls.Add(this.panel1);
 			this.Name = "TestRow";
 			this.Size = new System.Drawing.Size(642, 37);
