@@ -17,7 +17,16 @@ namespace Test_Management_App
 		public List<Step> Steps = new List<Step>();
 		public List<TeamMember> TeamMembers = new List<TeamMember>();
 		public List<ScheduleDay> ScheduleDays = new List<ScheduleDay>();
-		public List<DailyTest> DailyTests = new List<DailyTest>();		
+		public List<DailyTest> DailyTests = new List<DailyTest>();
+
+		// Mapping from status values to their names
+		public Dictionary<int, string> StatusNames = new Dictionary<int, string>()
+		{
+			{ 0, "NEW" },			
+			{ 1, "DEV" },
+			{ 2, "DONE" }
+		};
+
 
 		public MainFormModel()
 		{

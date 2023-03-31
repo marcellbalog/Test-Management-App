@@ -31,9 +31,10 @@ namespace Test_Management_App
 		{
 			this.SaveButton = new System.Windows.Forms.Button();
 			this.TestNameInput = new System.Windows.Forms.TextBox();
-			this.DescriptionInput = new System.Windows.Forms.TextBox();
-			this.TeamMemberInput = new System.Windows.Forms.TextBox();
-			this.StatusInput = new System.Windows.Forms.TextBox();
+			this.comboBoxTeamMember = new System.Windows.Forms.ComboBox();
+			this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+			this.comboBoxFolder = new System.Windows.Forms.ComboBox();
+			this.textBoxDescription = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// SaveButton
@@ -52,7 +53,7 @@ namespace Test_Management_App
 			// 
 			// TestNameInput
 			// 
-			this.TestNameInput.BackColor = System.Drawing.SystemColors.MenuBar;
+			this.TestNameInput.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.TestNameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.TestNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.TestNameInput.Location = new System.Drawing.Point(26, 23);
@@ -60,48 +61,57 @@ namespace Test_Management_App
 			this.TestNameInput.Size = new System.Drawing.Size(100, 19);
 			this.TestNameInput.TabIndex = 54;
 			this.TestNameInput.Text = "Testcase 01";
+			this.TestNameInput.Enter += new System.EventHandler(this.TestNameInput_Enter);
+			this.TestNameInput.Leave += new System.EventHandler(this.TestNameInput_Leave);
 			// 
-			// DescriptionInput
+			// comboBoxTeamMember
 			// 
-			this.DescriptionInput.BackColor = System.Drawing.SystemColors.MenuBar;
-			this.DescriptionInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.DescriptionInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.DescriptionInput.Location = new System.Drawing.Point(26, 64);
-			this.DescriptionInput.Name = "DescriptionInput";
-			this.DescriptionInput.Size = new System.Drawing.Size(100, 19);
-			this.DescriptionInput.TabIndex = 55;
-			this.DescriptionInput.Text = "Description";
+			this.comboBoxTeamMember.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxTeamMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxTeamMember.FormattingEnabled = true;
+			this.comboBoxTeamMember.Location = new System.Drawing.Point(164, 180);
+			this.comboBoxTeamMember.Name = "comboBoxTeamMember";
+			this.comboBoxTeamMember.Size = new System.Drawing.Size(121, 21);
+			this.comboBoxTeamMember.TabIndex = 58;
 			// 
-			// TeamMemberInput
+			// comboBoxStatus
 			// 
-			this.TeamMemberInput.BackColor = System.Drawing.SystemColors.MenuBar;
-			this.TeamMemberInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.TeamMemberInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.TeamMemberInput.Location = new System.Drawing.Point(26, 100);
-			this.TeamMemberInput.Name = "TeamMemberInput";
-			this.TeamMemberInput.Size = new System.Drawing.Size(100, 19);
-			this.TeamMemberInput.TabIndex = 56;
-			this.TeamMemberInput.Text = "TeamMember";
+			this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxStatus.FormattingEnabled = true;
+			this.comboBoxStatus.Location = new System.Drawing.Point(300, 180);
+			this.comboBoxStatus.Name = "comboBoxStatus";
+			this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
+			this.comboBoxStatus.TabIndex = 59;
 			// 
-			// StatusInput
+			// comboBoxFolder
 			// 
-			this.StatusInput.BackColor = System.Drawing.SystemColors.MenuBar;
-			this.StatusInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.StatusInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.StatusInput.Location = new System.Drawing.Point(26, 138);
-			this.StatusInput.Name = "StatusInput";
-			this.StatusInput.Size = new System.Drawing.Size(100, 19);
-			this.StatusInput.TabIndex = 57;
-			this.StatusInput.Text = "Status";
+			this.comboBoxFolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxFolder.FormattingEnabled = true;
+			this.comboBoxFolder.Location = new System.Drawing.Point(26, 180);
+			this.comboBoxFolder.Name = "comboBoxFolder";
+			this.comboBoxFolder.Size = new System.Drawing.Size(121, 21);
+			this.comboBoxFolder.TabIndex = 60;
+			// 
+			// textBoxDescription
+			// 
+			this.textBoxDescription.Location = new System.Drawing.Point(26, 58);
+			this.textBoxDescription.Multiline = true;
+			this.textBoxDescription.Name = "textBoxDescription";
+			this.textBoxDescription.Size = new System.Drawing.Size(493, 99);
+			this.textBoxDescription.TabIndex = 61;
 			// 
 			// Testcase
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.StatusInput);
-			this.Controls.Add(this.TeamMemberInput);
-			this.Controls.Add(this.DescriptionInput);
+			this.Controls.Add(this.textBoxDescription);
+			this.Controls.Add(this.comboBoxFolder);
+			this.Controls.Add(this.comboBoxStatus);
+			this.Controls.Add(this.comboBoxTeamMember);
 			this.Controls.Add(this.TestNameInput);
 			this.Controls.Add(this.SaveButton);
 			this.Name = "Testcase";
@@ -115,8 +125,9 @@ namespace Test_Management_App
 
 		private System.Windows.Forms.Button SaveButton;
 		private System.Windows.Forms.TextBox TestNameInput;
-		private System.Windows.Forms.TextBox DescriptionInput;
-		private System.Windows.Forms.TextBox TeamMemberInput;
-		private System.Windows.Forms.TextBox StatusInput;
+		private System.Windows.Forms.ComboBox comboBoxTeamMember;
+		private System.Windows.Forms.ComboBox comboBoxStatus;
+		private System.Windows.Forms.ComboBox comboBoxFolder;
+		private System.Windows.Forms.TextBox textBoxDescription;
 	}
 }

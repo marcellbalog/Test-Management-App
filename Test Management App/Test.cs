@@ -18,7 +18,7 @@ namespace Test_Management_App
 		public string Description { get; set; }
 
 		public Folder Folder { get; set; }
-		public TeamMember TeamMember{ get; set; }
+		public TeamMember TeamMember{ get; set; }		
 
 		public string GetStatusName()
 		{
@@ -26,13 +26,16 @@ namespace Test_Management_App
 			switch (Status)
 			{
 				case 0:
-					text = "DEV";
+					text = "NEW";
 					break;
 				case 1:
+					text = "DEV";
+					break;
+				case 2:
 					text = "DONE";
 					break;
 				default:
-					text = "DEV";
+					text = "NEW";
 					break;
 			}
 

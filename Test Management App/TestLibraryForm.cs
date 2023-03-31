@@ -31,7 +31,7 @@ namespace Test_Management_App
 			testListPanel.Controls.Clear();
 			foreach (Test item in data)
 			{
-				TestRow tr = new TestRow (item);
+				TestRow tr = new TestRow (item, mainForm);
 				testRows.Add(tr);				
 				testListPanel.Controls.Add(tr);
 				tr.Dock = DockStyle.Top;
@@ -43,6 +43,7 @@ namespace Test_Management_App
 				tr.TestOwner.Text = item.TeamMember.Name;
 				tr.TestStatus.Text = item.GetStatusName();
 				tr.TestResult.BackColor = item.GetResultColor();
+
 
 
 				Debug.WriteLine(item.TestName + item.Status + item.Result + item.TeamMemberID);

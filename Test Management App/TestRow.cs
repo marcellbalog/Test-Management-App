@@ -13,12 +13,14 @@ namespace Test_Management_App
 {
 	public partial class TestRow : UserControl
 	{
-		public Test thisTest { get; set; }
+		MainForm mainForm;
+		private Test thisTest { get; set; }
 
-		public TestRow(Test t)
+		public TestRow(Test t, MainForm mf)
 		{
 			InitializeComponent();
 			thisTest = t;
+			mainForm = mf;
 			Debug.WriteLine(thisTest + " " + t);
 		}
 
@@ -28,8 +30,8 @@ namespace Test_Management_App
 			Debug.WriteLine("click test");
 			Debug.WriteLine(thisTest + " ");
 
-			Testcase tc = new Testcase (thisTest);
-			tc.Show();
+			Testcase tc = new Testcase (thisTest, mainForm);
+			tc.Show();			
 
 		}
 	}
