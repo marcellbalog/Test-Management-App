@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,45 @@ namespace Test_Management_App
 		public Folder Folder { get; set; }
 		public TeamMember TeamMember{ get; set; }
 
+		public string GetStatusName()
+		{
+			string text;
+			switch (Status)
+			{
+				case 0:
+					text = "DEV";
+					break;
+				case 1:
+					text = "DONE";
+					break;
+				default:
+					text = "DEV";
+					break;
+			}
 
+			return text;
+		}
+
+		public Color GetResultColor()
+		{
+			Color color;
+			switch (Result)
+			{
+				case 0:
+					color = Color.WhiteSmoke;
+					break;
+				case 1:
+					color = Color.Lime;
+					break;
+				case 2:
+					color = Color.Crimson;
+					break;
+				default:
+					color = Color.Gray;
+					break;
+			}
+
+			return color;
+		}
 	}
 }

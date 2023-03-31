@@ -41,34 +41,8 @@ namespace Test_Management_App
 				tr.TestName.Text = item.TestName;
 
 				tr.TestOwner.Text = item.TeamMember.Name;
-
-				switch (item.Status)
-				{
-					case 0: 
-						tr.TestStatus.Text = "DEV";
-						break;
-					case 1:
-						tr.TestStatus.Text = "DONE";
-						break;
-					default:
-						tr.TestStatus.Text = "DEV";
-						break;
-				}
-
-				switch (item.Result)
-				{
-					case 0:
-						tr.TestResult.BackColor = Color.WhiteSmoke;
-						break;
-					case 1:
-						tr.TestResult.BackColor = Color.Lime;
-						break;
-					case 2:
-						tr.TestResult.BackColor = Color.Crimson;
-						break;
-					default: 
-						break;
-				}
+				tr.TestStatus.Text = item.GetStatusName();
+				tr.TestResult.BackColor = item.GetResultColor();
 
 
 				Debug.WriteLine(item.TestName + item.Status + item.Result + item.TeamMemberID);
