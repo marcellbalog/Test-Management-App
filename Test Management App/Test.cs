@@ -15,5 +15,10 @@ namespace Test_Management_App
 		public int Status { get; set; }
 		public int Result { get; set; }
 		public string Description { get; set; }
+
+		public Folder Folder { get; set; }
+		public TeamMember TeamMember{ get; set; }
+
+
 	}
 }

@@ -40,7 +40,7 @@ namespace Test_Management_App
 				tr.TestID.Text = "T" + item.ID.ToString();
 				tr.TestName.Text = item.TestName;
 
-				tr.TestOwner.Text = item.TeamMemberID.ToString();
+				tr.TestOwner.Text = item.TeamMember.Name;
 
 				switch (item.Status)
 				{

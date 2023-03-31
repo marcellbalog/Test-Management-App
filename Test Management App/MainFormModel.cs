@@ -23,8 +23,13 @@ namespace Test_Management_App
 		{
 			connection = new SqlConnection(connectionString);
 
-			LoadTests();
+
+			//fontos a sorrend
+			LoadTeamMembers();
 			LoadFolders();
+			LoadTests();
+			
+			
 		}
 
 
@@ -45,8 +50,16 @@ namespace Test_Management_App
 					Description = reader["Description"].ToString(),
 					Status = (int)reader["Status"],
 					Result = (int)reader["Result"],
-				};				
-			
+				};
+
+				int folderId = (int)reader["FolderID"];
+				Folder parentFolder = Folders.Find(folder => folder.ID == folderId);
+				item.Folder = parentFolder;
+
+				int memberID = (int)reader["TeamMemberID"];
+				TeamMember member = TeamMembers.Find(tmember => tmember.ID == memberID);
+				item.TeamMember = member;
+
 				Tests.Add(item);
 			}
 

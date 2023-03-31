@@ -26,8 +26,8 @@ namespace Test_Management_App
 		{
 			TestNameInput.Text = thisTest.TestName;
 			DescriptionInput.Text = thisTest.Description;
-			TeamMemberInput.Text = thisTest.TeamMemberID.ToString();
-			StatusInput.Text = thisTest.Status.ToString();
+			TeamMemberInput.Text = thisTest.TeamMember.Name;
+			StatusInput.Text = thisTest.Status.ToString();			
 		}
 
 		private void SaveButton_Click(object sender, EventArgs e)
