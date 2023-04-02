@@ -13,7 +13,7 @@ namespace TestManagementApp.UnitTests
 		{
 			// Arrange
 			var mainForm = new MainForm();
-			var pageForm = new TestLibraryForm();
+			var pageForm = new TestLibraryForm(mainForm);
 			var privateObject = new PrivateObject(mainForm); // create PrivateObject for MainForm instance
 
 
@@ -25,5 +25,7 @@ namespace TestManagementApp.UnitTests
 			Assert.AreEqual(pageForm, mainForm.activeForm);			
 
 		}
+
+
 	}
 }
