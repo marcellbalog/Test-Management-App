@@ -94,6 +94,12 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Step.cs" />
+    <Compile Include="StepRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StepRow.Designer.cs">
+      <DependentUpon>StepRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeamForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StepRow.resx">
+      <DependentUpon>StepRow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Testcase.resx">
       <DependentUpon>Testcase.cs</DependentUpon>
     </EmbeddedResource>

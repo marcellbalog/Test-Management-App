@@ -15,6 +15,7 @@ namespace Test_Management_App
 		private Test thisTest { get; set; }
 		private MainForm mainForm;
 
+		private List<StepRow> stepRows = new List<StepRow>();
 
 		public Testcase(Test t, MainForm mf)
 		{
@@ -74,6 +75,23 @@ namespace Test_Management_App
 		private void TestNameInput_Leave(object sender, EventArgs e)
 		{
 			TestNameInput.BackColor = Color.WhiteSmoke;
+		}
+
+		public void PopulateStepList()
+		{			
+			stepsPanel.Controls.Clear();
+			List<Step> stepsForTest = mainForm.model.Steps.Where(s => s.TestID == thisTest.ID).ToList();
+
+			foreach (Step item in stepsForTest)
+			{
+				StepRow sr = new StepRow(thisTest, item, mainForm);
+				stepRows.Add(sr);
+				stepsPanel.Controls.Add(sr);
+				sr.Dock = DockStyle.Top;
+				sr.MaximumSize = new Size(default, 45);
+				sr.MinimumSize = new Size(default, 45);			
+				
+			}
 		}
 	}
 }

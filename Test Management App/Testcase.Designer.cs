@@ -35,6 +35,8 @@ namespace Test_Management_App
 			this.comboBoxStatus = new System.Windows.Forms.ComboBox();
 			this.comboBoxFolder = new System.Windows.Forms.ComboBox();
 			this.textBoxDescription = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.stepsPanel = new System.Windows.Forms.Panel();
 			this.SuspendLayout();
 			// 
 			// SaveButton
@@ -102,12 +104,36 @@ namespace Test_Management_App
 			this.textBoxDescription.Size = new System.Drawing.Size(493, 99);
 			this.textBoxDescription.TabIndex = 61;
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label1.Location = new System.Drawing.Point(26, 227);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(46, 18);
+			this.label1.TabIndex = 62;
+			this.label1.Text = "Steps";
+			// 
+			// stepsPanel
+			// 
+			this.stepsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.stepsPanel.AutoScroll = true;
+			this.stepsPanel.Location = new System.Drawing.Point(26, 260);
+			this.stepsPanel.MinimumSize = new System.Drawing.Size(700, 225);
+			this.stepsPanel.Name = "stepsPanel";
+			this.stepsPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+			this.stepsPanel.Size = new System.Drawing.Size(747, 260);
+			this.stepsPanel.TabIndex = 63;
+			// 
 			// Testcase
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(800, 532);
+			this.Controls.Add(this.stepsPanel);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBoxDescription);
 			this.Controls.Add(this.comboBoxFolder);
 			this.Controls.Add(this.comboBoxStatus);
@@ -129,5 +155,7 @@ namespace Test_Management_App
 		private System.Windows.Forms.ComboBox comboBoxStatus;
 		private System.Windows.Forms.ComboBox comboBoxFolder;
 		private System.Windows.Forms.TextBox textBoxDescription;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Panel stepsPanel;
 	}
 }
