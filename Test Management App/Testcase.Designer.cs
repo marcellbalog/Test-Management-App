@@ -37,6 +37,7 @@ namespace Test_Management_App
 			this.textBoxDescription = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.stepsPanel = new System.Windows.Forms.Panel();
+			this.NewButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// SaveButton
@@ -122,9 +123,21 @@ namespace Test_Management_App
 			this.stepsPanel.Location = new System.Drawing.Point(26, 260);
 			this.stepsPanel.MinimumSize = new System.Drawing.Size(700, 225);
 			this.stepsPanel.Name = "stepsPanel";
-			this.stepsPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
 			this.stepsPanel.Size = new System.Drawing.Size(747, 260);
 			this.stepsPanel.TabIndex = 63;
+			// 
+			// NewButton
+			// 
+			this.NewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.NewButton.BackColor = System.Drawing.Color.LightCyan;
+			this.NewButton.FlatAppearance.BorderSize = 0;
+			this.NewButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.NewButton.Location = new System.Drawing.Point(726, 226);
+			this.NewButton.Name = "NewButton";
+			this.NewButton.Size = new System.Drawing.Size(47, 23);
+			this.NewButton.TabIndex = 64;
+			this.NewButton.Text = "NEW";
+			this.NewButton.UseVisualStyleBackColor = false;
 			// 
 			// Testcase
 			// 
@@ -132,6 +145,7 @@ namespace Test_Management_App
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.ClientSize = new System.Drawing.Size(800, 532);
+			this.Controls.Add(this.NewButton);
 			this.Controls.Add(this.stepsPanel);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBoxDescription);
@@ -157,5 +171,6 @@ namespace Test_Management_App
 		private System.Windows.Forms.TextBox textBoxDescription;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel stepsPanel;
+		private System.Windows.Forms.Button NewButton;
 	}
 }

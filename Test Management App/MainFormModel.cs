@@ -37,8 +37,9 @@ namespace Test_Management_App
 			LoadTeamMembers();
 			LoadFolders();
 			LoadTests();
-			
-			
+			LoadSteps();
+
+
 		}
 
 

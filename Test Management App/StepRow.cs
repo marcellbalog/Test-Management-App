@@ -25,6 +25,45 @@ namespace Test_Management_App
 			numberLabel.Text = thisStep.StepNum.ToString();
 			descriptionTextBox.Text = thisStep.StepDescription;
 			resultTextBox.Text = thisStep.StepResult;
+
+			// Handle TextChanged event for descriptionTextBox
+			descriptionTextBox.TextChanged += (sender, e) =>
+			{
+				ResizeTextBox(descriptionTextBox);
+			};
+
+			// Handle KeyDown event for descriptionTextBox
+			descriptionTextBox.KeyDown += (sender, e) =>
+			{
+				if (e.KeyCode == Keys.Enter)
+				{
+					ResizeTextBox(descriptionTextBox);
+				}
+			};
+
+			// Handle TextChanged event for resultTextBox
+			resultTextBox.TextChanged += (sender, e) =>
+			{
+				ResizeTextBox(resultTextBox);
+			};
+
+			// Handle KeyDown event for resultTextBox
+			resultTextBox.KeyDown += (sender, e) =>
+			{
+				if (e.KeyCode == Keys.Enter)
+				{
+					ResizeTextBox(resultTextBox);
+				}
+			};
+		}
+
+		private void ResizeTextBox(TextBox textBox)
+		{
+			using (Graphics g = textBox.CreateGraphics())
+			{
+				SizeF size = g.MeasureString(textBox.Text + Environment.NewLine, textBox.Font);
+				textBox.Height = (int)Math.Ceiling(size.Height) + 10; // Add 10 pixels of padding
+			}
 		}
 	}
 }

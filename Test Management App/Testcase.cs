@@ -24,6 +24,7 @@ namespace Test_Management_App
 			thisTest = t;
 			mainForm = mf;
 			LoadTestData();
+			PopulateStepList();
 		}
 
 		private	void LoadTestData()
@@ -80,7 +81,10 @@ namespace Test_Management_App
 		public void PopulateStepList()
 		{			
 			stepsPanel.Controls.Clear();
-			List<Step> stepsForTest = mainForm.model.Steps.Where(s => s.TestID == thisTest.ID).ToList();
+			List<Step> stepsForTest = mainForm.model.Steps
+				.Where(s => s.TestID == thisTest.ID)
+				.OrderByDescending(s => s.StepNum)
+				.ToList();
 
 			foreach (Step item in stepsForTest)
 			{
@@ -88,8 +92,8 @@ namespace Test_Management_App
 				stepRows.Add(sr);
 				stepsPanel.Controls.Add(sr);
 				sr.Dock = DockStyle.Top;
-				sr.MaximumSize = new Size(default, 45);
-				sr.MinimumSize = new Size(default, 45);			
+				//sr.MaximumSize = new Size(default, 45);
+				sr.MinimumSize = new Size(default, 72);			
 				
 			}
 		}
