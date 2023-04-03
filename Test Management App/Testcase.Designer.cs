@@ -138,6 +138,7 @@ namespace Test_Management_App
 			this.NewButton.TabIndex = 64;
 			this.NewButton.Text = "NEW";
 			this.NewButton.UseVisualStyleBackColor = false;
+			this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
 			// 
 			// Testcase
 			// 

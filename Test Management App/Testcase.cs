@@ -88,14 +88,32 @@ namespace Test_Management_App
 
 			foreach (Step item in stepsForTest)
 			{
-				StepRow sr = new StepRow(thisTest, item, mainForm);
-				stepRows.Add(sr);
-				stepsPanel.Controls.Add(sr);
-				sr.Dock = DockStyle.Top;
-				//sr.MaximumSize = new Size(default, 45);
-				sr.MinimumSize = new Size(default, 72);			
-				
+				CreateStepRow(item);				
 			}
 		}
+
+		private void CreateStepRow(Step item)
+		{
+			StepRow sr = new StepRow(thisTest, item, mainForm);
+			stepRows.Add(sr);
+			stepsPanel.Controls.Add(sr);
+			sr.Dock = DockStyle.Top;
+			sr.MinimumSize = new Size(default, 72);
+		}
+
+		private void NewButton_Click(object sender, EventArgs e)
+		{
+			Step newStep = new Step();
+			newStep.TestID = thisTest.ID;
+
+			int maxStepNum = mainForm.model.Steps.Where(s => s.TestID == thisTest.ID).Max(s => s.StepNum);
+			newStep.StepNum = maxStepNum + 1;
+
+
+
+			CreateStepRow(newStep);
+		}
+
+
 	}
 }

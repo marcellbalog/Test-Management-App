@@ -212,8 +212,10 @@ namespace Test_Management_App
 			Folders.Clear();
 			//others...
 
-			LoadTests();
+			LoadTeamMembers();
 			LoadFolders();
+			LoadTests();
+			LoadSteps();
 		}
 	}
 }

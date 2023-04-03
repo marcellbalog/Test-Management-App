@@ -65,5 +65,16 @@ namespace Test_Management_App
 				textBox.Height = (int)Math.Ceiling(size.Height) + 10; // Add 10 pixels of padding
 			}
 		}
+
+		private void deleteButton_Click(object sender, EventArgs e)
+		{
+			DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this step?", "Delete", MessageBoxButtons.YesNo);
+
+			if (dialogResult == DialogResult.Yes)
+			{
+				mainForm.model.Steps.Remove(thisStep);
+				this.Parent.Controls.Remove(this);
+			}
+		}
 	}
 }
