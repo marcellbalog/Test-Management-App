@@ -97,10 +97,15 @@ namespace Test_Management_App
 				else
 				{
 					item.ParentFolderID = (int)reader["ParentFolderID"];
-				}
-				
+				}			
+
 
 				Folders.Add(item);
+			}
+
+			foreach (Folder item in Folders)
+			{
+				item.ParentFolderDisplay =  item.GetDisplayValue(Folders);
 			}
 
 			reader.Close();

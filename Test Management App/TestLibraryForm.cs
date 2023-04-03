@@ -59,7 +59,10 @@ namespace Test_Management_App
 
 		private void NewButton_Click(object sender, EventArgs e)
 		{
-
+			Test newTest = new Test();
+			newTest.TestName = "Default Test Name";
+			Testcase tc = new Testcase(newTest, mainForm);
+			tc.Show();
 		}
 	}
 }

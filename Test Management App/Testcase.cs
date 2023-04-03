@@ -37,7 +37,7 @@ namespace Test_Management_App
 			comboBoxTeamMember.ValueMember = "ID";
 
 			comboBoxFolder.DataSource = mainForm.model.Folders;
-			comboBoxFolder.DisplayMember = "Name";
+			comboBoxFolder.DisplayMember = "ParentFolderDisplay";
 			comboBoxFolder.ValueMember = "ID";
 
 
@@ -88,17 +88,12 @@ namespace Test_Management_App
 
 			foreach (Step item in stepsForTest)
 			{
-				CreateStepRow(item);				
+				StepRow sr = new StepRow(thisTest, item, mainForm);
+				stepRows.Add(sr);
+				stepsPanel.Controls.Add(sr);
+				sr.Dock = DockStyle.Top;
+				sr.MinimumSize = new Size(default, 72);
 			}
-		}
-
-		private void CreateStepRow(Step item)
-		{
-			StepRow sr = new StepRow(thisTest, item, mainForm);
-			stepRows.Add(sr);
-			stepsPanel.Controls.Add(sr);
-			sr.Dock = DockStyle.Top;
-			sr.MinimumSize = new Size(default, 72);
 		}
 
 		private void NewButton_Click(object sender, EventArgs e)
@@ -109,9 +104,9 @@ namespace Test_Management_App
 			int maxStepNum = mainForm.model.Steps.Where(s => s.TestID == thisTest.ID).Max(s => s.StepNum);
 			newStep.StepNum = maxStepNum + 1;
 
+			mainForm.model.Steps.Add(newStep);
 
-
-			CreateStepRow(newStep);
+			PopulateStepList();
 		}
 
 

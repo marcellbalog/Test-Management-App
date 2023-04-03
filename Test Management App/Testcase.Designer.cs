@@ -46,7 +46,7 @@ namespace Test_Management_App
 			this.SaveButton.BackColor = System.Drawing.Color.LightCyan;
 			this.SaveButton.FlatAppearance.BorderSize = 0;
 			this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.SaveButton.Location = new System.Drawing.Point(726, 34);
+			this.SaveButton.Location = new System.Drawing.Point(726, 23);
 			this.SaveButton.Name = "SaveButton";
 			this.SaveButton.Size = new System.Drawing.Size(47, 23);
 			this.SaveButton.TabIndex = 52;
@@ -56,12 +56,14 @@ namespace Test_Management_App
 			// 
 			// TestNameInput
 			// 
+			this.TestNameInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.TestNameInput.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.TestNameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.TestNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.TestNameInput.Location = new System.Drawing.Point(26, 23);
 			this.TestNameInput.Name = "TestNameInput";
-			this.TestNameInput.Size = new System.Drawing.Size(100, 19);
+			this.TestNameInput.Size = new System.Drawing.Size(665, 19);
 			this.TestNameInput.TabIndex = 54;
 			this.TestNameInput.Text = "Testcase 01";
 			this.TestNameInput.Enter += new System.EventHandler(this.TestNameInput_Enter);
