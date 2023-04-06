@@ -17,6 +17,11 @@ namespace Test_Management_App
 
 		List<TestRow> testRows = new List<TestRow>();
 
+		private ContextMenuStrip contextMenuStrip1;
+		private ToolStripMenuItem addFolderMenuItem;
+		private ToolStripMenuItem renameFolderMenuItem;
+		private ToolStripMenuItem deleteFolderMenuItem;
+
 		public TestLibraryForm(MainForm mf)
 		{
 			InitializeComponent();
@@ -70,6 +75,8 @@ namespace Test_Management_App
 
 		private void PopulateTreeView(List<Folder> folders)
 		{
+			treeView1.Nodes.Clear();
+
 			Dictionary<int, TreeNode> nodes = new Dictionary<int, TreeNode>();
 
 			foreach (Folder folder in folders)
@@ -94,7 +101,83 @@ namespace Test_Management_App
 
 			// Root node expanded on start
 			treeView1.Nodes[0].Expand();
+
+
+
+			// Adding context menu for hierarchy nodes
+			contextMenuStrip1 = new ContextMenuStrip();			
+			contextMenuStrip1.Items.Add(addFolderMenuItem = new ToolStripMenuItem("Add folder"));
+			contextMenuStrip1.Items.Add(renameFolderMenuItem = new ToolStripMenuItem("Rename"));
+			contextMenuStrip1.Items.Add(deleteFolderMenuItem = new ToolStripMenuItem("Delete"));
+
+			// Add event handlers
+			addFolderMenuItem.Click += new EventHandler(addFolderMenuItem_Click);
+			renameFolderMenuItem.Click += new EventHandler(renameFolderMenuItem_Click);
+			deleteFolderMenuItem.Click += new EventHandler(removeFolderMenuItem_Click);
+			
+			treeView1.ContextMenuStrip = contextMenuStrip1;
 		}
+
+
+		// For selecting the node with right click (when opening context menu)
+		void treeView1_NodeMouseClick(object sender,TreeNodeMouseClickEventArgs e)
+		{
+			if (e.Button == MouseButtons.Right)
+			{				
+				treeView1.SelectedNode = e.Node;
+			}
+		}
+
+		// Add new folder node
+		private void addFolderMenuItem_Click(object sender, EventArgs e)
+		{
+			TreeNode clickedNode = treeView1.GetNodeAt(treeView1.PointToClient(Cursor.Position));
+
+			using (var form = new NameInputForm())
+			{
+				if (form.ShowDialog() == DialogResult.OK)
+				{					
+					TreeNode selectedNode = treeView1.SelectedNode;
+
+					// Add a new child node to the selected node with the entered name
+					var newNode = selectedNode.Nodes.Add(form.NameInput);
+
+					Folder newFolder = new Folder();
+					newFolder.Name = form.NameInput;					
+
+					// If the selected node represents a folder, set the ParentFolderID of the new folder
+					if (selectedNode.Tag is Folder parentFolder)
+					{
+						newFolder.ParentFolderID = parentFolder.ID;
+					}
+					
+					mainForm.model.Folders.Add(newFolder);
+
+					// Set the Tag property (for the display function)
+					newNode.Tag = newFolder;
+				}
+			}
+
+
+			PopulateTreeView(mainForm.model.Folders);
+		}
+
+		private void renameFolderMenuItem_Click(object sender, EventArgs e)
+		{
+			//show rename form...
+			//save to db...
+		}
+
+		// Remove the selected node
+		private void removeFolderMenuItem_Click(object sender, EventArgs e)
+		{
+			//show decide form...
+			//save to db...
+
+			TreeNode selectedNode = treeView1.SelectedNode;
+			treeView1.Nodes.Remove(selectedNode);
+		}
+
 
 		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
 		{			
@@ -129,5 +212,10 @@ namespace Test_Management_App
 
 			return descendantFolderIds;
 		}
+
+
 	}
+
+
+
 }
