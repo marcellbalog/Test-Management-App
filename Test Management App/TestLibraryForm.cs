@@ -68,13 +68,6 @@ namespace Test_Management_App
 			tc.Show();
 		}
 
-		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-		{
-			Console.WriteLine(treeView1.SelectedNode.Text);
-
-			CurrentFolderLabel.Text = treeView1.SelectedNode.FullPath;
-		}
-
 		private void PopulateTreeView(List<Folder> folders)
 		{
 			Dictionary<int, TreeNode> nodes = new Dictionary<int, TreeNode>();
@@ -98,7 +91,43 @@ namespace Test_Management_App
 					treeView1.Nodes.Add(node);
 				}
 			}
+
+			// Root node expanded on start
+			treeView1.Nodes[0].Expand();
 		}
 
+		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+		{			
+			CurrentFolderLabel.Text = treeView1.SelectedNode.FullPath;
+			
+			Folder selectedFolder = (Folder)treeView1.SelectedNode.Tag;
+
+			// Get a list of all Folder IDs that are descendants of the selected folder + the selected folder
+			List<int> folderIds = GetDescendantFolderIds(selectedFolder.ID);		
+			folderIds.Add(selectedFolder.ID);
+
+			// Get all tests from the selected folder and its subfolders
+			List<Test> testsInFolder = mainForm.model.Tests.Where(test => folderIds.Contains(test.FolderID)).ToList();
+
+			PopulateTestList(testsInFolder);
+		}
+
+		private List<int> GetDescendantFolderIds(int folderId)
+		{
+			// Get all direct children folders
+			List<Folder> childFolders = mainForm.model.Folders.Where(folder => folder.ParentFolderID == folderId).ToList();
+			
+			List<int> descendantFolderIds = new List<int>();
+
+			foreach (Folder childFolder in childFolders)
+			{				
+				descendantFolderIds.Add(childFolder.ID);
+
+				// Recursively get the IDs of all descendant folders of the child folder
+				descendantFolderIds.AddRange(GetDescendantFolderIds(childFolder.ID));
+			}
+
+			return descendantFolderIds;
+		}
 	}
 }
