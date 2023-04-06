@@ -23,6 +23,9 @@ namespace Test_Management_App
 
 			mainForm = mf;
 			PopulateTestList(mainForm.model.Tests);
+
+
+			PopulateTreeView(mainForm.model.Folders);
 		}
 
 		public void PopulateTestList(List<Test> data)
@@ -64,5 +67,38 @@ namespace Test_Management_App
 			Testcase tc = new Testcase(newTest, mainForm);
 			tc.Show();
 		}
+
+		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+		{
+			Console.WriteLine(treeView1.SelectedNode.Text);
+
+			CurrentFolderLabel.Text = treeView1.SelectedNode.FullPath;
+		}
+
+		private void PopulateTreeView(List<Folder> folders)
+		{
+			Dictionary<int, TreeNode> nodes = new Dictionary<int, TreeNode>();
+
+			foreach (Folder folder in folders)
+			{
+				// Create a new TreeNode for the current Folder
+				TreeNode node = new TreeNode(folder.Name);
+				node.Tag = folder;
+
+				nodes.Add(folder.ID, node);
+
+				// If the current Folder has a parent, add the TreeNode as a child of its parent's TreeNode
+				if (folder.ParentFolderID.HasValue && nodes.ContainsKey(folder.ParentFolderID.Value))
+				{
+					nodes[folder.ParentFolderID.Value].Nodes.Add(node);
+				}
+				else
+				{
+					// Otherwise, add the TreeNode as a root node
+					treeView1.Nodes.Add(node);
+				}
+			}
+		}
+
 	}
 }

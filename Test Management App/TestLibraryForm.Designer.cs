@@ -43,6 +43,7 @@ namespace Test_Management_App
 			this.label27 = new System.Windows.Forms.Label();
 			this.label30 = new System.Windows.Forms.Label();
 			this.label35 = new System.Windows.Forms.Label();
+			this.treeView1 = new Test_Management_App.MyTreeView();
 			this.HierarchyPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -131,9 +132,9 @@ namespace Test_Management_App
 			this.HierarchyPanel.Controls.Add(this.label27);
 			this.HierarchyPanel.Controls.Add(this.label30);
 			this.HierarchyPanel.Controls.Add(this.label35);
-			this.HierarchyPanel.Location = new System.Drawing.Point(12, 69);
+			this.HierarchyPanel.Location = new System.Drawing.Point(12, 351);
 			this.HierarchyPanel.Name = "HierarchyPanel";
-			this.HierarchyPanel.Size = new System.Drawing.Size(163, 591);
+			this.HierarchyPanel.Size = new System.Drawing.Size(163, 309);
 			this.HierarchyPanel.TabIndex = 65;
 			// 
 			// label21
@@ -222,11 +223,24 @@ namespace Test_Management_App
 			this.label35.TabIndex = 64;
 			this.label35.Text = "◆ Folder A";
 			// 
+			// treeView1
+			// 
+			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.treeView1.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.treeView1.LineColor = System.Drawing.Color.DarkSlateGray;
+			this.treeView1.Location = new System.Drawing.Point(12, 80);
+			this.treeView1.Name = "treeView1";
+			this.treeView1.Size = new System.Drawing.Size(163, 265);
+			this.treeView1.TabIndex = 66;
+			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+			// 
 			// TestLibraryForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1120, 660);
+			this.Controls.Add(this.treeView1);
 			this.Controls.Add(this.HierarchyPanel);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.testListPanel);
@@ -258,6 +272,7 @@ namespace Test_Management_App
 		private System.Windows.Forms.Label label26;
 		private System.Windows.Forms.Label label27;
 		private System.Windows.Forms.Label label30;
-		private System.Windows.Forms.Label label35;
+		private System.Windows.Forms.Label label35;		
+		private Test_Management_App.MyTreeView treeView1;
 	}
 }
