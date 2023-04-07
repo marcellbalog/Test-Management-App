@@ -143,7 +143,8 @@ namespace Test_Management_App
 					var newNode = selectedNode.Nodes.Add(form.NameInput);
 
 					Folder newFolder = new Folder();
-					newFolder.Name = form.NameInput;					
+					newFolder.Name = form.NameInput;
+					newFolder.ID = mainForm.model.Folders.Last().ID + 1;
 
 					// If the selected node represents a folder, set the ParentFolderID of the new folder
 					if (selectedNode.Tag is Folder parentFolder)
