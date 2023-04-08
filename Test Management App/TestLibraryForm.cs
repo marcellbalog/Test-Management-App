@@ -131,8 +131,6 @@ namespace Test_Management_App
 		// Add new folder node
 		private void addFolderMenuItem_Click(object sender, EventArgs e)
 		{
-			TreeNode clickedNode = treeView1.GetNodeAt(treeView1.PointToClient(Cursor.Position));
-
 			using (var form = new NameInputForm())
 			{
 				if (form.ShowDialog() == DialogResult.OK)
@@ -167,6 +165,23 @@ namespace Test_Management_App
 		{
 			//show rename form...
 			//save to db...
+
+			TreeNode selectedNode = treeView1.SelectedNode;
+
+			Folder f = (Folder)selectedNode.Tag;
+
+			using (var form = new NameInputForm(f.Name))
+			{							
+
+				if (form.ShowDialog() == DialogResult.OK)
+				{
+					
+					f.Name = form.NameInput;															
+				}
+			}
+
+
+			PopulateTreeView(mainForm.model.Folders);
 		}
 
 		// Remove the selected node

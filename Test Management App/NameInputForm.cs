@@ -14,9 +14,11 @@ namespace Test_Management_App
 	{
 
 		public string NameInput { get; private set; }
-		public NameInputForm()
+		public NameInputForm(string initialText = "")
 		{
 			InitializeComponent();
+
+			textBox1.Text = initialText;
 		}
 
 		private void button1_Click(object sender, EventArgs e)
