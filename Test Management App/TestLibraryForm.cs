@@ -163,19 +163,15 @@ namespace Test_Management_App
 
 		private void renameFolderMenuItem_Click(object sender, EventArgs e)
 		{
-			//show rename form...
-			//save to db...
-
 			TreeNode selectedNode = treeView1.SelectedNode;
 
 			Folder f = (Folder)selectedNode.Tag;
 
+
 			using (var form = new NameInputForm(f.Name))
 			{							
-
 				if (form.ShowDialog() == DialogResult.OK)
-				{
-					
+				{					
 					f.Name = form.NameInput;															
 				}
 			}
@@ -186,12 +182,31 @@ namespace Test_Management_App
 
 		// Remove the selected node
 		private void removeFolderMenuItem_Click(object sender, EventArgs e)
-		{
-			//show decide form...
-			//save to db...
-
+		{			
 			TreeNode selectedNode = treeView1.SelectedNode;
-			treeView1.Nodes.Remove(selectedNode);
+
+
+			if (selectedNode.Tag is Folder selectedFolder)
+			{
+				// If it's root folder, cancel method
+				if (selectedFolder.ID == 0)
+					return;
+
+				// Remove the folder from the data model
+				mainForm.model.Folders.Remove(selectedFolder);
+
+				// Update the tests to have the removed folder's parent folder ID as their FolderID (move the tests up a level)
+				foreach (var test in mainForm.model.Tests.Where(t => t.FolderID == selectedFolder.ID))
+				{
+					test.FolderID = (int)selectedFolder.ParentFolderID;
+				}
+
+				// Remove the node from the TreeView
+				selectedNode.Remove();
+			}			
+
+			PopulateTreeView(mainForm.model.Folders);
+
 		}
 
 
