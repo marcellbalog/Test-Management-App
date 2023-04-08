@@ -192,22 +192,51 @@ namespace Test_Management_App
 				if (selectedFolder.ID == 0)
 					return;
 
-				// Remove the folder from the data model
-				mainForm.model.Folders.Remove(selectedFolder);
 
-				// Update the tests to have the removed folder's parent folder ID as their FolderID (move the tests up a level)
-				foreach (var test in mainForm.model.Tests.Where(t => t.FolderID == selectedFolder.ID))
+				DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this folder? (All child folders will be removed, and all of the tests will be relocated to the parent folder.)", "Delete", MessageBoxButtons.YesNo);
+
+				if (dialogResult == DialogResult.Yes)
 				{
-					test.FolderID = (int)selectedFolder.ParentFolderID;
-				}
+					// Recursively find and remove all child folders
+					RemoveChildFolders(selectedFolder);
 
-				// Remove the node from the TreeView
-				selectedNode.Remove();
+					// Remove the folder from the data model
+					mainForm.model.Folders.Remove(selectedFolder);
+
+					// Update the tests to have the removed folder's parent folder ID as their FolderID (move the tests up a level)
+					foreach (var test in mainForm.model.Tests.Where(t => t.FolderID == selectedFolder.ID))
+					{
+						test.FolderID = (int)selectedFolder.ParentFolderID;
+					}
+
+					// Remove the node from the TreeView
+					selectedNode.Remove();
+				}
+				
 			}			
 
 			PopulateTreeView(mainForm.model.Folders);
 
 		}
+
+		private void RemoveChildFolders(Folder parentFolder)
+		{
+			var childFolders = mainForm.model.Folders.Where(f => f.ParentFolderID == parentFolder.ID).ToList();
+			foreach (var childFolder in childFolders)
+			{				
+				RemoveChildFolders(childFolder);
+
+				// Update the tests to have the parent folder's ID as their ParentFolderID
+				foreach (var test in mainForm.model.Tests.Where(t => t.FolderID == childFolder.ID))
+				{
+					test.FolderID = (int)parentFolder.ParentFolderID;
+				}
+
+				mainForm.model.Folders.Remove(childFolder);
+			}
+		}
+
+
 
 
 		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
