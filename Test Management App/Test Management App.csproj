@@ -153,6 +153,9 @@
     <EmbeddedResource Include="StepRow.resx">
       <DependentUpon>StepRow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeamForm.resx">
+      <DependentUpon>TeamForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Testcase.resx">
       <DependentUpon>Testcase.cs</DependentUpon>
     </EmbeddedResource>

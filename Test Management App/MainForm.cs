@@ -52,7 +52,7 @@ namespace Test_Management_App
 
 		public void teamButton_Click(object sender, EventArgs e)
 		{
-			OpenPageForm(new TeamForm());
+			OpenPageForm(new TeamForm(this));
 		}
 
 		public void scheduleButton_Click(object sender, EventArgs e)
