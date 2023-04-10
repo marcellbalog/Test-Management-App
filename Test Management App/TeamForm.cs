@@ -26,7 +26,7 @@ namespace Test_Management_App
 		{
 			// Filter out the first (=unknown) team member
 			var filteredTeam = mainForm.model.TeamMembers.Where(tm => tm.ID != 0).ToList();
-
+						
 			teamListBox.DataSource = filteredTeam;
 			teamListBox.DisplayMember = "Name";
 		}
