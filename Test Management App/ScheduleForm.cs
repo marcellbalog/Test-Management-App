@@ -12,13 +12,17 @@ namespace Test_Management_App
 {
 	public partial class ScheduleForm : Form
 	{
+		public MainForm mainForm;
+
 		private DateTime displayDate;
 
 		Panel[] panels;
 
-		public ScheduleForm()
+		public ScheduleForm(MainForm mf)
 		{
 			InitializeComponent();
+
+			mainForm = mf;
 
 			WriteDates(DateTime.Now);
 
@@ -72,7 +76,9 @@ namespace Test_Management_App
 			panels[panelNumber-1].Controls.Add(newItem);
 			newItem.Dock = DockStyle.Top;
 
-			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel();
+			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel (mainForm) {				
+				date = displayDate.AddDays(panelNumber-1)
+			};
 			editpanel.Show();
 
 			//SAVE IN EDIT FORM...

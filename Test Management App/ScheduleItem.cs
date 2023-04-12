@@ -19,8 +19,8 @@ namespace Test_Management_App
 
 		private void ScheduleItem_Click(object sender, EventArgs e)
 		{
-			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel();
-			editpanel.Show();
+			//ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel();
+			//editpanel.Show();
 		}
 	}
 }

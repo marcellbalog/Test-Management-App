@@ -57,7 +57,7 @@ namespace Test_Management_App
 
 		public void scheduleButton_Click(object sender, EventArgs e)
 		{
-			OpenPageForm(new ScheduleForm());
+			OpenPageForm(new ScheduleForm(this));
 		}
 
 		public void analyticsButton_Click(object sender, EventArgs e)

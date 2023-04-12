@@ -18,7 +18,10 @@ namespace Test_Management_App
 		public string Description { get; set; }
 
 		public Folder Folder { get; set; }
-		public TeamMember TeamMember{ get; set; }		
+		public TeamMember TeamMember{ get; set; }
+
+		// Property for display that combines the ID and TestName properties into a single string
+		public string DisplayText => $"T{ID}  {TestName}";
 
 		public string GetStatusName()
 		{
