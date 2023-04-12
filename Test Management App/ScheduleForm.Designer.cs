@@ -31,36 +31,36 @@ namespace Test_Management_App
 		{
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.dayPanel1 = new System.Windows.Forms.Panel();
-			this.dayPanel2 = new System.Windows.Forms.Panel();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel6 = new System.Windows.Forms.Panel();
-			this.panel7 = new System.Windows.Forms.Panel();
-			this.panel8 = new System.Windows.Forms.Panel();
-			this.panel9 = new System.Windows.Forms.Panel();
-			this.dayPanel3 = new System.Windows.Forms.Panel();
-			this.dayPanel4 = new System.Windows.Forms.Panel();
-			this.dayPanel5 = new System.Windows.Forms.Panel();
-			this.dayPanel6 = new System.Windows.Forms.Panel();
 			this.dayPanel7 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.panel5 = new System.Windows.Forms.Panel();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
+			this.dayPanel6 = new System.Windows.Forms.Panel();
+			this.dayPanel5 = new System.Windows.Forms.Panel();
+			this.dayPanel4 = new System.Windows.Forms.Panel();
+			this.dayPanel3 = new System.Windows.Forms.Panel();
+			this.panel9 = new System.Windows.Forms.Panel();
 			this.label7 = new System.Windows.Forms.Label();
+			this.panel8 = new System.Windows.Forms.Panel();
+			this.label6 = new System.Windows.Forms.Label();
+			this.panel7 = new System.Windows.Forms.Panel();
+			this.label5 = new System.Windows.Forms.Label();
+			this.panel6 = new System.Windows.Forms.Panel();
+			this.label4 = new System.Windows.Forms.Label();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.label3 = new System.Windows.Forms.Label();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label2 = new System.Windows.Forms.Label();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
+			this.dayPanel2 = new System.Windows.Forms.Panel();
+			this.dayPanel1 = new System.Windows.Forms.Panel();
 			this.buttonBack = new System.Windows.Forms.Button();
 			this.buttonForward = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
-			this.panel1.SuspendLayout();
-			this.panel2.SuspendLayout();
-			this.panel6.SuspendLayout();
-			this.panel7.SuspendLayout();
-			this.panel8.SuspendLayout();
 			this.panel9.SuspendLayout();
+			this.panel8.SuspendLayout();
+			this.panel7.SuspendLayout();
+			this.panel6.SuspendLayout();
+			this.panel2.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -106,83 +106,70 @@ namespace Test_Management_App
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(679, 379);
 			this.tableLayoutPanel1.TabIndex = 2;
 			// 
-			// dayPanel1
+			// dayPanel7
 			// 
-			this.dayPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.dayPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dayPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.dayPanel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.dayPanel1.Location = new System.Drawing.Point(3, 33);
-			this.dayPanel1.Name = "dayPanel1";
-			this.dayPanel1.Size = new System.Drawing.Size(90, 343);
-			this.dayPanel1.TabIndex = 4;
+			this.dayPanel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.dayPanel7.Location = new System.Drawing.Point(579, 34);
+			this.dayPanel7.Name = "dayPanel7";
+			this.dayPanel7.Size = new System.Drawing.Size(97, 342);
+			this.dayPanel7.TabIndex = 17;
+			this.dayPanel7.Tag = "7";
+			this.dayPanel7.DoubleClick += new System.EventHandler(this.dayPanelDoubleClick);
 			// 
-			// dayPanel2
+			// dayPanel6
 			// 
-			this.dayPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.dayPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dayPanel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.dayPanel2.Location = new System.Drawing.Point(99, 33);
-			this.dayPanel2.Name = "dayPanel2";
-			this.dayPanel2.Size = new System.Drawing.Size(90, 343);
-			this.dayPanel2.TabIndex = 5;
+			this.dayPanel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.dayPanel6.Location = new System.Drawing.Point(483, 34);
+			this.dayPanel6.Name = "dayPanel6";
+			this.dayPanel6.Size = new System.Drawing.Size(90, 342);
+			this.dayPanel6.TabIndex = 16;
+			this.dayPanel6.Tag = "6";
+			this.dayPanel6.DoubleClick += new System.EventHandler(this.dayPanelDoubleClick);
 			// 
-			// panel1
+			// dayPanel5
 			// 
-			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.dayPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.panel1.Controls.Add(this.label2);
-			this.panel1.Location = new System.Drawing.Point(99, 3);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(90, 24);
-			this.panel1.TabIndex = 7;
+			this.dayPanel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.dayPanel5.Location = new System.Drawing.Point(387, 34);
+			this.dayPanel5.Name = "dayPanel5";
+			this.dayPanel5.Size = new System.Drawing.Size(90, 342);
+			this.dayPanel5.TabIndex = 15;
+			this.dayPanel5.Tag = "5";
+			this.dayPanel5.DoubleClick += new System.EventHandler(this.dayPanelDoubleClick);
 			// 
-			// panel2
+			// dayPanel4
 			// 
-			this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.dayPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.panel2.Controls.Add(this.label3);
-			this.panel2.Location = new System.Drawing.Point(195, 3);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(90, 24);
-			this.panel2.TabIndex = 8;
+			this.dayPanel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.dayPanel4.Location = new System.Drawing.Point(291, 34);
+			this.dayPanel4.Name = "dayPanel4";
+			this.dayPanel4.Size = new System.Drawing.Size(90, 342);
+			this.dayPanel4.TabIndex = 14;
+			this.dayPanel4.Tag = "4";
+			this.dayPanel4.DoubleClick += new System.EventHandler(this.dayPanelDoubleClick);
 			// 
-			// panel6
+			// dayPanel3
 			// 
-			this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.dayPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.panel6.Controls.Add(this.label4);
-			this.panel6.Location = new System.Drawing.Point(291, 3);
-			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(90, 24);
-			this.panel6.TabIndex = 9;
-			// 
-			// panel7
-			// 
-			this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.panel7.Controls.Add(this.label5);
-			this.panel7.Location = new System.Drawing.Point(387, 3);
-			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(90, 24);
-			this.panel7.TabIndex = 10;
-			// 
-			// panel8
-			// 
-			this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.panel8.Controls.Add(this.label6);
-			this.panel8.Location = new System.Drawing.Point(483, 3);
-			this.panel8.Name = "panel8";
-			this.panel8.Size = new System.Drawing.Size(90, 24);
-			this.panel8.TabIndex = 11;
+			this.dayPanel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.dayPanel3.Location = new System.Drawing.Point(195, 34);
+			this.dayPanel3.Name = "dayPanel3";
+			this.dayPanel3.Size = new System.Drawing.Size(90, 342);
+			this.dayPanel3.TabIndex = 13;
+			this.dayPanel3.Tag = "3";
+			this.dayPanel3.DoubleClick += new System.EventHandler(this.dayPanelDoubleClick);
 			// 
 			// panel9
 			// 
@@ -195,136 +182,29 @@ namespace Test_Management_App
 			this.panel9.Size = new System.Drawing.Size(97, 24);
 			this.panel9.TabIndex = 12;
 			// 
-			// dayPanel3
+			// label7
 			// 
-			this.dayPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dayPanel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.dayPanel3.Location = new System.Drawing.Point(195, 33);
-			this.dayPanel3.Name = "dayPanel3";
-			this.dayPanel3.Size = new System.Drawing.Size(90, 343);
-			this.dayPanel3.TabIndex = 13;
+			this.label7.BackColor = System.Drawing.Color.SteelBlue;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label7.Location = new System.Drawing.Point(0, 0);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(97, 24);
+			this.label7.TabIndex = 1;
+			this.label7.Text = "04. 11.";
+			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// dayPanel4
+			// panel8
 			// 
-			this.dayPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dayPanel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.dayPanel4.Location = new System.Drawing.Point(291, 33);
-			this.dayPanel4.Name = "dayPanel4";
-			this.dayPanel4.Size = new System.Drawing.Size(90, 343);
-			this.dayPanel4.TabIndex = 14;
-			// 
-			// dayPanel5
-			// 
-			this.dayPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dayPanel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.dayPanel5.Location = new System.Drawing.Point(387, 33);
-			this.dayPanel5.Name = "dayPanel5";
-			this.dayPanel5.Size = new System.Drawing.Size(90, 343);
-			this.dayPanel5.TabIndex = 15;
-			// 
-			// dayPanel6
-			// 
-			this.dayPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dayPanel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.dayPanel6.Location = new System.Drawing.Point(483, 33);
-			this.dayPanel6.Name = "dayPanel6";
-			this.dayPanel6.Size = new System.Drawing.Size(90, 343);
-			this.dayPanel6.TabIndex = 16;
-			// 
-			// dayPanel7
-			// 
-			this.dayPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dayPanel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.dayPanel7.Location = new System.Drawing.Point(579, 33);
-			this.dayPanel7.Name = "dayPanel7";
-			this.dayPanel7.Size = new System.Drawing.Size(97, 343);
-			this.dayPanel7.TabIndex = 17;
-			// 
-			// label1
-			// 
-			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label1.BackColor = System.Drawing.Color.SteelBlue;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label1.Location = new System.Drawing.Point(0, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(90, 24);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "04. 11.";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// panel5
-			// 
-			this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.panel5.Controls.Add(this.label1);
-			this.panel5.Location = new System.Drawing.Point(3, 3);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(90, 24);
-			this.panel5.TabIndex = 6;
-			// 
-			// label2
-			// 
-			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label2.BackColor = System.Drawing.Color.SteelBlue;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label2.Location = new System.Drawing.Point(0, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(90, 24);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "04. 11.";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label3
-			// 
-			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label3.BackColor = System.Drawing.Color.SteelBlue;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label3.Location = new System.Drawing.Point(0, 0);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(90, 24);
-			this.label3.TabIndex = 1;
-			this.label3.Text = "04. 11.";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label4
-			// 
-			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label4.BackColor = System.Drawing.Color.SteelBlue;
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label4.Location = new System.Drawing.Point(0, 0);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(90, 24);
-			this.label4.TabIndex = 1;
-			this.label4.Text = "04. 11.";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label5
-			// 
-			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label5.BackColor = System.Drawing.Color.SteelBlue;
-			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label5.Location = new System.Drawing.Point(0, 0);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(90, 24);
-			this.label5.TabIndex = 1;
-			this.label5.Text = "04. 11.";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.panel8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.panel8.Controls.Add(this.label6);
+			this.panel8.Location = new System.Drawing.Point(483, 3);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(90, 24);
+			this.panel8.TabIndex = 11;
 			// 
 			// label6
 			// 
@@ -339,18 +219,152 @@ namespace Test_Management_App
 			this.label6.Text = "04. 11.";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// label7
+			// panel7
 			// 
-			this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label7.BackColor = System.Drawing.Color.SteelBlue;
-			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label7.Location = new System.Drawing.Point(0, 0);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(97, 24);
-			this.label7.TabIndex = 1;
-			this.label7.Text = "04. 11.";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.panel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.panel7.Controls.Add(this.label5);
+			this.panel7.Location = new System.Drawing.Point(387, 3);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(90, 24);
+			this.panel7.TabIndex = 10;
+			// 
+			// label5
+			// 
+			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label5.BackColor = System.Drawing.Color.SteelBlue;
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label5.Location = new System.Drawing.Point(0, 0);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(90, 24);
+			this.label5.TabIndex = 1;
+			this.label5.Text = "04. 11.";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel6
+			// 
+			this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.panel6.Controls.Add(this.label4);
+			this.panel6.Location = new System.Drawing.Point(291, 3);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(90, 24);
+			this.panel6.TabIndex = 9;
+			// 
+			// label4
+			// 
+			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label4.BackColor = System.Drawing.Color.SteelBlue;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label4.Location = new System.Drawing.Point(0, 0);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(90, 24);
+			this.label4.TabIndex = 1;
+			this.label4.Text = "04. 11.";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel2
+			// 
+			this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.panel2.Controls.Add(this.label3);
+			this.panel2.Location = new System.Drawing.Point(195, 3);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(90, 24);
+			this.panel2.TabIndex = 8;
+			// 
+			// label3
+			// 
+			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label3.BackColor = System.Drawing.Color.SteelBlue;
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label3.Location = new System.Drawing.Point(0, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(90, 24);
+			this.label3.TabIndex = 1;
+			this.label3.Text = "04. 11.";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel1
+			// 
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.panel1.Controls.Add(this.label2);
+			this.panel1.Location = new System.Drawing.Point(99, 3);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(90, 24);
+			this.panel1.TabIndex = 7;
+			// 
+			// label2
+			// 
+			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label2.BackColor = System.Drawing.Color.SteelBlue;
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label2.Location = new System.Drawing.Point(0, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(90, 24);
+			this.label2.TabIndex = 1;
+			this.label2.Text = "04. 11.";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel5
+			// 
+			this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.panel5.Controls.Add(this.label1);
+			this.panel5.Location = new System.Drawing.Point(3, 3);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(90, 24);
+			this.panel5.TabIndex = 6;
+			// 
+			// label1
+			// 
+			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label1.BackColor = System.Drawing.Color.SteelBlue;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label1.Location = new System.Drawing.Point(0, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(90, 24);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "04. 11.";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// dayPanel2
+			// 
+			this.dayPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dayPanel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.dayPanel2.Location = new System.Drawing.Point(99, 34);
+			this.dayPanel2.Name = "dayPanel2";
+			this.dayPanel2.Size = new System.Drawing.Size(90, 342);
+			this.dayPanel2.TabIndex = 5;
+			this.dayPanel2.Tag = "2";
+			this.dayPanel2.DoubleClick += new System.EventHandler(this.dayPanelDoubleClick);
+			// 
+			// dayPanel1
+			// 
+			this.dayPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dayPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.dayPanel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.dayPanel1.Location = new System.Drawing.Point(3, 34);
+			this.dayPanel1.Name = "dayPanel1";
+			this.dayPanel1.Size = new System.Drawing.Size(90, 342);
+			this.dayPanel1.TabIndex = 4;
+			this.dayPanel1.Tag = "1";
+			this.dayPanel1.DoubleClick += new System.EventHandler(this.dayPanelDoubleClick);
 			// 
 			// buttonBack
 			// 
@@ -392,12 +406,12 @@ namespace Test_Management_App
 			this.Name = "ScheduleForm";
 			this.Text = "ScheduleForm";
 			this.tableLayoutPanel1.ResumeLayout(false);
-			this.panel1.ResumeLayout(false);
-			this.panel2.ResumeLayout(false);
-			this.panel6.ResumeLayout(false);
-			this.panel7.ResumeLayout(false);
-			this.panel8.ResumeLayout(false);
 			this.panel9.ResumeLayout(false);
+			this.panel8.ResumeLayout(false);
+			this.panel7.ResumeLayout(false);
+			this.panel6.ResumeLayout(false);
+			this.panel2.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
 			this.panel5.ResumeLayout(false);
 			this.ResumeLayout(false);
 

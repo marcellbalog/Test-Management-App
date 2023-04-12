@@ -96,6 +96,12 @@
     <Compile Include="ScheduleForm.Designer.cs">
       <DependentUpon>ScheduleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleItemEditPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleItemEditPanel.Designer.cs">
+      <DependentUpon>ScheduleItemEditPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,12 @@
     <Compile Include="TestRow.Designer.cs">
       <DependentUpon>TestRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScheduleItem.Designer.cs">
+      <DependentUpon>ScheduleItem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +165,9 @@
     <EmbeddedResource Include="ScheduleForm.resx">
       <DependentUpon>ScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleItemEditPanel.resx">
+      <DependentUpon>ScheduleItemEditPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StepRow.resx">
       <DependentUpon>StepRow.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TestRow.resx">
       <DependentUpon>TestRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleItem.resx">
+      <DependentUpon>ScheduleItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

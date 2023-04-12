@@ -14,11 +14,16 @@ namespace Test_Management_App
 	{
 		private DateTime displayDate;
 
+		Panel[] panels;
+
 		public ScheduleForm()
 		{
 			InitializeComponent();
 
 			WriteDates(DateTime.Now);
+
+			Panel[] panels = { dayPanel1, dayPanel2, dayPanel3, dayPanel4, dayPanel5, dayPanel6, dayPanel7 };
+			this.panels = panels;
 		}
 
 		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -44,11 +49,35 @@ namespace Test_Management_App
 		private void buttonBack_Click(object sender, EventArgs e)
 		{
 			WriteDates(displayDate.AddDays(-7));
+
+			//SHOW PANELS...
 		}
 
 		private void buttonForward_Click(object sender, EventArgs e)
 		{
 			WriteDates(displayDate.AddDays(7));
+
+			//SHOW PANELS...
+		}
+
+		private void dayPanelDoubleClick(object sender, EventArgs e)
+		{
+			// Get a number reference to which panel was clicked
+			Panel clickedPanel = sender as Panel;
+			int panelNumber = int.Parse(clickedPanel.Tag.ToString());
+
+			Console.WriteLine(panelNumber);
+
+			ScheduleItem newItem = new ScheduleItem();
+			panels[panelNumber-1].Controls.Add(newItem);
+			newItem.Dock = DockStyle.Top;
+
+			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel();
+			editpanel.Show();
+
+			//SAVE IN EDIT FORM...
+
+			//RELOAD PANELS...
 		}
 	}
 }
