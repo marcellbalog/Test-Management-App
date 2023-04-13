@@ -12,28 +12,34 @@ namespace Test_Management_App
 {
 	public partial class ScheduleItemEditPanel : Form
 	{
-		public MainForm mainForm;
+		private MainForm mainForm;
+		private DailyTest dailyTest;
 
-		public Test Test { get; set; }
-		public ScheduleDay Day { get; set; }
-		public TeamMember TeamMember { get; set; }
+		private Test Test { get; set; }
+		private ScheduleDay Day { get; set; }
+		private TeamMember TeamMember { get; set; }
 
 		public DateTime date;
 
-		public ScheduleItemEditPanel(MainForm mf)
+		public ScheduleItemEditPanel(MainForm mf, DailyTest dt)
 		{
 			InitializeComponent();
 
 			mainForm = mf;
+			dailyTest = dt;
 
 			testListBox.DataSource = mainForm.model.Tests;
 			testListBox.DisplayMember = "DisplayText";
-			testListBox.ValueMember = "ID";
+			testListBox.ValueMember = "ID";			
+
+			searchTextBox.Text = mainForm.model.Tests.FirstOrDefault(te => te.ID == dailyTest.TestID).TestName;
 
 			teamComboBox.DataSource = mainForm.model.TeamMembers;
 			teamComboBox.DisplayMember = "Name";
 			teamComboBox.ValueMember = "ID";
-			
+			teamComboBox.SelectedIndex = dailyTest.TeamMemberID;
+
+			commentTextBox.Text = dailyTest.Comment;			
 			//action...
 		}
 

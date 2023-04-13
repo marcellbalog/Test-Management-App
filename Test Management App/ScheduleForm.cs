@@ -124,7 +124,7 @@ namespace Test_Management_App
 
 			Console.WriteLine(panelNumber);
 
-			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel (mainForm) {				
+			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel (mainForm, new DailyTest()) {				
 				date = displayDate.AddDays(panelNumber-1)
 			};
 			editpanel.Show();

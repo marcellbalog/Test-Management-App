@@ -197,6 +197,7 @@ namespace Test_Management_App
 					TeamMemberID = (int)reader["TeamMemberID"],
 					ScheduleDayID = (int)reader["ScheduleDayID"],
 					TestID = (int)reader["TestID"],
+					Comment = reader["Comment"].ToString()
 				};
 
 				DailyTests.Add(item);

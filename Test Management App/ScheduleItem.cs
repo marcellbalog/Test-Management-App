@@ -30,7 +30,7 @@ namespace Test_Management_App
 
 		private void ScheduleItem_Click(object sender, EventArgs e)
 		{
-			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel(mainForm);
+			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel(mainForm, dailyTest);
 			editpanel.Show();
 		}
 	}
