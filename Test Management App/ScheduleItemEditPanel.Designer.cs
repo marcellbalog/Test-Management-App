@@ -34,7 +34,7 @@ namespace Test_Management_App
 			this.testListBox = new System.Windows.Forms.ListBox();
 			this.teamComboBox = new System.Windows.Forms.ComboBox();
 			this.actionComboBox = new System.Windows.Forms.ComboBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.commentTextBox = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -88,13 +88,13 @@ namespace Test_Management_App
 			this.actionComboBox.Size = new System.Drawing.Size(121, 21);
 			this.actionComboBox.TabIndex = 54;
 			// 
-			// textBox2
+			// commentTextBox
 			// 
-			this.textBox2.Location = new System.Drawing.Point(40, 270);
-			this.textBox2.Multiline = true;
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(537, 116);
-			this.textBox2.TabIndex = 55;
+			this.commentTextBox.Location = new System.Drawing.Point(40, 270);
+			this.commentTextBox.Multiline = true;
+			this.commentTextBox.Name = "commentTextBox";
+			this.commentTextBox.Size = new System.Drawing.Size(537, 116);
+			this.commentTextBox.TabIndex = 55;
 			// 
 			// label1
 			// 
@@ -141,7 +141,7 @@ namespace Test_Management_App
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.commentTextBox);
 			this.Controls.Add(this.actionComboBox);
 			this.Controls.Add(this.teamComboBox);
 			this.Controls.Add(this.testListBox);
@@ -161,7 +161,7 @@ namespace Test_Management_App
 		private System.Windows.Forms.ListBox testListBox;
 		private System.Windows.Forms.ComboBox teamComboBox;
 		private System.Windows.Forms.ComboBox actionComboBox;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox commentTextBox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;

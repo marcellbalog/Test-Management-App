@@ -18,21 +18,28 @@ namespace Test_Management_App
 
 		Panel[] panels;
 
+		List<ScheduleDay> activeDays = new List<ScheduleDay>();
+		List<DailyTest> weeklyTests = new List<DailyTest>();
+
+		List<ScheduleItem> weeklyItems = new List<ScheduleItem>();
+
 		public ScheduleForm(MainForm mf)
 		{
 			InitializeComponent();
 
-			mainForm = mf;
-
-			WriteDates(DateTime.Now);
+			mainForm = mf;			
 
 			Panel[] panels = { dayPanel1, dayPanel2, dayPanel3, dayPanel4, dayPanel5, dayPanel6, dayPanel7 };
 			this.panels = panels;
+
+			WriteDates(DateTime.Now);
+			LoadItems(DateTime.Now);
 		}
 
 		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
 		{
 			WriteDates(dateTimePicker1.Value);
+			LoadItems(dateTimePicker1.Value);
 		}
 
 		public void WriteDates(DateTime selectedDate)
@@ -50,18 +57,63 @@ namespace Test_Management_App
 			displayDate = selectedDate;
 		}
 
-		private void buttonBack_Click(object sender, EventArgs e)
+		public void LoadItems(DateTime selectedDate)
 		{
-			WriteDates(displayDate.AddDays(-7));
+			// Remove displayed items & Free up resources
+			foreach (var item in weeklyItems)
+			{
+				item.Parent.Controls.Remove(item);				
+				item.Dispose();
+			}
+			weeklyItems.Clear();
+			weeklyTests.Clear();
 
-			//SHOW PANELS...
+			activeDays.Clear();
+			
+
+						
+
+			int delta = DayOfWeek.Monday - selectedDate.DayOfWeek;
+			DateTime monday = selectedDate.AddDays(delta);
+
+			for (int i = 0; i < 7; i++)
+			{
+				DateTime date = monday.AddDays(i);
+
+				activeDays = mainForm.model.ScheduleDays.FindAll(day => day.Date.Date == date.Date);
+				// Find the tests for the current date
+				var tests = mainForm.model.DailyTests.FindAll(test => activeDays.Any(ad => ad.ID == test.ScheduleDayID && ad.Date.Date == date.Date)).ToList();
+				weeklyTests.AddRange(tests);
+
+				foreach (var test in tests)
+				{
+					// Create a new user control and add it to the panel
+					ScheduleItem newItem = new ScheduleItem(mainForm, test);
+					panels[i].Controls.Add(newItem);
+					newItem.Dock = DockStyle.Top;
+					
+
+					weeklyItems.Add(newItem);
+
+					// Assign a tag for referencing the data with the panel
+					newItem.Tag = weeklyItems.Count()-1;
+				}
+			}
+
+		}
+
+		private void buttonBack_Click(object sender, EventArgs e)
+		{			
+
+			WriteDates(displayDate.AddDays(-7));
+			LoadItems(displayDate);			
 		}
 
 		private void buttonForward_Click(object sender, EventArgs e)
-		{
-			WriteDates(displayDate.AddDays(7));
+		{		
 
-			//SHOW PANELS...
+			WriteDates(displayDate.AddDays(7));
+			LoadItems(displayDate);			
 		}
 
 		private void dayPanelDoubleClick(object sender, EventArgs e)
@@ -71,10 +123,6 @@ namespace Test_Management_App
 			int panelNumber = int.Parse(clickedPanel.Tag.ToString());
 
 			Console.WriteLine(panelNumber);
-
-			ScheduleItem newItem = new ScheduleItem();
-			panels[panelNumber-1].Controls.Add(newItem);
-			newItem.Dock = DockStyle.Top;
 
 			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel (mainForm) {				
 				date = displayDate.AddDays(panelNumber-1)

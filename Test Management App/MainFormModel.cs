@@ -38,7 +38,8 @@ namespace Test_Management_App
 			LoadFolders();
 			LoadTests();
 			LoadSteps();
-
+			LoadScheduleDays();
+			LoadDailyTests();
 
 		}
 
@@ -221,6 +222,8 @@ namespace Test_Management_App
 			LoadFolders();
 			LoadTests();
 			LoadSteps();
+			LoadScheduleDays();
+			LoadDailyTests();
 		}
 	}
 }

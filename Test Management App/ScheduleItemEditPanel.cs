@@ -52,13 +52,20 @@ namespace Test_Management_App
 				mainForm.model.ScheduleDays.Add(Day);
 			}
 
+			Test = (Test)testListBox.SelectedItem;
+			TeamMember = (TeamMember)teamComboBox.SelectedItem;
+
 			DailyTest newDaily = new DailyTest
 			{
 				TestID = Test.ID,
 				ScheduleDayID = Day.ID,
-				TeamMemberID = TeamMember.ID
+				TeamMemberID = TeamMember.ID,
+				Comment = commentTextBox.Text
 			};
 			mainForm.model.DailyTests.Add(newDaily);
+
+
+			this.Close();
 
 		}	
 
