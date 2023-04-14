@@ -68,8 +68,8 @@
     <Compile Include="AnalyticsForm.Designer.cs">
       <DependentUpon>AnalyticsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DailyTest.cs" />
-    <Compile Include="Folder.cs" />
+    <Compile Include="Data classes\DailyTest.cs" />
+    <Compile Include="Data classes\Folder.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,18 +78,18 @@
     </Compile>
     <Compile Include="MainFormModel.cs" />
     <Compile Include="MainFormView.cs" />
-    <Compile Include="MyTreeView.cs">
+    <Compile Include="Misc\MyTreeView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="NameInputForm.cs">
+    <Compile Include="Misc\NameInputForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NameInputForm.Designer.cs">
+    <Compile Include="Misc\NameInputForm.Designer.cs">
       <DependentUpon>NameInputForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScheduleDay.cs" />
+    <Compile Include="Data classes\ScheduleDay.cs" />
     <Compile Include="ScheduleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,11 +108,11 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Step.cs" />
-    <Compile Include="StepRow.cs">
+    <Compile Include="Data classes\Step.cs" />
+    <Compile Include="User Controls\StepRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StepRow.Designer.cs">
+    <Compile Include="User Controls\StepRow.Designer.cs">
       <DependentUpon>StepRow.cs</DependentUpon>
     </Compile>
     <Compile Include="TeamForm.cs">
@@ -121,8 +121,8 @@
     <Compile Include="TeamForm.Designer.cs">
       <DependentUpon>TeamForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeamMember.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="Data classes\TeamMember.cs" />
+    <Compile Include="Data classes\Test.cs" />
     <Compile Include="Testcase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,22 +135,22 @@
     <Compile Include="TestLibraryForm.Designer.cs">
       <DependentUpon>TestLibraryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestRow.cs">
+    <Compile Include="User Controls\TestRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TestRow.Designer.cs">
+    <Compile Include="User Controls\TestRow.Designer.cs">
       <DependentUpon>TestRow.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScheduleItem.cs">
+    <Compile Include="User Controls\ScheduleItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ScheduleItem.Designer.cs">
+    <Compile Include="User Controls\ScheduleItem.Designer.cs">
       <DependentUpon>ScheduleItem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NameInputForm.resx">
+    <EmbeddedResource Include="Misc\NameInputForm.resx">
       <DependentUpon>NameInputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -168,7 +168,7 @@
     <EmbeddedResource Include="ScheduleItemEditPanel.resx">
       <DependentUpon>ScheduleItemEditPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StepRow.resx">
+    <EmbeddedResource Include="User Controls\StepRow.resx">
       <DependentUpon>StepRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeamForm.resx">
@@ -180,10 +180,10 @@
     <EmbeddedResource Include="TestLibraryForm.resx">
       <DependentUpon>TestLibraryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestRow.resx">
+    <EmbeddedResource Include="User Controls\TestRow.resx">
       <DependentUpon>TestRow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScheduleItem.resx">
+    <EmbeddedResource Include="User Controls\ScheduleItem.resx">
       <DependentUpon>ScheduleItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
