@@ -54,7 +54,7 @@ namespace Test_Management_App
 			label6.Text = monday.AddDays(5).ToString("MM.dd");
 			label7.Text = monday.AddDays(6).ToString("MM.dd");
 
-			displayDate = selectedDate;
+			displayDate = monday;
 		}
 
 		public void LoadItems(DateTime selectedDate)
@@ -98,12 +98,7 @@ namespace Test_Management_App
 					// Assign a tag for referencing the data with the panel
 					newItem.Tag = weeklyItems.Count()-1;
 				}
-			}
-		}
-
-		public void ReloadItems()
-		{
-			LoadItems(displayDate);
+			}			
 		}
 
 		private void buttonBack_Click(object sender, EventArgs e)
@@ -133,9 +128,13 @@ namespace Test_Management_App
 			};
 			editpanel.Show();
 
-			//SAVE IN EDIT FORM...
-
-			//RELOAD PANELS...
+			// Assign Reload method to form closed event (Reload the schedule table when exiting the edit form to show the updated table)
+			editpanel.FormClosed += new FormClosedEventHandler(ReloadItems);
+			
+		}
+		public void ReloadItems(object sender, FormClosedEventArgs e)
+		{
+			LoadItems(displayDate);
 		}
 	}
 }

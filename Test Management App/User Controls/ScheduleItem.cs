@@ -30,7 +30,9 @@ namespace Test_Management_App
 
 		private void ScheduleItem_Click(object sender, EventArgs e)
 		{
-			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel(mainForm, dailyTest);
+			ScheduleItemEditPanel editpanel = new ScheduleItemEditPanel(mainForm, dailyTest) {
+				date = mainForm.model.ScheduleDays.FirstOrDefault(d => d.ID == dailyTest.ScheduleDayID).Date
+			};			
 			editpanel.Show();
 		}
 	}

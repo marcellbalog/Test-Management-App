@@ -39,7 +39,8 @@ namespace Test_Management_App
 			teamComboBox.ValueMember = "ID";
 			teamComboBox.SelectedIndex = dailyTest.TeamMemberID;
 
-			commentTextBox.Text = dailyTest.Comment;			
+			commentTextBox.Text = dailyTest.Comment;	
+						
 			//action...
 		}
 
@@ -53,8 +54,13 @@ namespace Test_Management_App
 				Day = existingScheduleDay;
 			}
 			else
-			{			
-				Day = new ScheduleDay { Date = date };
+			{
+				Day = new ScheduleDay
+				{
+					Date = date,
+					ID = mainForm.model.ScheduleDays.Last().ID + 1, //REMOVE LATER (AUTO WRITE IN DB)
+				};																 
+
 				mainForm.model.ScheduleDays.Add(Day);
 			}
 
