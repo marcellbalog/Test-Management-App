@@ -99,7 +99,11 @@ namespace Test_Management_App
 					newItem.Tag = weeklyItems.Count()-1;
 				}
 			}
+		}
 
+		public void ReloadItems()
+		{
+			LoadItems(displayDate);
 		}
 
 		private void buttonBack_Click(object sender, EventArgs e)

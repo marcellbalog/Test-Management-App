@@ -61,15 +61,29 @@ namespace Test_Management_App
 			Test = (Test)testListBox.SelectedItem;
 			TeamMember = (TeamMember)teamComboBox.SelectedItem;
 
-			DailyTest newDaily = new DailyTest
+			// Check if the daily test exists already, if not, then create a new one
+			if (mainForm.model.DailyTests.Contains(dailyTest))
 			{
-				TestID = Test.ID,
-				ScheduleDayID = Day.ID,
-				TeamMemberID = TeamMember.ID,
-				Comment = commentTextBox.Text
-			};
-			mainForm.model.DailyTests.Add(newDaily);
+				int index = mainForm.model.DailyTests.IndexOf(dailyTest);
+				DailyTest existingDaily = mainForm.model.DailyTests[index];
 
+				existingDaily.TestID = Test.ID;
+				existingDaily.ScheduleDayID = Day.ID;
+				existingDaily.TeamMemberID = TeamMember.ID;
+				existingDaily.Comment = commentTextBox.Text;
+			}
+			else
+			{
+				DailyTest newDaily = new DailyTest
+				{
+					ID = mainForm.model.DailyTests.Last().ID + 1, //REMOVE LATER (AUTO WRITE IN DB)
+					TestID = Test.ID,
+					ScheduleDayID = Day.ID,
+					TeamMemberID = TeamMember.ID,
+					Comment = commentTextBox.Text
+				};
+				mainForm.model.DailyTests.Add(newDaily);
+			}
 
 			this.Close();
 
@@ -89,6 +103,18 @@ namespace Test_Management_App
 			testListBox.DisplayMember = "DisplayText";
 			testListBox.ValueMember = "ID";
 
+		}
+
+		private void deleteButton_Click(object sender, EventArgs e)
+		{
+			mainForm.model.DailyTests.Remove(dailyTest);
+
+			if (mainForm.model.DailyTests.Contains(dailyTest))
+			{
+				mainForm.model.DailyTests.Remove(dailyTest);
+			}
+
+			this.Close();
 		}
 	}
 }

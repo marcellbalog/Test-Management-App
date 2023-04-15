@@ -39,6 +39,7 @@ namespace Test_Management_App
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.deleteButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// SaveButton
@@ -48,7 +49,7 @@ namespace Test_Management_App
 			this.SaveButton.Cursor = System.Windows.Forms.Cursors.Default;
 			this.SaveButton.FlatAppearance.BorderSize = 0;
 			this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.SaveButton.Location = new System.Drawing.Point(558, 12);
+			this.SaveButton.Location = new System.Drawing.Point(510, 11);
 			this.SaveButton.Name = "SaveButton";
 			this.SaveButton.Size = new System.Drawing.Size(47, 23);
 			this.SaveButton.TabIndex = 50;
@@ -132,11 +133,27 @@ namespace Test_Management_App
 			this.label4.TabIndex = 59;
 			this.label4.Text = "Action";
 			// 
+			// deleteButton
+			// 
+			this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.deleteButton.BackColor = System.Drawing.Color.LightCyan;
+			this.deleteButton.Cursor = System.Windows.Forms.Cursors.Default;
+			this.deleteButton.FlatAppearance.BorderSize = 0;
+			this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.deleteButton.Location = new System.Drawing.Point(563, 11);
+			this.deleteButton.Name = "deleteButton";
+			this.deleteButton.Size = new System.Drawing.Size(63, 23);
+			this.deleteButton.TabIndex = 60;
+			this.deleteButton.Text = "DELETE";
+			this.deleteButton.UseVisualStyleBackColor = false;
+			this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+			// 
 			// ScheduleItemEditPanel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(638, 398);
+			this.Controls.Add(this.deleteButton);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
@@ -166,5 +183,6 @@ namespace Test_Management_App
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Button deleteButton;
 	}
 }
