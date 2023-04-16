@@ -15,7 +15,7 @@ namespace TestManagementApp.UnitTests
 		{
 			var test = new Test { Status = 0 };
 
-			var statusName = test.GetStatusName();
+			var statusName = test.StatusName;
 
 			Assert.That(statusName, Is.EqualTo("NEW"));
 		}
@@ -25,7 +25,7 @@ namespace TestManagementApp.UnitTests
 		{
 			var test = new Test { Status = 1 };
 
-			var statusName = test.GetStatusName();
+			var statusName = test.StatusName;
 
 			Assert.That(statusName, Is.EqualTo("DEV"));
 		}
@@ -35,7 +35,7 @@ namespace TestManagementApp.UnitTests
 		{
 			var test = new Test { Status = 2 };
 
-			var statusName = test.GetStatusName();
+			var statusName = test.StatusName;
 
 			Assert.That(statusName, Is.EqualTo("DONE"));
 		}
@@ -45,7 +45,7 @@ namespace TestManagementApp.UnitTests
 		{
 			var test = new Test { Status = -1 };
 
-			var statusName = test.GetStatusName();
+			var statusName = test.StatusName;
 
 			Assert.That(statusName, Is.EqualTo("NEW"));
 		}

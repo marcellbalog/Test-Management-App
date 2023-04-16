@@ -49,7 +49,7 @@ namespace Test_Management_App
 				tr.TestName.Text = item.TestName;
 
 				tr.TestOwner.Text = item.TeamMember.Name;
-				tr.TestStatus.Text = item.GetStatusName();
+				tr.TestStatus.Text = item.StatusName;
 				tr.TestResult.BackColor = item.GetResultColor();
 
 

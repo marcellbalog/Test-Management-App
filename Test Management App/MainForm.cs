@@ -62,7 +62,7 @@ namespace Test_Management_App
 
 		public void analyticsButton_Click(object sender, EventArgs e)
 		{
-			OpenPageForm(new AnalyticsForm());
+			OpenPageForm(new AnalyticsForm(this));
 		}
 
 		public void settingsButton_Click(object sender, EventArgs e)

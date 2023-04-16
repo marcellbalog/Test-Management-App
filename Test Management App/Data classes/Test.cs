@@ -23,6 +23,10 @@ namespace Test_Management_App
 		// Property for display that combines the ID and TestName properties into a single string
 		public string DisplayText => $"T{ID}  {TestName}";
 
+		public string StatusName => GetStatusName();
+
+		public string ResultName => GetResultName();
+
 		public string GetStatusName()
 		{
 			string text;
@@ -66,5 +70,28 @@ namespace Test_Management_App
 
 			return color;
 		}
+
+		public string GetResultName()
+		{
+			string name;
+			switch (Result)
+			{
+				case 0:
+					name = "NOT EXECUTED";
+					break;
+				case 1:
+					name = "FAIL";
+					break;
+				case 2:
+					name = "SUCCESS";
+					break;
+				default:
+					name = "NOT EXECUTED";
+					break;
+			}
+
+			return name;
+		}
 	}
 }
+
