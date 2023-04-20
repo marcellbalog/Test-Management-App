@@ -54,6 +54,7 @@ namespace Test_Management_App
 			this.descriptionTextBox.Name = "descriptionTextBox";
 			this.descriptionTextBox.Size = new System.Drawing.Size(272, 35);
 			this.descriptionTextBox.TabIndex = 1;
+			this.descriptionTextBox.TextChanged += new System.EventHandler(this.descriptionTextBox_TextChanged);
 			// 
 			// resultTextBox
 			// 
@@ -63,6 +64,7 @@ namespace Test_Management_App
 			this.resultTextBox.Name = "resultTextBox";
 			this.resultTextBox.Size = new System.Drawing.Size(271, 35);
 			this.resultTextBox.TabIndex = 2;
+			this.resultTextBox.TextChanged += new System.EventHandler(this.resultTextBox_TextChanged);
 			// 
 			// deleteButton
 			// 

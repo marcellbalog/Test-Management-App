@@ -217,7 +217,10 @@ namespace Test_Management_App
 		{
 			Tests.Clear();
 			Folders.Clear();
-			//others...
+			Steps.Clear();
+			TeamMembers.Clear();
+			ScheduleDays.Clear();
+			DailyTests.Clear();			
 
 			LoadTeamMembers();
 			LoadFolders();
@@ -227,6 +230,7 @@ namespace Test_Management_App
 			LoadDailyTests();
 		}
 
+		#region Test Write
 		public void UpdateTests()
 		{
 			string sql = "UPDATE Test SET FolderID = @FolderID, TeamMemberID = @TeamMemberID, TestName = @TestName, Description = @Description, Status = @Status, Result = @Result WHERE ID = @ID";
@@ -289,8 +293,9 @@ namespace Test_Management_App
 
 			Refresh();
 		}
+		#endregion
 
-
+		#region Folder Write
 		public void InsertFolder(Folder folder)
 		{
 			string sql = "INSERT INTO Folder (Name, ParentFolderID) VALUES (@Name, @ParentFolderID)";
@@ -348,5 +353,67 @@ namespace Test_Management_App
 
 			Refresh();
 		}
+		#endregion
+
+		#region Step Write
+		public void InsertStep(Step step)
+		{
+			string sql = "INSERT INTO Step (TestID, StepNum, StepDescription, StepResult) VALUES (@TestID, @StepNum, @StepDescription, @StepResult)";
+			using (SqlCommand command = new SqlCommand(sql, connection))
+			{
+				command.Parameters.AddWithValue("@TestID", step.TestID);
+				command.Parameters.AddWithValue("@StepNum", step.StepNum);
+				command.Parameters.AddWithValue("@StepDescription", step.StepDescription);
+				command.Parameters.AddWithValue("@StepResult", step.StepResult);
+
+				connection.Open();
+				command.ExecuteNonQuery();
+				connection.Close();
+			}
+			Refresh();
+		}
+
+		public void UpdateSteps()
+		{
+			string sql = "UPDATE Step SET TestID = @TestID, StepNum = @StepNum, StepDescription = @StepDescription, StepResult = @StepResult WHERE ID = @ID";
+			connection.Open();
+			foreach (Step step in Steps)
+			{
+				using (SqlCommand command = new SqlCommand(sql, connection))
+				{
+					command.Parameters.AddWithValue("@ID", step.ID);
+					command.Parameters.AddWithValue("@TestID", step.TestID);
+					command.Parameters.AddWithValue("@StepNum", step.StepNum);
+					command.Parameters.AddWithValue("@StepDescription", step.StepDescription);
+					command.Parameters.AddWithValue("@StepResult", step.StepResult);
+
+					int rowsAffected = command.ExecuteNonQuery();
+					Console.WriteLine(rowsAffected + " step rows updated");
+					if (rowsAffected == 0)
+					{
+						// Handle the case where the update was not successful
+					}
+				}
+			}
+			connection.Close();
+
+			Refresh();
+		}
+
+		public void RemoveStep(int id)
+		{
+			string sql = "DELETE FROM Step WHERE ID = @ID";
+			using (SqlCommand command = new SqlCommand(sql, connection))
+			{
+				command.Parameters.AddWithValue("@ID", id);
+
+				connection.Open();
+				command.ExecuteNonQuery();
+				connection.Close();
+			}
+			Refresh();
+		}
+		#endregion
+
 	}
 }

@@ -39,6 +39,8 @@ namespace Test_Management_App
 			this.stepsPanel = new System.Windows.Forms.Panel();
 			this.NewButton = new System.Windows.Forms.Button();
 			this.DeleteButton = new System.Windows.Forms.Button();
+			this.stepFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.stepsPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// SaveButton
@@ -123,6 +125,7 @@ namespace Test_Management_App
 			this.stepsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.stepsPanel.AutoScroll = true;
+			this.stepsPanel.Controls.Add(this.stepFlowLayoutPanel);
 			this.stepsPanel.Location = new System.Drawing.Point(26, 260);
 			this.stepsPanel.MinimumSize = new System.Drawing.Size(700, 225);
 			this.stepsPanel.Name = "stepsPanel";
@@ -157,6 +160,16 @@ namespace Test_Management_App
 			this.DeleteButton.UseVisualStyleBackColor = false;
 			this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
 			// 
+			// stepFlowLayoutPanel
+			// 
+			this.stepFlowLayoutPanel.AutoScroll = true;
+			this.stepFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+			this.stepFlowLayoutPanel.Location = new System.Drawing.Point(0, 25);
+			this.stepFlowLayoutPanel.Name = "stepFlowLayoutPanel";
+			this.stepFlowLayoutPanel.Size = new System.Drawing.Size(747, 235);
+			this.stepFlowLayoutPanel.TabIndex = 66;
+			this.stepFlowLayoutPanel.WrapContents = false;
+			// 
 			// Testcase
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +188,7 @@ namespace Test_Management_App
 			this.Controls.Add(this.SaveButton);
 			this.Name = "Testcase";
 			this.Text = "Testcase";
+			this.stepsPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -192,5 +206,6 @@ namespace Test_Management_App
 		private System.Windows.Forms.Panel stepsPanel;
 		private System.Windows.Forms.Button NewButton;
 		private System.Windows.Forms.Button DeleteButton;
+		private System.Windows.Forms.FlowLayoutPanel stepFlowLayoutPanel;
 	}
 }

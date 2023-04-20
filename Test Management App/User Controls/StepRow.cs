@@ -71,10 +71,20 @@ namespace Test_Management_App
 			DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this step?", "Delete", MessageBoxButtons.YesNo);
 
 			if (dialogResult == DialogResult.Yes)
-			{
-				mainForm.model.Steps.Remove(thisStep);
+			{				
+				mainForm.model.RemoveStep(thisStep.ID);
 				this.Parent.Controls.Remove(this);
 			}
+		}
+
+		private void descriptionTextBox_TextChanged(object sender, EventArgs e)
+		{
+			thisStep.StepDescription = descriptionTextBox.Text;
+		}
+
+		private void resultTextBox_TextChanged(object sender, EventArgs e)
+		{
+			thisStep.StepResult = resultTextBox.Text;			
 		}
 	}
 }

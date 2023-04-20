@@ -16,6 +16,8 @@ namespace Test_Management_App
 		private MainForm mainForm;
 
 		private List<StepRow> stepRows = new List<StepRow>();
+		private List<Step> newSteps = new List<Step>();
+		List<Step> stepsForTest = new List<Step>();
 
 		public bool isNew;
 
@@ -25,6 +27,7 @@ namespace Test_Management_App
 
 			thisTest = t;
 			mainForm = mf;
+
 			LoadTestData();
 			PopulateStepList();
 		}
@@ -77,8 +80,15 @@ namespace Test_Management_App
 			if (isNew)
 				mainForm.model.InsertTest(thisTest);
 			else
+			{
 				mainForm.model.UpdateTests();
-			
+				mainForm.model.UpdateSteps();
+			}
+
+			foreach (Step s in newSteps)
+			{
+				mainForm.model.InsertStep(s);
+			}
 		}
 
 		private void TestNameInput_Enter(object sender, EventArgs e)
@@ -92,23 +102,34 @@ namespace Test_Management_App
 		}
 
 		public void PopulateStepList()
-		{			
-			stepsPanel.Controls.Clear();
+		{
+			stepFlowLayoutPanel.Controls.Clear();			
 			List<Step> stepsForTest = mainForm.model.Steps
 				.Where(s => s.TestID == thisTest.ID)
-				.OrderByDescending(s => s.StepNum)
+				.OrderBy(s => s.StepNum)
 				.ToList();
 
+			// Load tests from db
 			foreach (Step item in stepsForTest)
 			{
 				StepRow sr = new StepRow(thisTest, item, mainForm);
 				stepRows.Add(sr);
-				stepsPanel.Controls.Add(sr);
+				stepFlowLayoutPanel.Controls.Add(sr);
+				sr.Dock = DockStyle.Top;
+				sr.MinimumSize = new Size(default, 72);
+			}
+			// Load new steps (after adding them to the list)
+			foreach (Step item in newSteps)
+			{
+				StepRow sr = new StepRow(thisTest, item, mainForm);
+				stepRows.Add(sr);
+				stepFlowLayoutPanel.Controls.Add(sr);
 				sr.Dock = DockStyle.Top;
 				sr.MinimumSize = new Size(default, 72);
 			}
 		}
 
+		//Adding new Step
 		private void NewButton_Click(object sender, EventArgs e)
 		{
 			Step newStep = new Step();
@@ -116,12 +137,13 @@ namespace Test_Management_App
 
 			int maxStepNum = mainForm.model.Steps.Where(s => s.TestID == thisTest.ID).Max(s => s.StepNum);
 			newStep.StepNum = maxStepNum + 1;
-
-			mainForm.model.Steps.Add(newStep);
+					
+			newSteps.Add(newStep);
 
 			PopulateStepList();
 		}
 
+		//Delete testcase
 		private void DeleteButton_Click(object sender, EventArgs e)
 		{
 
