@@ -78,11 +78,7 @@ namespace Test_Management_App
 				mainForm.model.InsertTest(thisTest);
 			else
 				mainForm.model.UpdateTests();
-
-			mainForm.model.Refresh();
 			
-
-
 		}
 
 		private void TestNameInput_Enter(object sender, EventArgs e)
@@ -133,7 +129,6 @@ namespace Test_Management_App
 			if (dialogResult == DialogResult.Yes)
 			{
 				mainForm.model.RemoveTest(thisTest.ID);
-				mainForm.model.Refresh();
 
 				this.Close();
 			}

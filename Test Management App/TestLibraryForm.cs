@@ -142,7 +142,7 @@ namespace Test_Management_App
 
 					Folder newFolder = new Folder();
 					newFolder.Name = form.NameInput;
-					newFolder.ID = mainForm.model.Folders.Last().ID + 1;
+					//newFolder.ID = mainForm.model.Folders.Last().ID + 1;
 
 					// If the selected node represents a folder, set the ParentFolderID of the new folder
 					if (selectedNode.Tag is Folder parentFolder)
@@ -150,7 +150,11 @@ namespace Test_Management_App
 						newFolder.ParentFolderID = parentFolder.ID;
 					}
 					
-					mainForm.model.Folders.Add(newFolder);
+					//mainForm.model.Folders.Add(newFolder);
+
+					mainForm.model.InsertFolder(newFolder);
+					
+
 
 					// Set the Tag property (for the display function)
 					newNode.Tag = newFolder;
@@ -176,6 +180,7 @@ namespace Test_Management_App
 				}
 			}
 
+			mainForm.model.UpdateFolders();
 
 			PopulateTreeView(mainForm.model.Folders);
 		}
@@ -200,8 +205,10 @@ namespace Test_Management_App
 					// Recursively find and remove all child folders
 					RemoveChildFolders(selectedFolder);
 
-					// Remove the folder from the data model
-					mainForm.model.Folders.Remove(selectedFolder);
+					// Remove the folder from the data model (not necessary after adding sql remove)
+					//mainForm.model.Folders.Remove(selectedFolder);
+
+					mainForm.model.RemoveFolder(selectedFolder);
 
 					// Update the tests to have the removed folder's parent folder ID as their FolderID (move the tests up a level)
 					foreach (var test in mainForm.model.Tests.Where(t => t.FolderID == selectedFolder.ID))
@@ -232,7 +239,9 @@ namespace Test_Management_App
 					test.FolderID = (int)parentFolder.ParentFolderID;
 				}
 
-				mainForm.model.Folders.Remove(childFolder);
+				//mainForm.model.Folders.Remove(childFolder);
+
+				mainForm.model.RemoveFolder(childFolder);
 			}
 		}
 

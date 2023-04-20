@@ -250,6 +250,8 @@ namespace Test_Management_App
 				}
 			}
 			connection.Close();
+
+			Refresh();
 		}
 
 		public void InsertTest(Test test)
@@ -266,6 +268,8 @@ namespace Test_Management_App
 			connection.Open();
 			command.ExecuteNonQuery();
 			connection.Close();
+
+			Refresh();
 		}
 
 
@@ -282,6 +286,67 @@ namespace Test_Management_App
 				// Handle the case where the delete was not successful
 			}
 			connection.Close();
+
+			Refresh();
+		}
+
+
+		public void InsertFolder(Folder folder)
+		{
+			string sql = "INSERT INTO Folder (Name, ParentFolderID) VALUES (@Name, @ParentFolderID)";
+			connection.Open();
+			SqlCommand command = new SqlCommand(sql, connection);
+			command.Parameters.AddWithValue("@Name", folder.Name);
+			command.Parameters.AddWithValue("@ParentFolderID", (object)folder.ParentFolderID ?? DBNull.Value);
+			int rowsAffected = command.ExecuteNonQuery();
+			Console.WriteLine(rowsAffected + " rows inserted");
+			if (rowsAffected == 0)
+			{
+				// Handle the case where the insert was not successful
+			}
+			connection.Close();
+
+			Refresh();
+		}
+
+		public void UpdateFolders()
+		{
+			string sql = "UPDATE Folder SET Name = @Name, ParentFolderID = @ParentFolderID WHERE ID = @ID";
+			connection.Open();
+			foreach (Folder folder in Folders)
+			{
+				SqlCommand command = new SqlCommand(sql, connection);
+				command.Parameters.AddWithValue("@Name", folder.Name);
+				command.Parameters.AddWithValue("@ParentFolderID", (object)folder.ParentFolderID ?? DBNull.Value);
+				command.Parameters.AddWithValue("@ID", folder.ID);
+				int rowsAffected = command.ExecuteNonQuery();
+				Console.WriteLine(rowsAffected + " rows updated");
+				if (rowsAffected == 0)
+				{
+					// Handle the case where the update was not successful
+				}
+			}
+			connection.Close();
+
+			Refresh();
+		}
+
+
+		public void RemoveFolder(Folder folder)
+		{
+			string sql = "DELETE FROM Folder WHERE ID = @ID";
+			connection.Open();
+			SqlCommand command = new SqlCommand(sql, connection);
+			command.Parameters.AddWithValue("@ID", folder.ID);
+			int rowsAffected = command.ExecuteNonQuery();
+			Console.WriteLine(rowsAffected + " rows deleted");
+			if (rowsAffected == 0)
+			{
+				// Handle the case where the delete was not successful
+			}
+			connection.Close();
+
+			Refresh();
 		}
 	}
 }
