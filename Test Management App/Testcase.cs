@@ -17,6 +17,8 @@ namespace Test_Management_App
 
 		private List<StepRow> stepRows = new List<StepRow>();
 
+		public bool isNew;
+
 		public Testcase(Test t, MainForm mf)
 		{
 			InitializeComponent();
@@ -45,25 +47,40 @@ namespace Test_Management_App
 			foreach (int value in statusValues)
 			{
 				comboBoxStatus.Items.Add(mainForm.model.StatusNames[value]);
-			}			
-			comboBoxStatus.SelectedItem = mainForm.model.StatusNames[thisTest.Status];
+			}
+			/*comboBoxStatus.DataSource = mainForm.model.Tests;
+			comboBoxStatus.DisplayMember = "StatusName";
+			comboBoxFolder.ValueMember = "Status";
+			*/comboBoxStatus.SelectedItem = mainForm.model.StatusNames[thisTest.Status];
 
 
 		}
 
 		private void SaveButton_Click(object sender, EventArgs e)
 		{
+			
+
 			thisTest.TestName = TestNameInput.Text;
-
-			//call sql write
-
+			thisTest.Description = textBoxDescription.Text;
+			thisTest.FolderID = (int)comboBoxFolder.SelectedValue;
+			//thisTest.Result = 			
+			thisTest.TeamMemberID = (int)comboBoxTeamMember.SelectedValue;
+			
 
 			//saving status data
-			/*
 			string selectedStatusName = comboBoxStatus.SelectedItem.ToString();
 			int selectedStatusValue = mainForm.model.StatusNames.FirstOrDefault(x => x.Value == selectedStatusName).Key;
 			thisTest.Status = selectedStatusValue;
-			*/
+			
+
+			//call sql write			
+			if (isNew)
+				mainForm.model.InsertTest(thisTest);
+			else
+				mainForm.model.UpdateTests();
+
+			mainForm.model.Refresh();
+			
 
 
 		}

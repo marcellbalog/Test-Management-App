@@ -44,7 +44,7 @@ namespace Test_Management_App
 		}
 
 
-		public void LoadTests()
+		private void LoadTests()
 		{
 			string sql = "SELECT * FROM Test";
 			SqlCommand command = new SqlCommand(sql, connection);
@@ -78,7 +78,7 @@ namespace Test_Management_App
 			connection.Close();
 		}
 
-		public void LoadFolders()
+		private void LoadFolders()
 		{
 			string sql = "SELECT * FROM Folder";
 			SqlCommand command = new SqlCommand(sql, connection);
@@ -113,7 +113,7 @@ namespace Test_Management_App
 			connection.Close();
 		}
 
-		public void LoadSteps()
+		private void LoadSteps()
 		{
 			string sql = "SELECT * FROM Step";
 			SqlCommand command = new SqlCommand(sql, connection);
@@ -138,7 +138,7 @@ namespace Test_Management_App
 			connection.Close();
 		}
 
-		public void LoadTeamMembers()
+		private void LoadTeamMembers()
 		{
 			string sql = "SELECT * FROM TeamMember";
 			SqlCommand command = new SqlCommand(sql, connection);
@@ -160,7 +160,7 @@ namespace Test_Management_App
 			connection.Close();
 		}
 
-		public void LoadScheduleDays()
+		private void LoadScheduleDays()
 		{
 			string sql = "SELECT * FROM ScheduleDay";
 			SqlCommand command = new SqlCommand(sql, connection);
@@ -182,7 +182,7 @@ namespace Test_Management_App
 			connection.Close();
 		}
 
-		public void LoadDailyTests()
+		private void LoadDailyTests()
 		{
 			string sql = "SELECT * FROM DailyTest";
 			SqlCommand command = new SqlCommand(sql, connection);
@@ -226,5 +226,47 @@ namespace Test_Management_App
 			LoadScheduleDays();
 			LoadDailyTests();
 		}
+
+		public void UpdateTests()
+		{
+			string sql = "UPDATE Test SET FolderID = @FolderID, TeamMemberID = @TeamMemberID, TestName = @TestName, Description = @Description, Status = @Status, Result = @Result WHERE ID = @ID";
+			connection.Open();
+			foreach (Test test in Tests)
+			{
+				SqlCommand command = new SqlCommand(sql, connection);
+				command.Parameters.AddWithValue("@FolderID", test.FolderID);
+				command.Parameters.AddWithValue("@TeamMemberID", test.TeamMemberID);
+				command.Parameters.AddWithValue("@TestName", test.TestName);
+				command.Parameters.AddWithValue("@Description", test.Description);
+				command.Parameters.AddWithValue("@Status", test.Status);
+				command.Parameters.AddWithValue("@Result", test.Result);
+				command.Parameters.AddWithValue("@ID", test.ID);
+
+				int rowsAffected = command.ExecuteNonQuery();
+				Console.WriteLine(rowsAffected + "rows updated");
+				if (rowsAffected == 0)
+				{
+					// Handle the case where the update was not successful
+				}
+			}
+			connection.Close();
+		}
+
+		public void InsertTest(Test test)
+		{
+			string sql = "INSERT INTO Test (FolderID, TeamMemberID, TestName, Description, Status, Result) VALUES (@FolderID, @TeamMemberID, @TestName, @Description, @Status, @Result)";
+			SqlCommand command = new SqlCommand(sql, connection);
+			command.Parameters.AddWithValue("@FolderID", test.FolderID);
+			command.Parameters.AddWithValue("@TeamMemberID", test.TeamMemberID);
+			command.Parameters.AddWithValue("@TestName", test.TestName);
+			command.Parameters.AddWithValue("@Description", test.Description);
+			command.Parameters.AddWithValue("@Status", test.Status);
+			command.Parameters.AddWithValue("@Result", test.Result);
+
+			connection.Open();
+			command.ExecuteNonQuery();
+			connection.Close();
+		}
+
 	}
 }

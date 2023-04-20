@@ -30,7 +30,7 @@ namespace Test_Management_App
 			Debug.WriteLine("click test");
 			Debug.WriteLine(thisTest + " ");
 
-			Testcase tc = new Testcase (thisTest, mainForm);
+			Testcase tc = new Testcase(thisTest, mainForm) { isNew = false };
 			tc.Show();			
 
 		}

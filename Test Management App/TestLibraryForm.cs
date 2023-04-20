@@ -69,7 +69,7 @@ namespace Test_Management_App
 		{
 			Test newTest = new Test();
 			newTest.TestName = "Default Test Name";
-			Testcase tc = new Testcase(newTest, mainForm);
+			Testcase tc = new Testcase(newTest, mainForm) { isNew = true};			
 			tc.Show();
 		}
 
