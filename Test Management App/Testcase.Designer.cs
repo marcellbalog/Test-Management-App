@@ -38,6 +38,7 @@ namespace Test_Management_App
 			this.label1 = new System.Windows.Forms.Label();
 			this.stepsPanel = new System.Windows.Forms.Panel();
 			this.NewButton = new System.Windows.Forms.Button();
+			this.DeleteButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// SaveButton
@@ -46,7 +47,7 @@ namespace Test_Management_App
 			this.SaveButton.BackColor = System.Drawing.Color.LightCyan;
 			this.SaveButton.FlatAppearance.BorderSize = 0;
 			this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.SaveButton.Location = new System.Drawing.Point(726, 23);
+			this.SaveButton.Location = new System.Drawing.Point(662, 23);
 			this.SaveButton.Name = "SaveButton";
 			this.SaveButton.Size = new System.Drawing.Size(47, 23);
 			this.SaveButton.TabIndex = 52;
@@ -63,7 +64,7 @@ namespace Test_Management_App
 			this.TestNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.TestNameInput.Location = new System.Drawing.Point(26, 23);
 			this.TestNameInput.Name = "TestNameInput";
-			this.TestNameInput.Size = new System.Drawing.Size(665, 19);
+			this.TestNameInput.Size = new System.Drawing.Size(618, 19);
 			this.TestNameInput.TabIndex = 54;
 			this.TestNameInput.Text = "Testcase 01";
 			this.TestNameInput.Enter += new System.EventHandler(this.TestNameInput_Enter);
@@ -142,12 +143,27 @@ namespace Test_Management_App
 			this.NewButton.UseVisualStyleBackColor = false;
 			this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
 			// 
+			// DeleteButton
+			// 
+			this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.DeleteButton.BackColor = System.Drawing.Color.LightCyan;
+			this.DeleteButton.FlatAppearance.BorderSize = 0;
+			this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.DeleteButton.Location = new System.Drawing.Point(715, 23);
+			this.DeleteButton.Name = "DeleteButton";
+			this.DeleteButton.Size = new System.Drawing.Size(58, 23);
+			this.DeleteButton.TabIndex = 65;
+			this.DeleteButton.Text = "DELETE";
+			this.DeleteButton.UseVisualStyleBackColor = false;
+			this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+			// 
 			// Testcase
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.ClientSize = new System.Drawing.Size(800, 532);
+			this.Controls.Add(this.DeleteButton);
 			this.Controls.Add(this.NewButton);
 			this.Controls.Add(this.stepsPanel);
 			this.Controls.Add(this.label1);
@@ -175,5 +191,6 @@ namespace Test_Management_App
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel stepsPanel;
 		private System.Windows.Forms.Button NewButton;
+		private System.Windows.Forms.Button DeleteButton;
 	}
 }

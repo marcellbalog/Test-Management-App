@@ -268,5 +268,20 @@ namespace Test_Management_App
 			connection.Close();
 		}
 
+
+		public void RemoveTest(int testID)
+		{
+			string sql = "DELETE FROM Test WHERE ID = @ID";
+			connection.Open();
+			SqlCommand command = new SqlCommand(sql, connection);
+			command.Parameters.AddWithValue("@ID", testID);
+			int rowsAffected = command.ExecuteNonQuery();
+			Console.WriteLine(rowsAffected + " rows deleted");
+			if (rowsAffected == 0)
+			{
+				// Handle the case where the delete was not successful
+			}
+			connection.Close();
+		}
 	}
 }

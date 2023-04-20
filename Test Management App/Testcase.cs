@@ -126,6 +126,18 @@ namespace Test_Management_App
 			PopulateStepList();
 		}
 
+		private void DeleteButton_Click(object sender, EventArgs e)
+		{
 
+			DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this testcase?", "Delete", MessageBoxButtons.YesNo);
+			if (dialogResult == DialogResult.Yes)
+			{
+				mainForm.model.RemoveTest(thisTest.ID);
+				mainForm.model.Refresh();
+
+				this.Close();
+			}
+				
+		}
 	}
 }
