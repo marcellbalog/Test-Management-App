@@ -58,10 +58,12 @@ namespace Test_Management_App
 				Day = new ScheduleDay
 				{
 					Date = date,
-					ID = mainForm.model.ScheduleDays.Last().ID + 1, //REMOVE LATER (AUTO WRITE IN DB)
-				};																 
+					//ID = mainForm.model.ScheduleDays.Last().ID + 1, //REMOVE LATER (AUTO WRITE IN DB)
+				};
 
-				mainForm.model.ScheduleDays.Add(Day);
+				//mainForm.model.ScheduleDays.Add(Day);
+				mainForm.model.InsertScheduleDay(Day);
+				Day = mainForm.model.ScheduleDays.First(sd => sd.Date.Date == date.Date);
 			}
 
 			Test = (Test)testListBox.SelectedItem;
@@ -77,18 +79,20 @@ namespace Test_Management_App
 				existingDaily.ScheduleDayID = Day.ID;
 				existingDaily.TeamMemberID = TeamMember.ID;
 				existingDaily.Comment = commentTextBox.Text;
+				mainForm.model.UpdateDailyTests();
 			}
 			else
 			{
 				DailyTest newDaily = new DailyTest
 				{
-					ID = mainForm.model.DailyTests.Last().ID + 1, //REMOVE LATER (AUTO WRITE IN DB)
+					//ID = mainForm.model.DailyTests.Last().ID + 1, //REMOVE LATER (AUTO WRITE IN DB)
 					TestID = Test.ID,
 					ScheduleDayID = Day.ID,
 					TeamMemberID = TeamMember.ID,
 					Comment = commentTextBox.Text
 				};
-				mainForm.model.DailyTests.Add(newDaily);
+				//mainForm.model.DailyTests.Add(newDaily);
+				mainForm.model.InsertDailyTest(newDaily);
 			}
 
 			this.Close();
@@ -112,15 +116,20 @@ namespace Test_Management_App
 		}
 
 		private void deleteButton_Click(object sender, EventArgs e)
-		{
-			mainForm.model.DailyTests.Remove(dailyTest);
+		{			
 
 			if (mainForm.model.DailyTests.Contains(dailyTest))
 			{
-				mainForm.model.DailyTests.Remove(dailyTest);
+				//mainForm.model.DailyTests.Remove(dailyTest);
+				mainForm.model.RemoveDailyTest(dailyTest);
 			}
 
 			this.Close();
+		}
+
+		private void ScheduleItemEditPanel_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Console.WriteLine("closign");
 		}
 	}
 }

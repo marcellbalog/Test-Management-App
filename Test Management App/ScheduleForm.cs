@@ -88,7 +88,7 @@ namespace Test_Management_App
 				foreach (var test in tests)
 				{
 					// Create a new user control and add it to the panel
-					ScheduleItem newItem = new ScheduleItem(mainForm, test);
+					ScheduleItem newItem = new ScheduleItem(mainForm, test, this);
 					panels[i].Controls.Add(newItem);
 					newItem.Dock = DockStyle.Top;
 					

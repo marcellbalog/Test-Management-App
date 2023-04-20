@@ -40,8 +40,8 @@ namespace Test_Management_App
 					TeamMember tm = new TeamMember();
 					tm.Name = form.NameInput;
 					tm.ID = mainForm.model.TeamMembers.Last().ID + 1;
-					
-					mainForm.model.TeamMembers.Add(tm);
+
+					mainForm.model.InsertTeamMember(tm);
 				}
 			}
 
@@ -61,8 +61,8 @@ namespace Test_Management_App
 				DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this team member?", "Delete", MessageBoxButtons.YesNo);
 
 				if (dialogResult == DialogResult.Yes)
-				{										
-					mainForm.model.TeamMembers.Remove(selectedTM);
+				{
+					
 
 					// Update tests' associated team member to 0
 					foreach (var test in mainForm.model.Tests.Where(t => t.TeamMemberID == selectedTM.ID))
@@ -75,6 +75,10 @@ namespace Test_Management_App
 					{
 						sched.TeamMemberID = 0;
 					}
+
+					mainForm.model.UpdateTests();
+					mainForm.model.UpdateDailyTests();
+					mainForm.model.RemoveTeamMember(selectedTM);
 				}
 			}
 

@@ -415,5 +415,164 @@ namespace Test_Management_App
 		}
 		#endregion
 
+		#region TeamMember Write
+		public void InsertTeamMember(TeamMember teamMember)
+		{
+			string sql = "INSERT INTO TeamMember (ID, Name) VALUES (@ID, @Name)";
+			SqlCommand command = new SqlCommand(sql, connection);
+			command.Parameters.AddWithValue("@ID", teamMember.ID);
+			command.Parameters.AddWithValue("@Name", teamMember.Name);
+
+			connection.Open();
+			command.ExecuteNonQuery();
+			connection.Close();
+
+			Refresh();
+		}
+
+		public void UpdateTeamMembers()
+		{
+			string sql = "UPDATE TeamMember SET Name = @Name WHERE ID = @ID";
+			connection.Open();
+			foreach (TeamMember teamMember in TeamMembers)
+			{
+				SqlCommand command = new SqlCommand(sql, connection);
+				command.Parameters.AddWithValue("@ID", teamMember.ID);
+				command.Parameters.AddWithValue("@Name", teamMember.Name);
+
+				int rowsAffected = command.ExecuteNonQuery();
+				Console.WriteLine(rowsAffected + " rows updated");
+				if (rowsAffected == 0)
+				{
+					// Handle the case where the update was not successful
+				}
+			}
+			connection.Close();
+
+			Refresh();
+		}
+
+		public void RemoveTeamMember(TeamMember teamMember)
+		{
+			string sql = "DELETE FROM TeamMember WHERE ID = @ID";
+			SqlCommand command = new SqlCommand(sql, connection);
+			command.Parameters.AddWithValue("@ID", teamMember.ID);
+
+			connection.Open();
+			command.ExecuteNonQuery();
+			connection.Close();
+
+			Refresh();
+		}
+		#endregion
+
+
+		#region Schedule
+		public void InsertScheduleDay(ScheduleDay scheduleDay)
+		{
+			string sql = "INSERT INTO ScheduleDay (Date) VALUES (@Date)";
+			SqlCommand command = new SqlCommand(sql, connection);			
+			command.Parameters.AddWithValue("@Date", scheduleDay.Date);
+
+			connection.Open();
+			command.ExecuteNonQuery();
+			connection.Close();
+
+			Refresh();
+		}
+
+		public void UpdateScheduleDays()
+		{
+			string sql = "UPDATE ScheduleDay SET Date = @Date WHERE ID = @ID";
+			connection.Open();
+			foreach (ScheduleDay scheduleDay in ScheduleDays)
+			{
+				SqlCommand command = new SqlCommand(sql, connection);
+				command.Parameters.AddWithValue("@ID", scheduleDay.ID);
+				command.Parameters.AddWithValue("@Date", scheduleDay.Date);
+
+				int rowsAffected = command.ExecuteNonQuery();
+				Console.WriteLine(rowsAffected + " rows updated");
+				if (rowsAffected == 0)
+				{
+					// Handle the case where the update was not successful
+				}
+			}
+			connection.Close();
+
+			Refresh();
+		}
+
+
+		public void RemoveScheduleDay(ScheduleDay scheduleDay)
+		{
+			string sql = "DELETE FROM ScheduleDay WHERE ID = @ID";
+			SqlCommand command = new SqlCommand(sql, connection);
+			command.Parameters.AddWithValue("@ID", scheduleDay.ID);
+
+			connection.Open();
+			command.ExecuteNonQuery();
+			connection.Close();
+
+			Refresh();
+		}
+		#endregion
+
+		#region DailyTests Write
+		public void InsertDailyTest(DailyTest dailyTest)
+		{
+			string sql = "INSERT INTO DailyTest (TeamMemberID, ScheduleDayID, TestID, Comment) VALUES (@TeamMemberID, @ScheduleDayID, @TestID, @Comment)";
+			SqlCommand command = new SqlCommand(sql, connection);
+			command.Parameters.AddWithValue("@TeamMemberID", dailyTest.TeamMemberID);
+			command.Parameters.AddWithValue("@ScheduleDayID", dailyTest.ScheduleDayID);
+			command.Parameters.AddWithValue("@TestID", dailyTest.TestID);
+			command.Parameters.AddWithValue("@Comment", dailyTest.Comment);
+
+			connection.Open();
+			command.ExecuteNonQuery();
+			connection.Close();
+
+			Refresh();
+		}
+
+		public void UpdateDailyTests()
+		{
+			string sql = "UPDATE DailyTest SET TeamMemberID = @TeamMemberID, ScheduleDayID = @ScheduleDayID, TestID = @TestID, Comment = @Comment WHERE ID = @ID";
+			connection.Open();
+			foreach (DailyTest dailyTest in DailyTests)
+			{
+				SqlCommand command = new SqlCommand(sql, connection);
+				command.Parameters.AddWithValue("@TeamMemberID", dailyTest.TeamMemberID);
+				command.Parameters.AddWithValue("@ScheduleDayID", dailyTest.ScheduleDayID);
+				command.Parameters.AddWithValue("@TestID", dailyTest.TestID);
+				command.Parameters.AddWithValue("@Comment", dailyTest.Comment);
+				command.Parameters.AddWithValue("@ID", dailyTest.ID);
+
+				int rowsAffected = command.ExecuteNonQuery();
+				Console.WriteLine(rowsAffected + " rows updated");
+				if (rowsAffected == 0)
+				{
+					// Handle the case where the update was not successful
+				}
+			}
+			connection.Close();
+
+			Refresh();
+		}
+
+		public void RemoveDailyTest(DailyTest dailyTest)
+		{
+			string sql = "DELETE FROM DailyTest WHERE ID = @ID";
+			SqlCommand command = new SqlCommand(sql, connection);
+			command.Parameters.AddWithValue("@ID", dailyTest.ID);
+
+			connection.Open();
+			command.ExecuteNonQuery();
+			connection.Close();
+
+			Refresh();
+		}
+
+		#endregion
 	}
 }
