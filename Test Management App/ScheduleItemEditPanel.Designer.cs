@@ -165,8 +165,7 @@ namespace Test_Management_App
 			this.Controls.Add(this.searchTextBox);
 			this.Controls.Add(this.SaveButton);
 			this.Name = "ScheduleItemEditPanel";
-			this.Text = "ScheduleItemEditPanel";
-			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ScheduleItemEditPanel_FormClosed);
+			this.Text = "ScheduleItemEditPanel";			
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

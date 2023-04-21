@@ -30,47 +30,32 @@ namespace Test_Management_App
 		private void InitializeComponent()
 		{
 			this.testListPanel = new System.Windows.Forms.Panel();
-			this.EditButton = new System.Windows.Forms.Button();
 			this.RefreshButton = new System.Windows.Forms.Button();
 			this.NewButton = new System.Windows.Forms.Button();
 			this.CurrentFolderLabel = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.HierarchyPanel = new System.Windows.Forms.Panel();
-			this.label21 = new System.Windows.Forms.Label();
-			this.label22 = new System.Windows.Forms.Label();
-			this.label25 = new System.Windows.Forms.Label();
-			this.label26 = new System.Windows.Forms.Label();
-			this.label27 = new System.Windows.Forms.Label();
-			this.label30 = new System.Windows.Forms.Label();
-			this.label35 = new System.Windows.Forms.Label();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.treeView1 = new Test_Management_App.MyTreeView();
-			this.HierarchyPanel.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// testListPanel
 			// 
-			this.testListPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.testListPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.testListPanel.AutoScroll = true;
-			this.testListPanel.Location = new System.Drawing.Point(181, 80);
+			this.testListPanel.Location = new System.Drawing.Point(191, 91);
 			this.testListPanel.MinimumSize = new System.Drawing.Size(700, 225);
 			this.testListPanel.Name = "testListPanel";
 			this.testListPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-			this.testListPanel.Size = new System.Drawing.Size(811, 307);
+			this.testListPanel.Size = new System.Drawing.Size(811, 520);
 			this.testListPanel.TabIndex = 56;
-			// 
-			// EditButton
-			// 
-			this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.EditButton.BackColor = System.Drawing.Color.LightCyan;
-			this.EditButton.FlatAppearance.BorderSize = 0;
-			this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.EditButton.Location = new System.Drawing.Point(868, 49);
-			this.EditButton.Name = "EditButton";
-			this.EditButton.Size = new System.Drawing.Size(47, 23);
-			this.EditButton.TabIndex = 51;
-			this.EditButton.Text = "EDIT";
-			this.EditButton.UseVisualStyleBackColor = false;
 			// 
 			// RefreshButton
 			// 
@@ -78,7 +63,7 @@ namespace Test_Management_App
 			this.RefreshButton.BackColor = System.Drawing.Color.LightCyan;
 			this.RefreshButton.FlatAppearance.BorderSize = 0;
 			this.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.RefreshButton.Location = new System.Drawing.Point(921, 49);
+			this.RefreshButton.Location = new System.Drawing.Point(933, 35);
 			this.RefreshButton.Name = "RefreshButton";
 			this.RefreshButton.Size = new System.Drawing.Size(68, 23);
 			this.RefreshButton.TabIndex = 50;
@@ -92,7 +77,7 @@ namespace Test_Management_App
 			this.NewButton.BackColor = System.Drawing.Color.LightCyan;
 			this.NewButton.FlatAppearance.BorderSize = 0;
 			this.NewButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.NewButton.Location = new System.Drawing.Point(815, 49);
+			this.NewButton.Location = new System.Drawing.Point(880, 35);
 			this.NewButton.Name = "NewButton";
 			this.NewButton.Size = new System.Drawing.Size(47, 23);
 			this.NewButton.TabIndex = 49;
@@ -105,11 +90,11 @@ namespace Test_Management_App
 			this.CurrentFolderLabel.AutoSize = true;
 			this.CurrentFolderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.CurrentFolderLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
-			this.CurrentFolderLabel.Location = new System.Drawing.Point(177, 32);
+			this.CurrentFolderLabel.Location = new System.Drawing.Point(187, 32);
 			this.CurrentFolderLabel.Name = "CurrentFolderLabel";
-			this.CurrentFolderLabel.Size = new System.Drawing.Size(88, 24);
+			this.CurrentFolderLabel.Size = new System.Drawing.Size(54, 24);
 			this.CurrentFolderLabel.TabIndex = 47;
-			this.CurrentFolderLabel.Text = "/Folder A";
+			this.CurrentFolderLabel.Text = "\\Root";
 			// 
 			// label6
 			// 
@@ -117,121 +102,89 @@ namespace Test_Management_App
 			this.label6.BackColor = System.Drawing.Color.Transparent;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label6.Location = new System.Drawing.Point(12, 32);
+			this.label6.Location = new System.Drawing.Point(22, 32);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(87, 22);
 			this.label6.TabIndex = 64;
 			this.label6.Text = "Hierarchy";
 			// 
-			// HierarchyPanel
+			// panel1
 			// 
-			this.HierarchyPanel.Controls.Add(this.label21);
-			this.HierarchyPanel.Controls.Add(this.label22);
-			this.HierarchyPanel.Controls.Add(this.label25);
-			this.HierarchyPanel.Controls.Add(this.label26);
-			this.HierarchyPanel.Controls.Add(this.label27);
-			this.HierarchyPanel.Controls.Add(this.label30);
-			this.HierarchyPanel.Controls.Add(this.label35);
-			this.HierarchyPanel.Location = new System.Drawing.Point(12, 351);
-			this.HierarchyPanel.Name = "HierarchyPanel";
-			this.HierarchyPanel.Size = new System.Drawing.Size(163, 309);
-			this.HierarchyPanel.TabIndex = 65;
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.panel1.Controls.Add(this.label5);
+			this.panel1.Controls.Add(this.label4);
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Controls.Add(this.label2);
+			this.panel1.Controls.Add(this.label1);
+			this.panel1.Location = new System.Drawing.Point(191, 64);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(810, 21);
+			this.panel1.TabIndex = 67;
 			// 
-			// label21
+			// label5
 			// 
-			this.label21.AutoSize = true;
-			this.label21.BackColor = System.Drawing.Color.Transparent;
-			this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label21.Location = new System.Drawing.Point(7, 105);
-			this.label21.Name = "label21";
-			this.label21.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-			this.label21.Size = new System.Drawing.Size(114, 17);
-			this.label21.TabIndex = 70;
-			this.label21.Text = "◆ Subfolder E2";
+			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(645, 4);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(37, 13);
+			this.label5.TabIndex = 4;
+			this.label5.Text = "Status";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
-			// label22
+			// label4
 			// 
-			this.label22.AutoSize = true;
-			this.label22.BackColor = System.Drawing.Color.Transparent;
-			this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label22.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label22.Location = new System.Drawing.Point(8, 88);
-			this.label22.Name = "label22";
-			this.label22.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-			this.label22.Size = new System.Drawing.Size(114, 17);
-			this.label22.TabIndex = 69;
-			this.label22.Text = "◇ Subfolder E1";
+			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(759, 4);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(37, 13);
+			this.label4.TabIndex = 3;
+			this.label4.Text = "Result";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
-			// label25
+			// label3
 			// 
-			this.label25.AutoSize = true;
-			this.label25.BackColor = System.Drawing.Color.Transparent;
-			this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label25.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label25.Location = new System.Drawing.Point(8, 73);
-			this.label25.Name = "label25";
-			this.label25.Size = new System.Drawing.Size(75, 17);
-			this.label25.TabIndex = 68;
-			this.label25.Text = "◆ Folder E";
+			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(435, 4);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(74, 13);
+			this.label3.TabIndex = 2;
+			this.label3.Text = "Team member";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
-			// label26
+			// label2
 			// 
-			this.label26.AutoSize = true;
-			this.label26.BackColor = System.Drawing.Color.Transparent;
-			this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label26.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label26.Location = new System.Drawing.Point(8, 58);
-			this.label26.Name = "label26";
-			this.label26.Size = new System.Drawing.Size(76, 17);
-			this.label26.TabIndex = 67;
-			this.label26.Text = "◆ Folder D";
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(83, 4);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(35, 13);
+			this.label2.TabIndex = 1;
+			this.label2.Text = "Name";
 			// 
-			// label27
+			// label1
 			// 
-			this.label27.AutoSize = true;
-			this.label27.BackColor = System.Drawing.Color.Transparent;
-			this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label27.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label27.Location = new System.Drawing.Point(8, 43);
-			this.label27.Name = "label27";
-			this.label27.Size = new System.Drawing.Size(75, 17);
-			this.label27.TabIndex = 66;
-			this.label27.Text = "◇ Folder C";
-			// 
-			// label30
-			// 
-			this.label30.AutoSize = true;
-			this.label30.BackColor = System.Drawing.Color.Transparent;
-			this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label30.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label30.Location = new System.Drawing.Point(8, 28);
-			this.label30.Name = "label30";
-			this.label30.Size = new System.Drawing.Size(75, 17);
-			this.label30.TabIndex = 65;
-			this.label30.Text = "◆ Folder B";
-			// 
-			// label35
-			// 
-			this.label35.AutoSize = true;
-			this.label35.BackColor = System.Drawing.Color.Transparent;
-			this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label35.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.label35.Location = new System.Drawing.Point(8, 11);
-			this.label35.Name = "label35";
-			this.label35.Size = new System.Drawing.Size(75, 17);
-			this.label35.TabIndex = 64;
-			this.label35.Text = "◆ Folder A";
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(16, 4);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(18, 13);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "ID";
 			// 
 			// treeView1
 			// 
+			this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.treeView1.ForeColor = System.Drawing.Color.DarkSlateGray;
 			this.treeView1.LineColor = System.Drawing.Color.DarkSlateGray;
-			this.treeView1.Location = new System.Drawing.Point(12, 80);
+			this.treeView1.Location = new System.Drawing.Point(22, 64);
 			this.treeView1.Name = "treeView1";
-			this.treeView1.Size = new System.Drawing.Size(163, 265);
+			this.treeView1.Size = new System.Drawing.Size(163, 547);
 			this.treeView1.TabIndex = 66;
 			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
 			this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
@@ -241,18 +194,17 @@ namespace Test_Management_App
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1120, 660);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.treeView1);
-			this.Controls.Add(this.HierarchyPanel);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.testListPanel);
-			this.Controls.Add(this.EditButton);
 			this.Controls.Add(this.RefreshButton);
 			this.Controls.Add(this.NewButton);
 			this.Controls.Add(this.CurrentFolderLabel);
 			this.Name = "TestLibraryForm";
 			this.Text = "TestLibraryForm";
-			this.HierarchyPanel.ResumeLayout(false);
-			this.HierarchyPanel.PerformLayout();
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -261,19 +213,16 @@ namespace Test_Management_App
 		#endregion
 
 		private System.Windows.Forms.Panel testListPanel;
-		private System.Windows.Forms.Button EditButton;
 		private System.Windows.Forms.Button RefreshButton;
 		private System.Windows.Forms.Button NewButton;
 		private System.Windows.Forms.Label CurrentFolderLabel;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Panel HierarchyPanel;
-		private System.Windows.Forms.Label label21;
-		private System.Windows.Forms.Label label22;
-		private System.Windows.Forms.Label label25;
-		private System.Windows.Forms.Label label26;
-		private System.Windows.Forms.Label label27;
-		private System.Windows.Forms.Label label30;
-		private System.Windows.Forms.Label label35;		
 		private Test_Management_App.MyTreeView treeView1;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label5;
 	}
 }

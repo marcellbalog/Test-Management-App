@@ -31,6 +31,7 @@ namespace Test_Management_App
 
 
 			PopulateTreeView(mainForm.model.Folders);
+			
 		}
 
 		public void PopulateTestList(List<Test> data)
@@ -250,7 +251,7 @@ namespace Test_Management_App
 
 		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
 		{			
-			CurrentFolderLabel.Text = treeView1.SelectedNode.FullPath;
+			CurrentFolderLabel.Text = "\\"+treeView1.SelectedNode.FullPath;
 			
 			Folder selectedFolder = (Folder)treeView1.SelectedNode.Tag;
 
@@ -281,8 +282,6 @@ namespace Test_Management_App
 
 			return descendantFolderIds;
 		}
-
-
 	}
 
 

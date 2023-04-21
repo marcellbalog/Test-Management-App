@@ -126,10 +126,5 @@ namespace Test_Management_App
 
 			this.Close();
 		}
-
-		private void ScheduleItemEditPanel_FormClosed(object sender, FormClosedEventArgs e)
-		{
-			Console.WriteLine("closign");
-		}
 	}
 }

@@ -64,9 +64,9 @@ namespace Test_Management_App
 			this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.settingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.settingsButton.ForeColor = System.Drawing.Color.Aqua;
-			this.settingsButton.Location = new System.Drawing.Point(414, 22);
+			this.settingsButton.Location = new System.Drawing.Point(412, 22);
 			this.settingsButton.Name = "settingsButton";
-			this.settingsButton.Size = new System.Drawing.Size(94, 30);
+			this.settingsButton.Size = new System.Drawing.Size(88, 30);
 			this.settingsButton.TabIndex = 12;
 			this.settingsButton.Text = "Settings";
 			this.settingsButton.UseVisualStyleBackColor = false;
