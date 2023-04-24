@@ -70,6 +70,7 @@
       <DependentUpon>AnalyticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data classes\DailyTest.cs" />
+    <Compile Include="Data classes\Execution.cs" />
     <Compile Include="Data classes\Folder.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -110,6 +111,12 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data classes\Step.cs" />
+    <Compile Include="User Controls\ExecutionRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ExecutionRow.Designer.cs">
+      <DependentUpon>ExecutionRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\StepRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleItemEditPanel.resx">
       <DependentUpon>ScheduleItemEditPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ExecutionRow.resx">
+      <DependentUpon>ExecutionRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\StepRow.resx">
       <DependentUpon>StepRow.cs</DependentUpon>
