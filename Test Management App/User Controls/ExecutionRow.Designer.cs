@@ -1,5 +1,5 @@
 ﻿
-namespace Test_Management_App.User_Controls
+namespace Test_Management_App
 {
 	partial class ExecutionRow
 	{

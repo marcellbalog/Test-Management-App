@@ -18,6 +18,7 @@ namespace Test_Management_App
 		public List<TeamMember> TeamMembers = new List<TeamMember>();
 		public List<ScheduleDay> ScheduleDays = new List<ScheduleDay>();
 		public List<DailyTest> DailyTests = new List<DailyTest>();
+		public List<Execution> Executions = new List<Execution>();
 
 		// Mapping from status values to their names
 		public Dictionary<int, string> StatusNames = new Dictionary<int, string>()
@@ -40,7 +41,7 @@ namespace Test_Management_App
 			LoadSteps();
 			LoadScheduleDays();
 			LoadDailyTests();
-
+			LoadExecutions();
 		}
 
 
@@ -206,7 +207,34 @@ namespace Test_Management_App
 			reader.Close();
 			connection.Close();
 		}
-		
+
+		private void LoadExecutions()
+		{
+			string sql = "SELECT * FROM Execution";
+			SqlCommand command = new SqlCommand(sql, connection);
+			connection.Open();
+			SqlDataReader reader = command.ExecuteReader();
+
+			while (reader.Read())
+			{
+				Execution item = new Execution
+				{
+					ID = (int)reader["ID"],
+					TestID = (int)reader["TestID"],
+					Date = (DateTime)reader["Date"],
+					Time = (int)reader["Time"],
+					Result = (int)reader["Result"],
+					FailedStepID = (int)reader["FailedStepID"],
+					Comment = reader["Comment"].ToString()
+				};
+
+				Executions.Add(item);
+			}
+
+			reader.Close();
+			connection.Close();
+		}
+
 
 		public List<Test> GetData()
 		{

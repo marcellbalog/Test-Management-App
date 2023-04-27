@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Test_Management_App.User_Controls
+namespace Test_Management_App
 {
 	public partial class ExecutionRow : UserControl
 	{
@@ -18,3 +18,4 @@ namespace Test_Management_App.User_Controls
 		}
 	}
 }
+
