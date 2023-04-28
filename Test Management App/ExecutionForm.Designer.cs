@@ -29,14 +29,16 @@ namespace Test_Management_App
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
+			this.buttonStart = new System.Windows.Forms.Button();
+			this.buttonPause = new System.Windows.Forms.Button();
+			this.buttonStop = new System.Windows.Forms.Button();
+			this.labelTime = new System.Windows.Forms.Label();
 			this.labelInfo = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.SuspendLayout();
 			// 
 			// flowLayoutPanel
@@ -46,54 +48,57 @@ namespace Test_Management_App
 			this.flowLayoutPanel.Size = new System.Drawing.Size(378, 317);
 			this.flowLayoutPanel.TabIndex = 0;
 			// 
-			// button1
+			// buttonStart
 			// 
-			this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-			this.button1.FlatAppearance.BorderSize = 3;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.button1.Location = new System.Drawing.Point(36, 27);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(47, 42);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "▶";
-			this.button1.UseVisualStyleBackColor = true;
+			this.buttonStart.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+			this.buttonStart.FlatAppearance.BorderSize = 3;
+			this.buttonStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.buttonStart.Location = new System.Drawing.Point(36, 27);
+			this.buttonStart.Name = "buttonStart";
+			this.buttonStart.Size = new System.Drawing.Size(47, 42);
+			this.buttonStart.TabIndex = 1;
+			this.buttonStart.Text = "▶";
+			this.buttonStart.UseVisualStyleBackColor = true;
+			this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
 			// 
-			// button2
+			// buttonPause
 			// 
-			this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-			this.button2.FlatAppearance.BorderSize = 3;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.button2.Location = new System.Drawing.Point(89, 27);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(47, 42);
-			this.button2.TabIndex = 2;
-			this.button2.Text = "⏸";
-			this.button2.UseVisualStyleBackColor = true;
+			this.buttonPause.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+			this.buttonPause.FlatAppearance.BorderSize = 3;
+			this.buttonPause.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.buttonPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.buttonPause.Location = new System.Drawing.Point(89, 27);
+			this.buttonPause.Name = "buttonPause";
+			this.buttonPause.Size = new System.Drawing.Size(47, 42);
+			this.buttonPause.TabIndex = 2;
+			this.buttonPause.Text = "⏸";
+			this.buttonPause.UseVisualStyleBackColor = true;
+			this.buttonPause.Click += new System.EventHandler(this.buttonPause_Click);
 			// 
-			// button3
+			// buttonStop
 			// 
-			this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-			this.button3.FlatAppearance.BorderSize = 3;
-			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.button3.Location = new System.Drawing.Point(142, 27);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(47, 42);
-			this.button3.TabIndex = 3;
-			this.button3.Text = "⬛";
-			this.button3.UseVisualStyleBackColor = true;
+			this.buttonStop.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+			this.buttonStop.FlatAppearance.BorderSize = 3;
+			this.buttonStop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.buttonStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.buttonStop.Location = new System.Drawing.Point(142, 27);
+			this.buttonStop.Name = "buttonStop";
+			this.buttonStop.Size = new System.Drawing.Size(47, 42);
+			this.buttonStop.TabIndex = 3;
+			this.buttonStop.Text = "⬛";
+			this.buttonStop.UseVisualStyleBackColor = true;
+			this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
 			// 
-			// label1
+			// labelTime
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label1.Location = new System.Drawing.Point(195, 31);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(120, 31);
-			this.label1.TabIndex = 4;
-			this.label1.Text = "00:00:00";
+			this.labelTime.AutoSize = true;
+			this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.labelTime.Location = new System.Drawing.Point(195, 31);
+			this.labelTime.Name = "labelTime";
+			this.labelTime.Size = new System.Drawing.Size(120, 31);
+			this.labelTime.TabIndex = 4;
+			this.labelTime.Text = "00:00:00";
 			// 
 			// labelInfo
 			// 
@@ -131,10 +136,10 @@ namespace Test_Management_App
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.labelInfo);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.labelTime);
+			this.Controls.Add(this.buttonStop);
+			this.Controls.Add(this.buttonPause);
+			this.Controls.Add(this.buttonStart);
 			this.Controls.Add(this.flowLayoutPanel);
 			this.Name = "ExecutionForm";
 			this.Text = "ExecutionForm";
@@ -146,12 +151,13 @@ namespace Test_Management_App
 		#endregion
 
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button buttonStart;
+		private System.Windows.Forms.Button buttonPause;
+		private System.Windows.Forms.Button buttonStop;
+		private System.Windows.Forms.Label labelTime;
 		private System.Windows.Forms.Label labelInfo;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Timer timer1;
 	}
 }
