@@ -38,7 +38,7 @@ namespace Test_Management_App
 			// Load tests from db
 			foreach (Execution item in execs)
 			{
-				ExecutionRow er = new ExecutionRow();
+				ExecutionRow er = new ExecutionRow(item);
 				exeRows.Add(er);
 				flowLayoutPanel.Controls.Add(er);
 				er.Dock = DockStyle.Top;

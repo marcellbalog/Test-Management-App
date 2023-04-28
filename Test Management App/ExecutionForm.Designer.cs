@@ -34,13 +34,16 @@ namespace Test_Management_App
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
+			this.labelInfo = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// flowLayoutPanel
 			// 
 			this.flowLayoutPanel.Location = new System.Drawing.Point(36, 94);
 			this.flowLayoutPanel.Name = "flowLayoutPanel";
-			this.flowLayoutPanel.Size = new System.Drawing.Size(723, 317);
+			this.flowLayoutPanel.Size = new System.Drawing.Size(378, 317);
 			this.flowLayoutPanel.TabIndex = 0;
 			// 
 			// button1
@@ -92,11 +95,42 @@ namespace Test_Management_App
 			this.label1.TabIndex = 4;
 			this.label1.Text = "00:00:00";
 			// 
+			// labelInfo
+			// 
+			this.labelInfo.AutoSize = true;
+			this.labelInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.labelInfo.Location = new System.Drawing.Point(439, 94);
+			this.labelInfo.Name = "labelInfo";
+			this.labelInfo.Size = new System.Drawing.Size(151, 26);
+			this.labelInfo.TabIndex = 5;
+			this.labelInfo.Text = "Failed at Step 14";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(439, 161);
+			this.textBox1.Multiline = true;
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(323, 250);
+			this.textBox1.TabIndex = 6;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(439, 142);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(54, 13);
+			this.label2.TabIndex = 7;
+			this.label2.Text = "Comment:";
+			// 
 			// ExecutionForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.labelInfo);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button2);
@@ -116,5 +150,8 @@ namespace Test_Management_App
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label labelInfo;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Label label2;
 	}
 }

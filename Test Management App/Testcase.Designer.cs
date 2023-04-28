@@ -37,9 +37,10 @@ namespace Test_Management_App
 			this.textBoxDescription = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.stepsPanel = new System.Windows.Forms.Panel();
+			this.stepFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.NewButton = new System.Windows.Forms.Button();
 			this.DeleteButton = new System.Windows.Forms.Button();
-			this.stepFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.button1 = new System.Windows.Forms.Button();
 			this.stepsPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -132,6 +133,16 @@ namespace Test_Management_App
 			this.stepsPanel.Size = new System.Drawing.Size(747, 260);
 			this.stepsPanel.TabIndex = 63;
 			// 
+			// stepFlowLayoutPanel
+			// 
+			this.stepFlowLayoutPanel.AutoScroll = true;
+			this.stepFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+			this.stepFlowLayoutPanel.Location = new System.Drawing.Point(0, 25);
+			this.stepFlowLayoutPanel.Name = "stepFlowLayoutPanel";
+			this.stepFlowLayoutPanel.Size = new System.Drawing.Size(747, 235);
+			this.stepFlowLayoutPanel.TabIndex = 66;
+			this.stepFlowLayoutPanel.WrapContents = false;
+			// 
 			// NewButton
 			// 
 			this.NewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -160,15 +171,15 @@ namespace Test_Management_App
 			this.DeleteButton.UseVisualStyleBackColor = false;
 			this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
 			// 
-			// stepFlowLayoutPanel
+			// button1
 			// 
-			this.stepFlowLayoutPanel.AutoScroll = true;
-			this.stepFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			this.stepFlowLayoutPanel.Location = new System.Drawing.Point(0, 25);
-			this.stepFlowLayoutPanel.Name = "stepFlowLayoutPanel";
-			this.stepFlowLayoutPanel.Size = new System.Drawing.Size(747, 235);
-			this.stepFlowLayoutPanel.TabIndex = 66;
-			this.stepFlowLayoutPanel.WrapContents = false;
+			this.button1.Location = new System.Drawing.Point(255, 3);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 66;
+			this.button1.Text = "Execution";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// Testcase
 			// 
@@ -176,6 +187,7 @@ namespace Test_Management_App
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.ClientSize = new System.Drawing.Size(800, 532);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.DeleteButton);
 			this.Controls.Add(this.NewButton);
 			this.Controls.Add(this.stepsPanel);
@@ -207,5 +219,6 @@ namespace Test_Management_App
 		private System.Windows.Forms.Button NewButton;
 		private System.Windows.Forms.Button DeleteButton;
 		private System.Windows.Forms.FlowLayoutPanel stepFlowLayoutPanel;
+		private System.Windows.Forms.Button button1;
 	}
 }
