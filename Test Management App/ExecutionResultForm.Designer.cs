@@ -30,10 +30,11 @@ namespace Test_Management_App
 		private void InitializeComponent()
 		{
 			this.label1 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.comboBoxResult = new System.Windows.Forms.ComboBox();
+			this.textBoxComment = new System.Windows.Forms.TextBox();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.SaveButton = new System.Windows.Forms.Button();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
@@ -48,29 +49,29 @@ namespace Test_Management_App
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Result of XY test running";
 			// 
-			// comboBox1
+			// comboBoxResult
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(3, 3);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(121, 21);
-			this.comboBox1.TabIndex = 1;
-			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+			this.comboBoxResult.FormattingEnabled = true;
+			this.comboBoxResult.Location = new System.Drawing.Point(3, 3);
+			this.comboBoxResult.Name = "comboBoxResult";
+			this.comboBoxResult.Size = new System.Drawing.Size(121, 21);
+			this.comboBoxResult.TabIndex = 1;
+			this.comboBoxResult.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
 			// 
-			// textBox1
+			// textBoxComment
 			// 
-			this.textBox1.Location = new System.Drawing.Point(16, 100);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(442, 112);
-			this.textBox1.TabIndex = 2;
+			this.textBoxComment.Location = new System.Drawing.Point(16, 100);
+			this.textBoxComment.Multiline = true;
+			this.textBoxComment.Name = "textBoxComment";
+			this.textBoxComment.Size = new System.Drawing.Size(442, 112);
+			this.textBoxComment.TabIndex = 2;
 			// 
 			// flowLayoutPanel1
 			// 
 			this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.flowLayoutPanel1.AutoSize = true;
 			this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.flowLayoutPanel1.Controls.Add(this.comboBox1);
+			this.flowLayoutPanel1.Controls.Add(this.comboBoxResult);
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(157, 3);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(127, 26);
@@ -88,13 +89,28 @@ namespace Test_Management_App
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(442, 32);
 			this.tableLayoutPanel1.TabIndex = 4;
 			// 
+			// SaveButton
+			// 
+			this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.SaveButton.BackColor = System.Drawing.Color.LightCyan;
+			this.SaveButton.FlatAppearance.BorderSize = 0;
+			this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.SaveButton.Location = new System.Drawing.Point(411, 13);
+			this.SaveButton.Name = "SaveButton";
+			this.SaveButton.Size = new System.Drawing.Size(47, 23);
+			this.SaveButton.TabIndex = 53;
+			this.SaveButton.Text = "SAVE";
+			this.SaveButton.UseVisualStyleBackColor = false;
+			this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+			// 
 			// ExecutionResultForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(480, 224);
+			this.Controls.Add(this.SaveButton);
 			this.Controls.Add(this.tableLayoutPanel1);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.textBoxComment);
 			this.Controls.Add(this.label1);
 			this.Name = "ExecutionResultForm";
 			this.Text = "ExecutionResultForm";
@@ -109,9 +125,10 @@ namespace Test_Management_App
 		#endregion
 
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.ComboBox comboBoxResult;
+		private System.Windows.Forms.TextBox textBoxComment;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+		private System.Windows.Forms.Button SaveButton;
 	}
 }

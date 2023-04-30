@@ -14,12 +14,14 @@ namespace Test_Management_App
 	{
 		private MainForm mainForm;
 		private Test thisTest;
-		private Execution thisExecution;
+		private Execution thisExecution = new Execution();
 
-		Label popupLabel = new Label();
-		ComboBox popupComboBox = new ComboBox();
+		private double timeInSeconds;
 
-		public ExecutionResultForm(MainForm mf, Test t)
+		private Label popupLabel = new Label();
+		private ComboBox popupComboBox = new ComboBox();
+
+		public ExecutionResultForm(MainForm mf, Test t, double time)
 		{
 			InitializeComponent();
 
@@ -27,13 +29,15 @@ namespace Test_Management_App
 			thisTest = t;
 			//thisExecution = e;
 
-			comboBox1.Items.AddRange(new string[]{"Success", "Fail", "Terminated"});
-			comboBox1.SelectedIndex = 0;			
+			timeInSeconds = time;
+
+			comboBoxResult.Items.AddRange(new string[]{"Success", "Fail", "Terminated"});
+			comboBoxResult.SelectedIndex = 0;			
 		}
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (comboBox1.SelectedIndex == 1)
+			if (comboBoxResult.SelectedIndex == 1)
 			{				
 				popupLabel.Text = "at step:";
 				popupLabel.AutoSize = true;
@@ -53,6 +57,18 @@ namespace Test_Management_App
 				flowLayoutPanel1.Controls.Remove(popupLabel);
 				flowLayoutPanel1.Controls.Remove(popupComboBox);
 			}
+		}
+
+		private void SaveButton_Click(object sender, EventArgs e)
+		{
+			thisExecution.TestID = thisTest.ID;
+			thisExecution.Date = DateTime.Now;
+			thisExecution.Result = comboBoxResult.SelectedIndex;
+			thisExecution.Time = timeInSeconds;
+			thisExecution.FailedStepID = popupComboBox.SelectedIndex;
+			thisExecution.Comment = textBoxComment.Text;
+			
+			mainForm.model.InsertExecution(thisExecution);
 		}
 	}
 }

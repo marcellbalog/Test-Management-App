@@ -16,7 +16,7 @@ namespace Test_Management_App
 		private MainForm mainForm;
 		private Test thisTest;
 
-		private List<ExecutionRow> exeRows;
+		private List<ExecutionRow> exeRows = new List<ExecutionRow>();
 		Timer timer;
 		Stopwatch sw;
 
@@ -27,6 +27,9 @@ namespace Test_Management_App
 			mainForm = mf;
 			thisTest = t;
 			Setup();
+
+			buttonStop.Enabled = false;
+			buttonPause.Enabled = false;
 		}
 
 		private void Setup()
@@ -41,15 +44,14 @@ namespace Test_Management_App
 			// Load tests from db
 			foreach (Execution item in execs)
 			{
-				ExecutionRow er = new ExecutionRow(item);
+				ExecutionRow er = new ExecutionRow(item, this);
 				exeRows.Add(er);
 				flowLayoutPanel.Controls.Add(er);
 				er.Dock = DockStyle.Top;
 				er.MinimumSize = new Size(default, 72);
 			}
 
-			buttonStop.Enabled = false;
-			buttonPause.Enabled = false;
+			UpdateSideInfo(execs.First());
 		}
 
 		private void buttonStart_Click(object sender, EventArgs e)
@@ -101,7 +103,7 @@ namespace Test_Management_App
 			buttonStop.Enabled = false;
 			buttonPause.Enabled = false;
 
-			ExecutionResultForm ef = new ExecutionResultForm(mainForm, thisTest);
+			ExecutionResultForm ef = new ExecutionResultForm(mainForm, thisTest, sw.Elapsed.TotalSeconds);
 			ef.Show();
 		}
 
@@ -110,5 +112,20 @@ namespace Test_Management_App
 			labelTime.Text = sw.Elapsed.ToString(@"mm\:ss\:ff");
 		}
 
+		private void RefreshButton_Click(object sender, EventArgs e)
+		{
+			Setup();
+		}
+
+		public void UpdateSideInfo(Execution e)
+		{
+			if (e.Result == 0)
+				labelInfo.Text = "Failed at step: " + e.FailedStepID;
+			else if (e.Result == 1)
+				labelInfo.Text = "Success";
+			else if (e.Result == 2)
+				labelInfo.Text = "Terminated";
+			textBoxComment.Text = e.Comment;
+		}
 	}
 }

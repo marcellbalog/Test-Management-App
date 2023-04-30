@@ -222,7 +222,7 @@ namespace Test_Management_App
 					ID = (int)reader["ID"],
 					TestID = (int)reader["TestID"],
 					Date = (DateTime)reader["Date"],
-					Time = (int)reader["Time"],
+					Time = (double)reader["Time"],
 					Result = (int)reader["Result"],
 					FailedStepID = (int)reader["FailedStepID"],
 					Comment = reader["Comment"].ToString()
@@ -248,7 +248,8 @@ namespace Test_Management_App
 			Steps.Clear();
 			TeamMembers.Clear();
 			ScheduleDays.Clear();
-			DailyTests.Clear();			
+			DailyTests.Clear();
+			Executions.Clear();
 
 			LoadTeamMembers();
 			LoadFolders();
@@ -256,6 +257,7 @@ namespace Test_Management_App
 			LoadSteps();
 			LoadScheduleDays();
 			LoadDailyTests();
+			LoadExecutions();
 		}
 
 		#region Test Write
@@ -495,7 +497,7 @@ namespace Test_Management_App
 		#endregion
 
 
-		#region Schedule
+		#region Schedule Write
 		public void InsertScheduleDay(ScheduleDay scheduleDay)
 		{
 			string sql = "INSERT INTO ScheduleDay (Date) VALUES (@Date)";
@@ -601,6 +603,71 @@ namespace Test_Management_App
 			Refresh();
 		}
 
+		#endregion
+
+		#region Execution Write
+		public void InsertExecution(Execution execution)
+		{
+			string sql = "INSERT INTO Execution (TestID, Date, Time, Result, FailedStepID, Comment) VALUES (@TestID, @Date, @Time, @Result, @FailedStepID, @Comment)";
+			SqlCommand command = new SqlCommand(sql, connection);			
+			command.Parameters.AddWithValue("@TestID", execution.TestID);
+			command.Parameters.AddWithValue("@Date", execution.Date);
+			command.Parameters.AddWithValue("@Time", execution.Time);
+			command.Parameters.AddWithValue("@Result", execution.Result);
+			command.Parameters.AddWithValue("@FailedStepID", execution.FailedStepID);
+			command.Parameters.AddWithValue("@Comment", execution.Comment);
+
+			connection.Open();
+			command.ExecuteNonQuery();
+			connection.Close();
+
+			Refresh();
+		}
+
+		public void UpdateExecutions()
+		{
+			string sql = "UPDATE Execution SET TestID = @TestID, Date = @Date, Time = @Time, Result = @Result, FailedStepID = @FailedStepID, Comment = @Comment WHERE ID = @ID";
+			connection.Open();
+			foreach (Execution execution in Executions)
+			{
+				SqlCommand command = new SqlCommand(sql, connection);
+				command.Parameters.AddWithValue("@TestID", execution.TestID);
+				command.Parameters.AddWithValue("@Date", execution.Date);
+				command.Parameters.AddWithValue("@Time", execution.Time);
+				command.Parameters.AddWithValue("@Result", execution.Result);
+				command.Parameters.AddWithValue("@FailedStepID", execution.FailedStepID);
+				command.Parameters.AddWithValue("@Comment", execution.Comment);
+				command.Parameters.AddWithValue("@ID", execution.ID);
+
+				int rowsAffected = command.ExecuteNonQuery();
+				Console.WriteLine(rowsAffected + " rows updated");
+				if (rowsAffected == 0)
+				{
+					// Handle the case where the update was not successful
+				}
+			}
+			connection.Close();
+
+			Refresh();
+		}
+
+		public void RemoveExecution(int id)
+		{
+			string sql = "DELETE FROM Execution WHERE ID = @ID";
+			SqlCommand command = new SqlCommand(sql, connection);
+			command.Parameters.AddWithValue("@ID", id);
+
+			connection.Open();
+			int rowsAffected = command.ExecuteNonQuery();
+			Console.WriteLine(rowsAffected + " rows deleted");
+			if (rowsAffected == 0)
+			{
+				// Handle the case where the delete was not successful
+			}
+			connection.Close();
+
+			Refresh();
+		}
 		#endregion
 	}
 }

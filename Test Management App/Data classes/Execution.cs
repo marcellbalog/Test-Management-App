@@ -10,7 +10,7 @@ public class Execution
 	public int ID { get; set; }
 	public int TestID { get; set; }
 	public DateTime Date { get; set; }
-	public int Time { get; set; }
+	public double Time { get; set; }
 	public int Result { get; set; }
 	public int FailedStepID { get; set; }
 	public string Comment { get; set; }
