@@ -62,6 +62,7 @@ namespace Test_Management_App
 					Description = reader["Description"].ToString(),
 					Status = (int)reader["Status"],
 					Result = (int)reader["Result"],
+					Precondition = reader["Precondition"].ToString(),
 				};
 
 				int folderId = (int)reader["FolderID"];
@@ -198,7 +199,8 @@ namespace Test_Management_App
 					TeamMemberID = (int)reader["TeamMemberID"],
 					ScheduleDayID = (int)reader["ScheduleDayID"],
 					TestID = (int)reader["TestID"],
-					Comment = reader["Comment"].ToString()
+					Comment = reader["Comment"].ToString(),
+					Action = (int)reader["Action"]
 				};
 
 				DailyTests.Add(item);
@@ -263,7 +265,7 @@ namespace Test_Management_App
 		#region Test Write
 		public void UpdateTests()
 		{
-			string sql = "UPDATE Test SET FolderID = @FolderID, TeamMemberID = @TeamMemberID, TestName = @TestName, Description = @Description, Status = @Status, Result = @Result WHERE ID = @ID";
+			string sql = "UPDATE Test SET FolderID = @FolderID, TeamMemberID = @TeamMemberID, TestName = @TestName, Description = @Description, Status = @Status, Precondition = @Precondition, Result = @Result WHERE ID = @ID";
 			connection.Open();
 			foreach (Test test in Tests)
 			{
@@ -275,6 +277,7 @@ namespace Test_Management_App
 				command.Parameters.AddWithValue("@Status", test.Status);
 				command.Parameters.AddWithValue("@Result", test.Result);
 				command.Parameters.AddWithValue("@ID", test.ID);
+				command.Parameters.AddWithValue("@Precondition", test.Precondition);
 
 				int rowsAffected = command.ExecuteNonQuery();
 				Console.WriteLine(rowsAffected + "rows updated");
@@ -290,7 +293,7 @@ namespace Test_Management_App
 
 		public void InsertTest(Test test)
 		{
-			string sql = "INSERT INTO Test (FolderID, TeamMemberID, TestName, Description, Status, Result) VALUES (@FolderID, @TeamMemberID, @TestName, @Description, @Status, @Result)";
+			string sql = "INSERT INTO Test (FolderID, TeamMemberID, TestName, Description, Status, Result, Precondition) VALUES (@FolderID, @TeamMemberID, @TestName, @Description, @Status, @Result, @Precondition)";
 			SqlCommand command = new SqlCommand(sql, connection);
 			command.Parameters.AddWithValue("@FolderID", test.FolderID);
 			command.Parameters.AddWithValue("@TeamMemberID", test.TeamMemberID);
@@ -298,6 +301,7 @@ namespace Test_Management_App
 			command.Parameters.AddWithValue("@Description", test.Description);
 			command.Parameters.AddWithValue("@Status", test.Status);
 			command.Parameters.AddWithValue("@Result", test.Result);
+			command.Parameters.AddWithValue("@Precondition", test.Precondition);
 
 			connection.Open();
 			command.ExecuteNonQuery();
@@ -551,12 +555,13 @@ namespace Test_Management_App
 		#region DailyTests Write
 		public void InsertDailyTest(DailyTest dailyTest)
 		{
-			string sql = "INSERT INTO DailyTest (TeamMemberID, ScheduleDayID, TestID, Comment) VALUES (@TeamMemberID, @ScheduleDayID, @TestID, @Comment)";
+			string sql = "INSERT INTO DailyTest (TeamMemberID, ScheduleDayID, TestID, Comment, Action) VALUES (@TeamMemberID, @ScheduleDayID, @TestID, @Comment, @Action)";
 			SqlCommand command = new SqlCommand(sql, connection);
 			command.Parameters.AddWithValue("@TeamMemberID", dailyTest.TeamMemberID);
 			command.Parameters.AddWithValue("@ScheduleDayID", dailyTest.ScheduleDayID);
 			command.Parameters.AddWithValue("@TestID", dailyTest.TestID);
 			command.Parameters.AddWithValue("@Comment", dailyTest.Comment);
+			command.Parameters.AddWithValue("@Action", dailyTest.Action);
 
 			connection.Open();
 			command.ExecuteNonQuery();
@@ -567,7 +572,7 @@ namespace Test_Management_App
 
 		public void UpdateDailyTests()
 		{
-			string sql = "UPDATE DailyTest SET TeamMemberID = @TeamMemberID, ScheduleDayID = @ScheduleDayID, TestID = @TestID, Comment = @Comment WHERE ID = @ID";
+			string sql = "UPDATE DailyTest SET TeamMemberID = @TeamMemberID, ScheduleDayID = @ScheduleDayID, TestID = @TestID, Comment = @Comment, Action = @Action WHERE ID = @ID";
 			connection.Open();
 			foreach (DailyTest dailyTest in DailyTests)
 			{
@@ -577,6 +582,7 @@ namespace Test_Management_App
 				command.Parameters.AddWithValue("@TestID", dailyTest.TestID);
 				command.Parameters.AddWithValue("@Comment", dailyTest.Comment);
 				command.Parameters.AddWithValue("@ID", dailyTest.ID);
+				command.Parameters.AddWithValue("@Action", dailyTest.Action);				
 
 				int rowsAffected = command.ExecuteNonQuery();
 				Console.WriteLine(rowsAffected + " rows updated");

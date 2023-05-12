@@ -13,5 +13,6 @@ namespace Test_Management_App
 		public int ScheduleDayID { get; set; }
 		public int TestID { get; set; }
 		public string Comment { get; set; }
+		public int Action { get; set; }
 	}
 }

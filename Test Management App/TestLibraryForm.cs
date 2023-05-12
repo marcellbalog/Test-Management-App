@@ -38,7 +38,13 @@ namespace Test_Management_App
 		{
 			Debug.WriteLine(data.Count());
 			testListPanel.Controls.Clear();
-			foreach (Test item in data)
+
+			// ehelyett estleg flowlayoutot
+			List<Test> orderedTests = data
+				.OrderByDescending(t => t.ID)
+				.ToList();
+
+			foreach (Test item in orderedTests)
 			{
 				TestRow tr = new TestRow (item, mainForm);
 				testRows.Add(tr);				
