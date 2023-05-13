@@ -51,7 +51,9 @@ namespace Test_Management_App
 				er.MinimumSize = new Size(default, 72);
 			}
 
-			UpdateSideInfo(execs.First());
+
+			if (execs.Count > 0)
+				UpdateSideInfo(execs.First());
 		}
 
 		private void buttonStart_Click(object sender, EventArgs e)

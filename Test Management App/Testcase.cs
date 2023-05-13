@@ -93,12 +93,12 @@ namespace Test_Management_App
 
 		private void TestNameInput_Enter(object sender, EventArgs e)
 		{
-			TestNameInput.BackColor = Color.White;
+			TestNameInput.BackColor = Color.LightSeaGreen;
 		}
 
 		private void TestNameInput_Leave(object sender, EventArgs e)
 		{
-			TestNameInput.BackColor = Color.WhiteSmoke;
+			TestNameInput.BackColor = Color.DarkSlateGray;
 		}
 
 		public void PopulateStepList()
