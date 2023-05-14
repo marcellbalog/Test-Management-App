@@ -53,9 +53,13 @@ namespace Test_Management_App
 			this.label9 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.label10 = new System.Windows.Forms.Label();
+			this.TestResult = new System.Windows.Forms.PictureBox();
+			this.resultLabel = new System.Windows.Forms.Label();
 			this.stepsPanel.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.TestResult)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// SaveButton
@@ -301,6 +305,9 @@ namespace Test_Management_App
 			this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel2.BackColor = System.Drawing.Color.LightBlue;
+			this.panel2.Controls.Add(this.resultLabel);
+			this.panel2.Controls.Add(this.TestResult);
+			this.panel2.Controls.Add(this.label10);
 			this.panel2.Controls.Add(this.label9);
 			this.panel2.Controls.Add(this.textBoxDescription);
 			this.panel2.Controls.Add(this.textBox1);
@@ -324,6 +331,35 @@ namespace Test_Management_App
 			this.panel3.Size = new System.Drawing.Size(810, 66);
 			this.panel3.TabIndex = 74;
 			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(481, 148);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(107, 13);
+			this.label10.TabIndex = 73;
+			this.label10.Text = "Last execution result:";
+			// 
+			// TestResult
+			// 
+			this.TestResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.TestResult.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.TestResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.TestResult.Location = new System.Drawing.Point(594, 144);
+			this.TestResult.Name = "TestResult";
+			this.TestResult.Size = new System.Drawing.Size(25, 25);
+			this.TestResult.TabIndex = 74;
+			this.TestResult.TabStop = false;
+			// 
+			// resultLabel
+			// 
+			this.resultLabel.AutoSize = true;
+			this.resultLabel.Location = new System.Drawing.Point(625, 148);
+			this.resultLabel.Name = "resultLabel";
+			this.resultLabel.Size = new System.Drawing.Size(57, 13);
+			this.resultLabel.TabIndex = 75;
+			this.resultLabel.Text = "SUCCESS";
+			// 
 			// Testcase
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,6 +382,7 @@ namespace Test_Management_App
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.TestResult)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -377,5 +414,8 @@ namespace Test_Management_App
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label resultLabel;
+		public System.Windows.Forms.PictureBox TestResult;
 	}
 }

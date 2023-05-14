@@ -157,7 +157,7 @@ namespace Test_Management_App
 			this.Controls.Add(this.pageFormPanel);
 			this.Controls.Add(this.panel1);
 			this.Name = "MainForm";
-			this.Text = "Form1";
+			this.Text = "Test Management Tool";
 			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();

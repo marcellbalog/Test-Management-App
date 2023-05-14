@@ -85,12 +85,25 @@ namespace Test_Management_App
 				var tests = mainForm.model.DailyTests.FindAll(test => activeDays.Any(ad => ad.ID == test.ScheduleDayID && ad.Date.Date == date.Date)).ToList();
 				weeklyTests.AddRange(tests);
 
-				foreach (var test in tests)
+				foreach (var dtest in tests)
 				{
 					// Create a new user control and add it to the panel
-					ScheduleItem newItem = new ScheduleItem(mainForm, test, this);
+					ScheduleItem newItem = new ScheduleItem(mainForm, dtest, this);
 					panels[i].Controls.Add(newItem);
 					newItem.Dock = DockStyle.Top;
+					
+					switch (dtest.Action)
+					{
+						case 0:
+							newItem.BackColor = Color.Khaki;
+								break;
+						case 1:
+							newItem.BackColor = Color.DeepSkyBlue;
+								break;
+						case 2:
+							newItem.BackColor = Color.DarkSalmon;
+								break;
+					}
 					
 
 					weeklyItems.Add(newItem);

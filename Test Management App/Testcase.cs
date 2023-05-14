@@ -45,6 +45,8 @@ namespace Test_Management_App
 			comboBoxFolder.DisplayMember = "ParentFolderDisplay";
 			comboBoxFolder.ValueMember = "ID";
 
+			resultLabel.Text = thisTest.ResultName;
+			TestResult.BackColor = thisTest.GetResultColor();
 
 			List<int> statusValues = new List<int>(mainForm.model.StatusNames.Keys);
 			foreach (int value in statusValues)

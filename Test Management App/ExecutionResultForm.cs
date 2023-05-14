@@ -69,6 +69,15 @@ namespace Test_Management_App
 			thisExecution.Comment = textBoxComment.Text;
 			
 			mainForm.model.InsertExecution(thisExecution);
+
+			// +1 because 0 is "Not Executed" in test data
+			thisTest.Result = 1 + thisExecution.Result;
+
+			mainForm.model.UpdateTests();
+
+
+
+			this.Close();
 		}
 	}
 }

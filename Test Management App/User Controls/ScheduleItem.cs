@@ -26,7 +26,7 @@ namespace Test_Management_App
 
 			testLabel.Text = mainForm.model.Tests.FirstOrDefault(te => te.ID == dailyTest.TestID).TestName;
 			teamLabel.Text = mainForm.model.TeamMembers.FirstOrDefault(te => te.ID == dailyTest.TeamMemberID).Name;
-			actionLabel.Text = "[action]";
+			actionLabel.Text = dailyTest.ActionName;
 		}
 
 		private void ScheduleItem_Click(object sender, EventArgs e)

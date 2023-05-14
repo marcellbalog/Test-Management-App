@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,8 +99,11 @@ namespace Test_Management_App
 
 		private void buttonStop_Click(object sender, EventArgs e)
 		{
-			timer.Stop();
+			timer.Stop();			
 			sw.Stop();
+			sw.Reset();
+
+			labelTime.Text = "00:00:00";
 
 			buttonStart.Enabled = true;
 			buttonStop.Enabled = false;
@@ -128,6 +132,24 @@ namespace Test_Management_App
 			else if (e.Result == 2)
 				labelInfo.Text = "Terminated";
 			textBoxComment.Text = e.Comment;
+		}
+
+		private void uploadImageButton_Click(object sender, EventArgs e)
+		{
+			byte[] imageBytes;
+			using (OpenFileDialog openFileDialog = new OpenFileDialog())
+			{
+				openFileDialog.Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png";
+				if (openFileDialog.ShowDialog() == DialogResult.OK)
+				{
+					using (FileStream fileStream = new FileStream(openFileDialog.FileName, FileMode.Open))
+					{
+						// Reads the contents of the file into a byte array
+						imageBytes = new byte[fileStream.Length];
+						fileStream.Read(imageBytes, 0, imageBytes.Length);
+					}
+				}
+			}
 		}
 	}
 }

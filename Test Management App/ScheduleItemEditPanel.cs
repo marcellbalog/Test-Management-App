@@ -39,9 +39,11 @@ namespace Test_Management_App
 			teamComboBox.ValueMember = "ID";
 			teamComboBox.SelectedIndex = dailyTest.TeamMemberID;
 
-			commentTextBox.Text = dailyTest.Comment;	
-						
+			commentTextBox.Text = dailyTest.Comment;
+
 			//action...
+			actionComboBox.Items.AddRange(new string[] { "DEV", "RUN", "FIX" });
+			actionComboBox.SelectedIndex = 0;
 		}
 
 		private void SaveButton_Click(object sender, EventArgs e)
@@ -79,6 +81,7 @@ namespace Test_Management_App
 				existingDaily.ScheduleDayID = Day.ID;
 				existingDaily.TeamMemberID = TeamMember.ID;
 				existingDaily.Comment = commentTextBox.Text;
+				existingDaily.Action = actionComboBox.SelectedIndex;
 				mainForm.model.UpdateDailyTests();
 			}
 			else
@@ -89,7 +92,8 @@ namespace Test_Management_App
 					TestID = Test.ID,
 					ScheduleDayID = Day.ID,
 					TeamMemberID = TeamMember.ID,
-					Comment = commentTextBox.Text
+					Comment = commentTextBox.Text,
+					Action = actionComboBox.SelectedIndex
 				};
 				//mainForm.model.DailyTests.Add(newDaily);
 				mainForm.model.InsertDailyTest(newDaily);

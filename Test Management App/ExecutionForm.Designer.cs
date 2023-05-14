@@ -41,6 +41,7 @@ namespace Test_Management_App
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.RefreshButton = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.uploadImageButton = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -123,7 +124,7 @@ namespace Test_Management_App
 			this.textBoxComment.Location = new System.Drawing.Point(439, 161);
 			this.textBoxComment.Multiline = true;
 			this.textBoxComment.Name = "textBoxComment";
-			this.textBoxComment.Size = new System.Drawing.Size(323, 250);
+			this.textBoxComment.Size = new System.Drawing.Size(323, 220);
 			this.textBoxComment.TabIndex = 6;
 			// 
 			// label2
@@ -161,11 +162,26 @@ namespace Test_Management_App
 			this.panel1.Size = new System.Drawing.Size(356, 63);
 			this.panel1.TabIndex = 55;
 			// 
+			// uploadImageButton
+			// 
+			this.uploadImageButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.uploadImageButton.BackColor = System.Drawing.Color.LightSteelBlue;
+			this.uploadImageButton.FlatAppearance.BorderSize = 0;
+			this.uploadImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.uploadImageButton.Location = new System.Drawing.Point(439, 388);
+			this.uploadImageButton.Name = "uploadImageButton";
+			this.uploadImageButton.Size = new System.Drawing.Size(89, 23);
+			this.uploadImageButton.TabIndex = 56;
+			this.uploadImageButton.Text = "Upload image";
+			this.uploadImageButton.UseVisualStyleBackColor = false;
+			this.uploadImageButton.Click += new System.EventHandler(this.uploadImageButton_Click);
+			// 
 			// ExecutionForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 456);
+			this.Controls.Add(this.uploadImageButton);
 			this.Controls.Add(this.RefreshButton);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.textBoxComment);
@@ -194,5 +210,6 @@ namespace Test_Management_App
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Button RefreshButton;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Button uploadImageButton;
 	}
 }

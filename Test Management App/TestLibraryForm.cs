@@ -39,15 +39,13 @@ namespace Test_Management_App
 			Debug.WriteLine(data.Count());
 			testListPanel.Controls.Clear();
 
-			// ehelyett estleg flowlayoutot
-			List<Test> orderedTests = data
-				.OrderByDescending(t => t.ID)
-				.ToList();
+			data.Sort((x, y) => y.ID.CompareTo(x.ID));
 
-			foreach (Test item in orderedTests)
+
+			foreach (Test item in data)
 			{
 				TestRow tr = new TestRow (item, mainForm);
-				testRows.Add(tr);				
+				testRows.Add(tr);
 				testListPanel.Controls.Add(tr);
 				tr.Dock = DockStyle.Top;
 				tr.MaximumSize = new Size(default, 45);

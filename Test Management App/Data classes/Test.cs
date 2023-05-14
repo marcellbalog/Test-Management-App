@@ -63,6 +63,9 @@ namespace Test_Management_App
 				case 2:
 					color = Color.Crimson;
 					break;
+				case 3:
+					color = Color.Orange;
+					break;
 				default:
 					color = Color.Gray;
 					break;
@@ -80,10 +83,13 @@ namespace Test_Management_App
 					name = "NOT EXECUTED";
 					break;
 				case 1:
-					name = "FAIL";
+					name = "SUCCESS";
 					break;
 				case 2:
-					name = "SUCCESS";
+					name = "FAIL";
+					break;
+				case 3:
+					name = "TERMINATED";
 					break;
 				default:
 					name = "NOT EXECUTED";

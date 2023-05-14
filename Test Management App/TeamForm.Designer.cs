@@ -45,6 +45,7 @@ namespace Test_Management_App
 			this.teamListBox.FormattingEnabled = true;
 			this.teamListBox.ItemHeight = 16;
 			this.teamListBox.Location = new System.Drawing.Point(215, 15);
+			this.teamListBox.MultiColumn = true;
 			this.teamListBox.Name = "teamListBox";
 			this.teamListBox.Size = new System.Drawing.Size(243, 292);
 			this.teamListBox.TabIndex = 0;
