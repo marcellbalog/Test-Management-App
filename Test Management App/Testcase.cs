@@ -14,6 +14,7 @@ namespace Test_Management_App
 	{
 		private Test thisTest { get; set; }
 		private MainForm mainForm;
+		private TestBuilder testBuilder;
 
 		private List<StepRow> stepRows = new List<StepRow>();
 		private List<Step> newSteps = new List<Step>();
@@ -28,6 +29,7 @@ namespace Test_Management_App
 			thisTest = t;
 			mainForm = mf;
 
+			testBuilder = new TestBuilder(t);
 			LoadTestData();
 			PopulateStepList();
 		}
@@ -63,12 +65,20 @@ namespace Test_Management_App
 
 		private void SaveButton_Click(object sender, EventArgs e)
 		{
+			thisTest = testBuilder
+				.WithName(TestNameInput.Text)
+				.WithDescription(textBoxDescription.Text)
+				.WithFolderID((int)comboBoxFolder.SelectedValue)
+				.WithTeamMemberID((int)comboBoxTeamMember.SelectedValue)
+				.WithStatus(comboBoxStatus.SelectedItem.ToString(), mainForm.model.StatusNames)
+				.Build();
 			
 
+
+			/*
 			thisTest.TestName = TestNameInput.Text;
 			thisTest.Description = textBoxDescription.Text;
-			thisTest.FolderID = (int)comboBoxFolder.SelectedValue;
-			//thisTest.Result = 			
+			thisTest.FolderID = (int)comboBoxFolder.SelectedValue;			
 			thisTest.TeamMemberID = (int)comboBoxTeamMember.SelectedValue;
 			
 
@@ -76,7 +86,7 @@ namespace Test_Management_App
 			string selectedStatusName = comboBoxStatus.SelectedItem.ToString();
 			int selectedStatusValue = mainForm.model.StatusNames.FirstOrDefault(x => x.Value == selectedStatusName).Key;
 			thisTest.Status = selectedStatusValue;
-			
+			*/
 
 			//call sql write			
 			if (isNew)

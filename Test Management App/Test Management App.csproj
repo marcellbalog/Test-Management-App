@@ -123,6 +123,7 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data classes\Step.cs" />
+    <Compile Include="Misc\TestBuilder.cs" />
     <Compile Include="User Controls\ExecutionRow.cs">
       <SubType>UserControl</SubType>
     </Compile>

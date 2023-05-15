@@ -57,6 +57,8 @@ namespace Test_Management_App
 			};
 		}
 
+
+		// Automatically resize textbox according to text size
 		private void ResizeTextBox(TextBox textBox)
 		{
 			using (Graphics g = textBox.CreateGraphics())

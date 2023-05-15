@@ -44,6 +44,7 @@ namespace Test_Management_App
 			this.testLabel.Size = new System.Drawing.Size(121, 52);
 			this.testLabel.TabIndex = 0;
 			this.testLabel.Text = "testLabeltestLabeltetestLabeltestLabelte\r\n\r\n\r\n";
+			this.testLabel.Click += new System.EventHandler(this.ScheduleItem_Click);
 			// 
 			// teamLabel
 			// 
@@ -76,6 +77,7 @@ namespace Test_Management_App
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(137, 81);
 			this.flowLayoutPanel1.TabIndex = 3;
+			this.flowLayoutPanel1.Click += new System.EventHandler(this.ScheduleItem_Click);
 			// 
 			// ScheduleItem
 			// 

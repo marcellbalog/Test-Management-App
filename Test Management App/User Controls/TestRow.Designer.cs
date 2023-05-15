@@ -98,6 +98,7 @@ namespace Test_Management_App
 			this.TestName.Size = new System.Drawing.Size(140, 17);
 			this.TestName.TabIndex = 1;
 			this.TestName.Text = "Sample Test Name 2";
+			this.TestName.Click += new System.EventHandler(this.TestRow_Click);
 			// 
 			// TestID
 			// 
