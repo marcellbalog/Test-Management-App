@@ -159,7 +159,7 @@ namespace Test_Management_App
 				
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void executionButton_Click(object sender, EventArgs e)
 		{
 			ExecutionForm ef = new ExecutionForm(mainForm, thisTest);
 			ef.Show();

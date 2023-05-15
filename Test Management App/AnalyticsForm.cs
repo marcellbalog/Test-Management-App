@@ -56,6 +56,14 @@ namespace Test_Management_App
 			chart2.Series[0].XValueMember = "StatusName";
 			chart2.Series[0].YValueMembers = "ID";
 
+
+			chart3.DataSource = mainForm.model.Tests;
+			chart3.Series[0].XValueMember = "TeamMember";
+			chart3.Series[0].YValueMembers = "ID";
+
+			chart3.DataSource = mainForm.model.DailyTests;
+			chart3.Series[0].XValueMember = "Action";
+			chart3.Series[0].YValueMembers = "ID";
 		}
 
 		private void FolderComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,7 +83,16 @@ namespace Test_Management_App
 			List<Test> testsInFolder = mainForm.model.Tests.Where(test => folderIds.Contains(test.FolderID)).ToList();
 
 			chart1.DataSource = testsInFolder;
-			chart1.DataBind();			
+			chart1.DataBind();
+
+			chart2.DataSource = testsInFolder;
+			chart2.DataBind();
+
+			chart3.DataSource = testsInFolder;
+			chart3.DataBind();
+
+			chart3.DataSource = testsInFolder;
+			chart4.DataBind();
 		}
 
 		private List<int> GetDescendantFolderIds(int folderId)
@@ -94,6 +111,6 @@ namespace Test_Management_App
 			}
 
 			return descendantFolderIds;
-		}	
+		}
 	}
 }
