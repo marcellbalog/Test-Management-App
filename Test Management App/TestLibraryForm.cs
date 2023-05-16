@@ -36,30 +36,36 @@ namespace Test_Management_App
 
 		public void PopulateTestList(List<Test> data)
 		{
-			Debug.WriteLine(data.Count());
-			testListPanel.Controls.Clear();
-
-			data.Sort((x, y) => y.ID.CompareTo(x.ID));
-
-
-			foreach (Test item in data)
+			try
 			{
-				TestRow tr = new TestRow (item, mainForm);
-				testRows.Add(tr);
-				testListPanel.Controls.Add(tr);
-				tr.Dock = DockStyle.Top;
-				tr.MaximumSize = new Size(default, 45);
-				tr.MinimumSize = new Size(default, 45);
-				tr.TestID.Text = "T" + item.ID.ToString();
-				tr.TestName.Text = item.TestName;
+				Debug.WriteLine(data.Count());
+				testListPanel.Controls.Clear();
 
-				tr.TestOwner.Text = item.TeamMember.Name;
-				tr.TestStatus.Text = item.StatusName;
-				tr.TestResult.BackColor = item.GetResultColor();
+				data.Sort((x, y) => y.ID.CompareTo(x.ID));
 
 
+				foreach (Test item in data)
+				{
+					TestRow tr = new TestRow (item, mainForm);
+					testRows.Add(tr);
+					testListPanel.Controls.Add(tr);
+					tr.Dock = DockStyle.Top;
+					tr.MaximumSize = new Size(default, 45);
+					tr.MinimumSize = new Size(default, 45);
 
-				Debug.WriteLine(item.TestName + item.Status + item.Result + item.TeamMemberID);
+					// Handle null reference exceptions when accessing properties
+					tr.TestID.Text = "T" + (item?.ID.ToString() ?? "N/A");
+					tr.TestName.Text = item?.TestName ?? "N/A";
+					tr.TestOwner.Text = item?.TeamMember?.Name ?? "N/A";
+					tr.TestStatus.Text = item?.StatusName ?? "N/A";
+					tr.TestResult.BackColor = item?.GetResultColor() ?? Color.White;
+
+					Debug.WriteLine(item?.TestName + item?.Status + item?.Result + item?.TeamMemberID);
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("An error occurred while populating the test list: " + ex.Message);
 			}
 		}
 
