@@ -28,12 +28,12 @@ namespace Test_Management_App
 			var filteredTeam = mainForm.model.TeamMembers.Where(tm => tm.ID != 0).ToList();
 						
 			teamListBox.DataSource = filteredTeam;
-			teamListBox.DisplayMember = "Name";
+			teamListBox.DisplayMember = "DisplayInfo";
 		}
 
 		private void AddButton_Click(object sender, EventArgs e)
 		{
-			using (var form = new NameInputForm())
+			using (var form = new NameRoleInputForm())
 			{
 				if (form.ShowDialog() == DialogResult.OK)
 				{					
@@ -82,6 +82,31 @@ namespace Test_Management_App
 				}
 			}
 
+			PopulateTeamList();
+		}
+
+		private void editButton_Click(object sender, EventArgs e)
+		{
+			var selected = teamListBox.SelectedItem;
+
+			if (selected is TeamMember selectedTM)
+			{
+				// If it's 0 (unknown), cancel method
+				if (selectedTM.ID == 0)
+					return;
+
+				using (var form = new NameRoleInputForm(selectedTM))
+				{
+					if (form.ShowDialog() == DialogResult.OK)
+					{
+						TeamMember tm = mainForm.model.TeamMembers.FirstOrDefault(t => t.ID == selectedTM.ID);
+						tm.Name = form.NameInput;
+						tm.Role = form.RoleInput;
+
+						mainForm.model.UpdateTeamMembers();
+					}
+				}
+			}
 			PopulateTeamList();
 		}
 	}

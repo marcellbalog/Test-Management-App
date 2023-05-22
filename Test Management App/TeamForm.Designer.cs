@@ -34,6 +34,7 @@ namespace Test_Management_App
 			this.AddButton = new System.Windows.Forms.Button();
 			this.removeButton = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.editButton = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -45,7 +46,6 @@ namespace Test_Management_App
 			this.teamListBox.FormattingEnabled = true;
 			this.teamListBox.ItemHeight = 16;
 			this.teamListBox.Location = new System.Drawing.Point(215, 15);
-			this.teamListBox.MultiColumn = true;
 			this.teamListBox.Name = "teamListBox";
 			this.teamListBox.Size = new System.Drawing.Size(243, 292);
 			this.teamListBox.TabIndex = 0;
@@ -94,11 +94,26 @@ namespace Test_Management_App
 			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel1.BackColor = System.Drawing.Color.White;
+			this.panel1.Controls.Add(this.editButton);
 			this.panel1.Controls.Add(this.teamListBox);
 			this.panel1.Location = new System.Drawing.Point(38, 73);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(704, 339);
 			this.panel1.TabIndex = 52;
+			// 
+			// editButton
+			// 
+			this.editButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.editButton.BackColor = System.Drawing.Color.LightCyan;
+			this.editButton.FlatAppearance.BorderSize = 0;
+			this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.editButton.Location = new System.Drawing.Point(479, 73);
+			this.editButton.Name = "editButton";
+			this.editButton.Size = new System.Drawing.Size(65, 23);
+			this.editButton.TabIndex = 53;
+			this.editButton.Text = "EDIT";
+			this.editButton.UseVisualStyleBackColor = false;
+			this.editButton.Click += new System.EventHandler(this.editButton_Click);
 			// 
 			// TeamForm
 			// 
@@ -124,5 +139,6 @@ namespace Test_Management_App
 		private System.Windows.Forms.Button AddButton;
 		private System.Windows.Forms.Button removeButton;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Button editButton;
 	}
 }

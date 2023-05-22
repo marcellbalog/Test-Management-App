@@ -154,6 +154,7 @@ namespace Test_Management_App
 				{
 					ID = (int)reader["ID"],
 					Name = reader["Name"].ToString(),
+					Role = (int)reader["Role"],
 				};
 
 				TeamMembers.Add(item);
@@ -453,10 +454,10 @@ namespace Test_Management_App
 		#region TeamMember Write
 		public void InsertTeamMember(TeamMember teamMember)
 		{
-			string sql = "INSERT INTO TeamMember (ID, Name) VALUES (@ID, @Name)";
+			string sql = "INSERT INTO TeamMember (Name, Role) VALUES (@Name, @Role)";
 			SqlCommand command = new SqlCommand(sql, connection);
-			command.Parameters.AddWithValue("@ID", teamMember.ID);
 			command.Parameters.AddWithValue("@Name", teamMember.Name);
+			command.Parameters.AddWithValue("@Role", teamMember.Role);
 
 			connection.Open();
 			command.ExecuteNonQuery();
@@ -467,13 +468,14 @@ namespace Test_Management_App
 
 		public void UpdateTeamMembers()
 		{
-			string sql = "UPDATE TeamMember SET Name = @Name WHERE ID = @ID";
+			string sql = "UPDATE TeamMember SET Name = @Name, Role = @Role WHERE ID = @ID";
 			connection.Open();
 			foreach (TeamMember teamMember in TeamMembers)
 			{
 				SqlCommand command = new SqlCommand(sql, connection);
 				command.Parameters.AddWithValue("@ID", teamMember.ID);
 				command.Parameters.AddWithValue("@Name", teamMember.Name);
+				command.Parameters.AddWithValue("@Role", teamMember.Role);
 
 				int rowsAffected = command.ExecuteNonQuery();
 				Console.WriteLine(rowsAffected + " rows updated");

@@ -95,6 +95,12 @@
     <Compile Include="Misc\MyTreeView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Misc\NameRoleInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Misc\NameRoleInputForm.Designer.cs">
+      <DependentUpon>NameRoleInputForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Misc\NameInputForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Misc\NameRoleInputForm.resx">
+      <DependentUpon>NameRoleInputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Misc\NameInputForm.resx">
       <DependentUpon>NameInputForm.cs</DependentUpon>
