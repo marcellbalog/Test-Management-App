@@ -122,12 +122,12 @@ namespace Test_Management_App
 			// 
 			// testLibraryButton
 			// 
-			this.testLibraryButton.BackColor = System.Drawing.Color.Transparent;
+			this.testLibraryButton.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.testLibraryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.testLibraryButton.FlatAppearance.BorderSize = 0;
 			this.testLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.testLibraryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.testLibraryButton.ForeColor = System.Drawing.Color.Aqua;
+			this.testLibraryButton.ForeColor = System.Drawing.Color.DarkCyan;
 			this.testLibraryButton.Location = new System.Drawing.Point(15, 22);
 			this.testLibraryButton.Name = "testLibraryButton";
 			this.testLibraryButton.Size = new System.Drawing.Size(146, 30);
@@ -167,11 +167,11 @@ namespace Test_Management_App
 		#endregion
 
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Button settingsButton;
-		private System.Windows.Forms.Button analyticsButton;
-		private System.Windows.Forms.Button scheduleButton;
-		private System.Windows.Forms.Button teamButton;
-		private System.Windows.Forms.Button testLibraryButton;
+		public System.Windows.Forms.Button settingsButton;
+		public System.Windows.Forms.Button analyticsButton;
+		public System.Windows.Forms.Button scheduleButton;
+		public System.Windows.Forms.Button teamButton;
+		public System.Windows.Forms.Button testLibraryButton;
 		private System.Windows.Forms.Panel pageFormPanel;
 	}
 }

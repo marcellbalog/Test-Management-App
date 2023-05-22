@@ -182,13 +182,20 @@ namespace Test_Management_App
 
 			Folder f = (Folder)selectedNode.Tag;
 
-
+			// Showing renaming window
 			using (var form = new NameInputForm(f.Name))
 			{							
 				if (form.ShowDialog() == DialogResult.OK)
 				{					
 					f.Name = form.NameInput;															
 				}
+			}
+
+			// Updating the Folder instance
+			int index = mainForm.model.Folders.FindIndex(x => x.ID == f.ID);
+			if (index != -1)
+			{
+				mainForm.model.Folders[index].Name = f.Name;
 			}
 
 			mainForm.model.UpdateFolders();

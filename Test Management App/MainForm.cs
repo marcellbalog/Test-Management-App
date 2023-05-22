@@ -27,7 +27,7 @@ namespace Test_Management_App
 			model = new MainFormModel();			
 			view = new MainFormView(this);
 
-			view.Show();
+			view.ShowForm();
 			OpenPageForm(new TestLibraryForm(this));
 
 			testLibraryButton.Click  += new EventHandler(view.OnTestLibraryButtonClick);
@@ -48,26 +48,31 @@ namespace Test_Management_App
 		public void testLibrarybutton_Click(object sender, EventArgs e)
 		{
 			OpenPageForm(new TestLibraryForm(this));
+			view.ChangeButtonColors(testLibraryButton);
 		}
 
 		public void teamButton_Click(object sender, EventArgs e)
 		{
 			OpenPageForm(new TeamForm(this));
+			view.ChangeButtonColors(teamButton);
 		}
 
 		public void scheduleButton_Click(object sender, EventArgs e)
 		{
 			OpenPageForm(new ScheduleForm(this));
+			view.ChangeButtonColors(scheduleButton);
 		}
 
 		public void analyticsButton_Click(object sender, EventArgs e)
 		{
 			OpenPageForm(new AnalyticsForm(this));
+			view.ChangeButtonColors(analyticsButton);
 		}
 
 		public void settingsButton_Click(object sender, EventArgs e)
 		{
 			OpenPageForm(new SettingsForm());
+			view.ChangeButtonColors(settingsButton);
 		}
 	}
 }

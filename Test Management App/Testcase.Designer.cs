@@ -49,13 +49,13 @@ namespace Test_Management_App
 			this.label5 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.preconditionTextBox = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.label10 = new System.Windows.Forms.Label();
-			this.TestResult = new System.Windows.Forms.PictureBox();
 			this.resultLabel = new System.Windows.Forms.Label();
+			this.TestResult = new System.Windows.Forms.PictureBox();
+			this.label10 = new System.Windows.Forms.Label();
+			this.panel3 = new System.Windows.Forms.Panel();
 			this.stepsPanel.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -283,13 +283,13 @@ namespace Test_Management_App
 			this.label8.TabIndex = 70;
 			this.label8.Text = "Desctiption";
 			// 
-			// textBox1
+			// preconditionTextBox
 			// 
-			this.textBox1.Location = new System.Drawing.Point(481, 24);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(262, 99);
-			this.textBox1.TabIndex = 71;
+			this.preconditionTextBox.Location = new System.Drawing.Point(481, 24);
+			this.preconditionTextBox.Multiline = true;
+			this.preconditionTextBox.Name = "preconditionTextBox";
+			this.preconditionTextBox.Size = new System.Drawing.Size(262, 99);
+			this.preconditionTextBox.TabIndex = 71;
 			// 
 			// label9
 			// 
@@ -310,7 +310,7 @@ namespace Test_Management_App
 			this.panel2.Controls.Add(this.label10);
 			this.panel2.Controls.Add(this.label9);
 			this.panel2.Controls.Add(this.textBoxDescription);
-			this.panel2.Controls.Add(this.textBox1);
+			this.panel2.Controls.Add(this.preconditionTextBox);
 			this.panel2.Controls.Add(this.comboBoxTeamMember);
 			this.panel2.Controls.Add(this.label8);
 			this.panel2.Controls.Add(this.comboBoxStatus);
@@ -323,22 +323,14 @@ namespace Test_Management_App
 			this.panel2.Size = new System.Drawing.Size(813, 184);
 			this.panel2.TabIndex = 73;
 			// 
-			// panel3
+			// resultLabel
 			// 
-			this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-			this.panel3.Location = new System.Drawing.Point(-4, -2);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(810, 66);
-			this.panel3.TabIndex = 74;
-			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(481, 148);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(107, 13);
-			this.label10.TabIndex = 73;
-			this.label10.Text = "Last execution result:";
+			this.resultLabel.AutoSize = true;
+			this.resultLabel.Location = new System.Drawing.Point(625, 148);
+			this.resultLabel.Name = "resultLabel";
+			this.resultLabel.Size = new System.Drawing.Size(57, 13);
+			this.resultLabel.TabIndex = 75;
+			this.resultLabel.Text = "SUCCESS";
 			// 
 			// TestResult
 			// 
@@ -351,14 +343,22 @@ namespace Test_Management_App
 			this.TestResult.TabIndex = 74;
 			this.TestResult.TabStop = false;
 			// 
-			// resultLabel
+			// label10
 			// 
-			this.resultLabel.AutoSize = true;
-			this.resultLabel.Location = new System.Drawing.Point(625, 148);
-			this.resultLabel.Name = "resultLabel";
-			this.resultLabel.Size = new System.Drawing.Size(57, 13);
-			this.resultLabel.TabIndex = 75;
-			this.resultLabel.Text = "SUCCESS";
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(481, 148);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(107, 13);
+			this.label10.TabIndex = 73;
+			this.label10.Text = "Last execution result:";
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+			this.panel3.Location = new System.Drawing.Point(-4, -2);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(810, 66);
+			this.panel3.TabIndex = 74;
 			// 
 			// Testcase
 			// 
@@ -410,7 +410,7 @@ namespace Test_Management_App
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox preconditionTextBox;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel3;

@@ -37,15 +37,18 @@ namespace Test_Management_App
 		private	void LoadTestData()
 		{
 			TestNameInput.Text = thisTest.TestName;
-			textBoxDescription.Text = thisTest.Description;			
+			textBoxDescription.Text = thisTest.Description;
+			preconditionTextBox.Text = thisTest.Precondition;
 
 			comboBoxTeamMember.DataSource = mainForm.model.TeamMembers;
 			comboBoxTeamMember.DisplayMember = "Name";
 			comboBoxTeamMember.ValueMember = "ID";
+			comboBoxTeamMember.SelectedValue = thisTest.TeamMemberID;
 
 			comboBoxFolder.DataSource = mainForm.model.Folders;
 			comboBoxFolder.DisplayMember = "ParentFolderDisplay";
 			comboBoxFolder.ValueMember = "ID";
+			comboBoxFolder.SelectedValue = thisTest.FolderID;
 
 			resultLabel.Text = thisTest.ResultName;
 			TestResult.BackColor = thisTest.GetResultColor();
@@ -57,7 +60,7 @@ namespace Test_Management_App
 			}
 			/*comboBoxStatus.DataSource = mainForm.model.Tests;
 			comboBoxStatus.DisplayMember = "StatusName";
-			comboBoxFolder.ValueMember = "Status";
+			comboBoxStatus.ValueMember = "Status";
 			*/comboBoxStatus.SelectedItem = mainForm.model.StatusNames[thisTest.Status];
 
 
@@ -68,6 +71,7 @@ namespace Test_Management_App
 			thisTest = testBuilder
 				.WithName(TestNameInput.Text)
 				.WithDescription(textBoxDescription.Text)
+				.WithPrecondition(preconditionTextBox.Text)
 				.WithFolderID((int)comboBoxFolder.SelectedValue)
 				.WithTeamMemberID((int)comboBoxTeamMember.SelectedValue)
 				.WithStatus(comboBoxStatus.SelectedItem.ToString(), mainForm.model.StatusNames)

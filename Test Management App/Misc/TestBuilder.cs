@@ -27,6 +27,12 @@ namespace Test_Management_App
 			return this;
 		}
 
+		public TestBuilder WithPrecondition(string precondition)
+		{
+			test.Precondition = precondition;
+			return this;
+		}
+
 		public TestBuilder WithFolderID(int folderID)
 		{
 			test.FolderID = folderID;

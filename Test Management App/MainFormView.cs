@@ -16,6 +16,8 @@ namespace Test_Management_App
 	{
 		private MainForm form;
 
+		List<Button> NavigationButtons;
+
 		public MainFormView(MainForm form)
 		{
 			this.form = form;
@@ -25,9 +27,11 @@ namespace Test_Management_App
 			this.form.scheduleButton.Click += OnScheduleButtonClick;
 			this.form.analyticsButton.Click += OnAnalyticsButtonClick;
 			this.form.settingsButton.Click += OnSettingsButtonClick;*/
+
+			NavigationButtons = new List<Button>() { form.testLibraryButton, form.teamButton, form.scheduleButton, form.analyticsButton, form.settingsButton };
 		}
 
-		public void Show()
+		public void ShowForm()
 		{
 			form.Show();
 		}
@@ -42,13 +46,28 @@ namespace Test_Management_App
 
 			Debug.WriteLine("library show");
 		}
+		
+		public void ChangeButtonColors(Button btn)
+		{
+			foreach (var prev in NavigationButtons)
+			{
+				prev.BackColor = Color.Transparent;
+				prev.ForeColor = Color.Aqua;
+				prev.Font = new Font(btn.Font.Name, btn.Font.Size, FontStyle.Regular);
+			}
+
+			btn.BackColor = Color.WhiteSmoke;
+			btn.ForeColor = Color.DarkCyan;
+			btn.Font = new Font(btn.Font.Name, btn.Font.Size, FontStyle.Bold);
+		}
+
 
 		public void OnTestLibraryButtonClick(object sender, EventArgs e)
 		{
 			//form.controller.OnTestLibraryButtonClick();
 			//OpenPageForm(new TestLibraryForm(form.model));
-			Debug.WriteLine("library click");
-
+			Debug.WriteLine("library click");			
+			
 		}
 
 		private void OnTeamButtonClick(object sender, EventArgs e)
