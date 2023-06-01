@@ -74,5 +74,11 @@ namespace Test_Management_App
 			OpenPageForm(new SettingsForm());
 			view.ChangeButtonColors(settingsButton);
 		}
+
+		private void helpButton_Click(object sender, EventArgs e)
+		{
+			Process.Start("https://github.com/marcellbalog/Test-Management-App");
+
+		}
 	}
 }

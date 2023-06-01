@@ -29,6 +29,8 @@ namespace Test_Management_App
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.settingsButton = new System.Windows.Forms.Button();
 			this.analyticsButton = new System.Windows.Forms.Button();
@@ -36,6 +38,8 @@ namespace Test_Management_App
 			this.teamButton = new System.Windows.Forms.Button();
 			this.testLibraryButton = new System.Windows.Forms.Button();
 			this.pageFormPanel = new System.Windows.Forms.Panel();
+			this.helpButton = new System.Windows.Forms.Button();
+			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -46,6 +50,7 @@ namespace Test_Management_App
 			this.panel1.AutoSize = true;
 			this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel1.Controls.Add(this.helpButton);
 			this.panel1.Controls.Add(this.settingsButton);
 			this.panel1.Controls.Add(this.analyticsButton);
 			this.panel1.Controls.Add(this.scheduleButton);
@@ -148,6 +153,29 @@ namespace Test_Management_App
 			this.pageFormPanel.Size = new System.Drawing.Size(1018, 581);
 			this.pageFormPanel.TabIndex = 47;
 			// 
+			// helpButton
+			// 
+			this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.helpButton.BackColor = System.Drawing.Color.Transparent;
+			this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.helpButton.FlatAppearance.BorderSize = 0;
+			this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.helpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.helpButton.ForeColor = System.Drawing.Color.Aqua;
+			this.helpButton.Image = ((System.Drawing.Image)(resources.GetObject("helpButton.Image")));
+			this.helpButton.Location = new System.Drawing.Point(963, 14);
+			this.helpButton.Name = "helpButton";
+			this.helpButton.Size = new System.Drawing.Size(41, 38);
+			this.helpButton.TabIndex = 14;
+			this.helpButton.UseVisualStyleBackColor = false;
+			this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+			// 
+			// imageList1
+			// 
+			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+			this.imageList1.Images.SetKeyName(0, "help_FILL0_wght400_GRAD0_opsz48.png");
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +201,8 @@ namespace Test_Management_App
 		public System.Windows.Forms.Button teamButton;
 		public System.Windows.Forms.Button testLibraryButton;
 		private System.Windows.Forms.Panel pageFormPanel;
+		public System.Windows.Forms.Button helpButton;
+		private System.Windows.Forms.ImageList imageList1;
 	}
 }
 
